@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">AppAncona</string>
     <string name="cavallo">Hello World</string>
+    <string name="desc_logo">logo applicazione</string>
+    <string name="label_icona1">label 1</string>
 </resources>

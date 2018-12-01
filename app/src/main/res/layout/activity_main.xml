@@ -7,12 +7,41 @@
     android:visibility="visible"
     tools:context=".MainActivity">
 
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="393dp"
-        android:layout_height="match_parent"
+        android:layout_height="@android:dimen/thumbnail_width"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="0dp"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        android:layout_marginEnd="0dp"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/desc_logo" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_height="25dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-1dp"
+        android:text="@string/label_icona1"
+        android:textAlignment="center"
+        android:textSize="20dp" />
 </RelativeLayout>
