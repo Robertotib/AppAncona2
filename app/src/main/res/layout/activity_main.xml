@@ -7,13 +7,89 @@
     android:visibility="visible"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="128dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="117dp"
+        android:text="@string/label_icona6"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="@android:dimen/thumbnail_width"
+        android:id="@+id/imageButton4"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView3"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="256dp"
+        android:contentDescription="@string/desc_icona4"
         app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="117dp"
+        android:contentDescription="@string/desc_icona5"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="117dp"
+        android:contentDescription="@string/desc_icona6"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/imageButton2"
+        android:contentDescription="@string/desc_icona3"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="128dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:text="@string/label_icona3"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="128dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="128dp"
+        android:text="@string/label_icona2"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -28,20 +104,57 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_width="128dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView3"
         android:layout_alignParentStart="true"
+        android:contentDescription="@string/desc_icona1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="0dp"
+        android:contentDescription="@string/desc_icona2"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="@android:dimen/thumbnail_width"
+        android:layout_width="128dp"
         android:layout_height="25dp"
         android:layout_below="@+id/imageButton"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="-1dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
         android:text="@string/label_icona1"
         android:textAlignment="center"
-        android:textSize="20dp" />
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="128dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="117dp"
+        android:text="@string/label_icona4"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="128dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="117dp"
+        android:text="@string/label_icona5"
+        android:textAlignment="center"
+        android:textSize="20sp" />
 </RelativeLayout>
