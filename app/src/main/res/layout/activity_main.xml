@@ -1,160 +1,254 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="128dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="117dp"
-        android:text="@string/label_icona6"
-        android:textAlignment="center"
-        android:textSize="20sp" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="128dp"
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineO1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="256dp"
-        android:contentDescription="@string/desc_icona4"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.0" />
 
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="128dp"
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineO2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="117dp"
-        android:contentDescription="@string/desc_icona5"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.25" />
 
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="128dp"
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineO3"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="117dp"
-        android:contentDescription="@string/desc_icona6"
-        app:srcCompat="@mipmap/ic_launcher_round" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="128dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.45" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineLabel1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView3"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_toEndOf="@+id/imageButton2"
-        android:contentDescription="@string/desc_icona3"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.5"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="128dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="256dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        android:text="@string/label_icona3"
-        android:textAlignment="center"
-        android:textSize="20sp" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineO4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.70" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.75"/>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="128dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="128dp"
-        android:text="@string/label_icona2"
-        android:textAlignment="center"
-        android:textSize="20sp" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineO5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.95" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineLabel3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="1.0"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.0" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineV3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="1.0" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="393dp"
-        android:layout_height="@android:dimen/thumbnail_width"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="0dp"
-        app:srcCompat="@drawable/logo"
-        android:contentDescription="@string/desc_logo" />
+        android:id="@+id/logo"
+
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/desc_logo"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO2"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineO1"
+        app:srcCompat="@drawable/logo" />
 
     <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentStart="true"
+        android:id="@+id/icona1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/desc_icona1"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineO2"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView3"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="0dp"
+        android:id="@+id/icona2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/desc_icona2"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineO2"
+        app:srcCompat="@mipmap/ic_launcher" />
+    <ImageButton
+        android:id="@+id/icona3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/desc_icona3"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO4"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineLabel1"
+        app:srcCompat="@mipmap/ic_launcher" />
+    <ImageButton
+        android:id="@+id/icona4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/desc_icona4"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO4"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineLabel1"
+        app:srcCompat="@mipmap/ic_launcher" />
+    <ImageButton
+        android:id="@+id/icona5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/desc_icona5"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO5"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineLabel2"
+        app:srcCompat="@mipmap/ic_launcher" />
+    <ImageButton
+        android:id="@+id/icona6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/desc_icona6"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO5"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineLabel2"
+        app:srcCompat="@mipmap/ic_launcher" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="128dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
-        android:text="@string/label_icona1"
+        android:id="@+id/label1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/label_icona1"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineLabel1"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineO3"
         android:textAlignment="center"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/label_icona1" />
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/label_icona2"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineLabel1"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineO3"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/label_icona2" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="128dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="117dp"
-        android:text="@string/label_icona4"
+        android:id="@+id/label3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/label_icona3"
+        android:text="@string/label_icona3"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineLabel2"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineO4"
         android:textAlignment="center"
-        android:textSize="20sp" />
-
+        android:textSize="20sp"
+        android:textStyle="bold"/>
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="128dp"
-        android:layout_height="25dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="117dp"
-        android:text="@string/label_icona5"
+        android:id="@+id/label4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/label_icona4"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineLabel2"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineO4"
         android:textAlignment="center"
-        android:textSize="20sp" />
-</RelativeLayout>
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/label_icona4" />
+    <TextView
+        android:id="@+id/label5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/label_icona5"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineLabel3"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineO5"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/label_icona5" />
+    <TextView
+        android:id="@+id/label6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/label_icona6"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineLabel3"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineO5"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/label_icona6" />
+
+
+</android.support.constraint.ConstraintLayout>
+

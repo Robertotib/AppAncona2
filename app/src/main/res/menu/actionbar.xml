@@ -8,13 +8,13 @@
         android:layout_height="wrap_content"
         android:checkable="true"
         android:icon="@android:drawable/ic_menu_add"
-        android:title="@string/cavallo"
+        android:title="@string/app_name"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/MENU_2"
         android:checkable="true"
         android:icon="@android:drawable/ic_menu_agenda"
-        android:title="@string/cavallo"
+        android:title="@string/app_name"
         app:showAsAction="ifRoom" />
 </menu>

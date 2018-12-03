@@ -1,14 +1,13 @@
 <resources>
     <string name="app_name">AppAncona</string>
-    <string name="cavallo">Hello World</string>
     <string name="desc_logo">logo applicazione</string>
     <!-- LABEL ICONE   -->
-    <string name="label_icona1">label 1</string>
-    <string name="label_icona2">label 2</string>
-    <string name="label_icona3">label 3</string>
-    <string name="label_icona4">label 4</string>
-    <string name="label_icona5">label 5</string>
-    <string name="label_icona6">label 6</string>
+    <string name="label_icona1">Punti di interesse</string>
+    <string name="label_icona2">Ristorazione</string>
+    <string name="label_icona3">Pernottamento</string>
+    <string name="label_icona4">Percorsi</string>
+    <string name="label_icona5">Servizi</string>
+    <string name="label_icona6">La Città</string>
 
     <!-- DESCRIZIONE ICONE   -->
     <string name="desc_icona1">icona 1</string>
