@@ -7,14 +7,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checkable="true"
-        android:icon="@android:drawable/ic_menu_add"
+        android:icon="@android:drawable/ic_menu_search"
         android:title="@string/app_name"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/MENU_2"
         android:checkable="true"
-        android:icon="@android:drawable/ic_menu_agenda"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="@string/app_name"
         app:showAsAction="ifRoom" />
 </menu>

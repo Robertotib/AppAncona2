@@ -113,10 +113,15 @@
         android:layout_height="0dp"
         android:contentDescription="@string/desc_icona1"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineO2"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/puntiinteresse"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"/>
 
     <ImageButton
         android:id="@+id/icona2"
@@ -127,7 +132,11 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineO2"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/rist2"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"/>
+
     <ImageButton
         android:id="@+id/icona3"
         android:layout_width="0dp"
@@ -137,7 +146,11 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel1"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/pernottamento"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"/>
+
     <ImageButton
         android:id="@+id/icona4"
         android:layout_width="0dp"
@@ -147,7 +160,11 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel1"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/percorsi"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"/>
+
     <ImageButton
         android:id="@+id/icona5"
         android:layout_width="0dp"
@@ -157,17 +174,26 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel2"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:srcCompat="@drawable/servizi"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"/>
+
     <ImageButton
         android:id="@+id/icona6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/desc_icona6"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO5"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel2"
-        app:srcCompat="@mipmap/ic_launcher" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/lacitta"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"/>
 
     <TextView
         android:id="@+id/label1"
