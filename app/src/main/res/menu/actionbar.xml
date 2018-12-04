@@ -4,12 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/MENU_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:checkable="true"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/app_name"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/MENU_2"
@@ -17,4 +15,5 @@
         android:icon="@android:drawable/ic_menu_sort_by_size"
         android:title="@string/app_name"
         app:showAsAction="ifRoom" />
+
 </menu>

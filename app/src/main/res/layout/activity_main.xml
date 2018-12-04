@@ -111,89 +111,97 @@
         android:id="@+id/icona1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"
+        android:clickable="true"
         android:contentDescription="@string/desc_icona1"
+        android:focusable="true"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineO2"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/puntiinteresse"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="#ffffff"/>
+        app:srcCompat="@drawable/puntiinteresse" />
 
     <ImageButton
         android:id="@+id/icona2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"
+        android:clickable="true"
         android:contentDescription="@string/desc_icona2"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineO2"
-        app:srcCompat="@drawable/rist2"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="#ffffff"/>
+        app:srcCompat="@drawable/rist2" />
 
     <ImageButton
         android:id="@+id/icona3"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"
+        android:clickable="true"
         android:contentDescription="@string/desc_icona3"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO4"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel1"
-        app:srcCompat="@drawable/pernottamento"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="#ffffff"/>
+        app:srcCompat="@drawable/pernottamento" />
 
     <ImageButton
         android:id="@+id/icona4"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"
+        android:clickable="true"
         android:contentDescription="@string/desc_icona4"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO4"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel1"
-        app:srcCompat="@drawable/percorsi"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="#ffffff"/>
+        app:srcCompat="@drawable/percorsi" />
 
     <ImageButton
         android:id="@+id/icona5"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"
+        android:clickable="true"
+        android:focusable="true"
         android:contentDescription="@string/desc_icona5"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO5"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel2"
-        app:srcCompat="@drawable/servizi"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="#ffffff"/>
+        app:srcCompat="@drawable/servizi" />
 
     <ImageButton
         android:id="@+id/icona6"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:background="#ffffff"
+        android:clickable="true"
         android:contentDescription="@string/desc_icona6"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO5"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineLabel2"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/lacitta"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:background="#ffffff"/>
+        app:srcCompat="@drawable/lacitta" />
 
     <TextView
         android:id="@+id/label1"
