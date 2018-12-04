@@ -16,4 +16,10 @@
     <string name="desc_icona4">icona 4</string>
     <string name="desc_icona5">icona 5</string>
     <string name="desc_icona6">icona 6</string>
+
+    <!--LABEL PUNTI D'INTERESSE -->
+    <string name="label1">Monumenti Storici</string>
+    <string name="label2">Parchi e Paesaggi</string>
+    <string name="label3">Monumenti Religiosi</string>
+    <string name="label4">Luoghi Culturali</string>
 </resources>

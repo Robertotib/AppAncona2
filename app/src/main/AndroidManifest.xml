@@ -4,25 +4,40 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:icon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Punti_interesse1Activity"></activity>
-    <activity android:name=".Ristorazione1Activity"></activity>
-        <activity android:name=".Pernottamento1Activity"></activity>
-        <activity android:name=".Percorsi1Activity"></activity>
-        <activity android:name=".Servizi1Activity"></activity>
-        <activity android:name=".Citta1Activity"></activity>
-        <activity android:name=".Ricerca1Activity"></activity>
+        <activity android:name=".Punti_interesse1Activity"
+                  android:label="@string/label_icona1">
+
+        </activity>
+        <activity android:name=".Ristorazione1Activity"
+                  android:label="@string/label_icona2">
+        </activity>
+        <activity android:name=".Pernottamento1Activity"
+                  android:label="@string/label_icona3">
+        </activity>
+        <activity android:name=".Percorsi1Activity"
+                  android:label="@string/label_icona4">
+        </activity>
+        <activity android:name=".Servizi1Activity"
+                  android:label="@string/label_icona5">
+        </activity>
+        <activity android:name=".Citta1Activity"
+                  android:label="@string/label_icona6">
+        </activity>
+        <activity android:name=".Ricerca1Activity"
+                  android:label="Ricerca">
+        </activity>
 
     </application>
 
