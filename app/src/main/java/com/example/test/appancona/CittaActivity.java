@@ -3,10 +3,10 @@ package com.example.test.appancona;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class Percorsi1Activity extends AppCompatActivity {
+public class CittaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.percorsi1);
+        setContentView(R.layout.citta);
 
     }
 }

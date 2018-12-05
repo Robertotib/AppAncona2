@@ -17,26 +17,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Punti_interesse1Activity"
+        <activity android:name=".Punti_interesseActivity"
                   android:label="@string/label_icona1">
 
         </activity>
-        <activity android:name=".Ristorazione1Activity"
+        <activity android:name=".RistorazioneActivity"
                   android:label="@string/label_icona2">
         </activity>
-        <activity android:name=".Pernottamento1Activity"
+        <activity android:name=".PernottamentoActivity"
                   android:label="@string/label_icona3">
         </activity>
-        <activity android:name=".Percorsi1Activity"
+        <activity android:name=".PercorsiActivity"
                   android:label="@string/label_icona4">
         </activity>
-        <activity android:name=".Servizi1Activity"
+        <activity android:name=".ServiziActivity"
                   android:label="@string/label_icona5">
         </activity>
-        <activity android:name=".Citta1Activity"
+        <activity android:name=".CittaActivity"
                   android:label="@string/label_icona6">
         </activity>
-        <activity android:name=".Ricerca1Activity"
+        <activity android:name=".RicercaActivity"
                   android:label="Ricerca">
         </activity>
 

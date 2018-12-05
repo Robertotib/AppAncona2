@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,Punti_interesse1Activity.class);
+                i = new Intent(MainActivity.this,Punti_interesseActivity.class);
                 startActivity(i);
 
             }
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,Ristorazione1Activity.class);
+                i = new Intent(MainActivity.this,RistorazioneActivity.class);
                 startActivity(i);
 
             }
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,Pernottamento1Activity.class);
+                i = new Intent(MainActivity.this,PernottamentoActivity.class);
                 startActivity(i);
 
             }
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,Percorsi1Activity.class);
+                i = new Intent(MainActivity.this,PercorsiActivity.class);
                 startActivity(i);
 
             }
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,Servizi1Activity.class);
+                i = new Intent(MainActivity.this,ServiziActivity.class);
                 startActivity(i);
 
             }
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,Citta1Activity.class);
+                i = new Intent(MainActivity.this,CittaActivity.class);
                 startActivity(i);
 
             }
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.MENU_1:
                 Intent i;
-                i = new Intent(MainActivity.this,Ricerca1Activity.class);
+                i = new Intent(MainActivity.this,RicercaActivity.class);
                 startActivity(i);
                 break;
 
