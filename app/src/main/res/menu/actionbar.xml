@@ -5,14 +5,14 @@
     <item
         android:id="@+id/MENU_1"
         android:checkable="true"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/ricerca"
         android:title="@string/app_name"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/MENU_2"
         android:checkable="true"
-        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:icon="@drawable/menu"
         android:title="@string/app_name"
         app:showAsAction="ifRoom" />
 
