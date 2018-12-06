@@ -47,7 +47,7 @@
         app:layout_constraintGuide_percent="1.0" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guidelinV1"
+        android:id="@+id/guidelineV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -70,7 +70,7 @@
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineO2"
-        app:layout_constraintLeft_toLeftOf="@+id/guidelinV1"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
         app:layout_constraintRight_toRightOf="@+id/guidelineV2"
         app:layout_constraintTop_toTopOf="@+id/guidelineO1" />
     <view
@@ -81,7 +81,7 @@
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineO3"
-        app:layout_constraintLeft_toLeftOf="@+id/guidelinV1"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
         app:layout_constraintRight_toRightOf="@+id/guidelineV2"
         app:layout_constraintTop_toTopOf="@+id/guidelineO2" />
     <view
@@ -92,7 +92,7 @@
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineO4"
-        app:layout_constraintLeft_toLeftOf="@+id/guidelinV1"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
         app:layout_constraintRight_toRightOf="@+id/guidelineV2"
         app:layout_constraintTop_toTopOf="@+id/guidelineO3" />
     <view
@@ -103,7 +103,7 @@
         android:clickable="true"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="@+id/guidelineO5"
-        app:layout_constraintLeft_toLeftOf="@+id/guidelinV1"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
         app:layout_constraintRight_toRightOf="@+id/guidelineV2"
         app:layout_constraintTop_toTopOf="@+id/guidelineO4" />
 
@@ -116,7 +116,7 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/label2"
         app:layout_constraintBottom_toTopOf="@+id/guidelineO3"
-        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
         app:layout_constraintTop_toTopOf="@+id/guidelineO2"
         app:layout_constraintVertical_bias="0.485"
         app:srcCompat="@drawable/iconaparchi" />
@@ -146,7 +146,7 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/label1"
         app:layout_constraintBottom_toTopOf="@+id/guidelineO2"
-        app:layout_constraintStart_toStartOf="@+id/guidelinV1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
         app:layout_constraintTop_toTopOf="@+id/guidelineO1"
         app:srcCompat="@drawable/parthenon" />
 
@@ -175,7 +175,7 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/label3"
         app:layout_constraintBottom_toTopOf="@+id/guidelineO4"
-        app:layout_constraintStart_toStartOf="@+id/guidelinV1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
         app:layout_constraintTop_toTopOf="@+id/guidelineO3"
         app:layout_constraintVertical_bias="0.485"
         app:srcCompat="@drawable/iconachiesa" />
@@ -205,7 +205,7 @@
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/label4"
         app:layout_constraintBottom_toTopOf="@+id/guidelineO5"
-        app:layout_constraintStart_toStartOf="@+id/guidelinV1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineV1"
         app:layout_constraintTop_toTopOf="@+id/guidelineO4"
         app:srcCompat="@drawable/iconaculturali" />
 
