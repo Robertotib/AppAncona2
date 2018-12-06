@@ -73,7 +73,7 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineO1"
-        app:srcCompat="@drawable/lacitta" />
+        app:srcCompat="@drawable/arrivarci" />
     <ImageView
         android:id="@+id/image2"
         android:layout_width="0dp"
@@ -82,7 +82,7 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineO1"
-        app:srcCompat="@drawable/puntiinteresse" />
+        app:srcCompat="@drawable/visitarla" />
     <ImageView
         android:id="@+id/image3"
         android:layout_width="191dp"
@@ -91,7 +91,7 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
         app:layout_constraintTop_toTopOf="@id/guidelineO2"
-        app:srcCompat="@drawable/servizi" />
+        app:srcCompat="@drawable/negozi" />
     <ImageView
         android:id="@+id/image4"
         android:layout_width="191dp"
@@ -106,7 +106,7 @@
         android:id="@+id/label1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="TextView"
+        android:text="@string/label_citta1"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO2"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
@@ -115,7 +115,7 @@
         android:id="@+id/label2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="TextView"
+        android:text="@string/label_citta2"
         app:layout_constraintTop_toTopOf="@id/guidelinelabel1"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO2"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
@@ -124,7 +124,7 @@
         android:id="@+id/label3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="TextView"
+        android:text="@string/label_citta3"
         app:layout_constraintTop_toTopOf="@id/guidelinelabel2"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
@@ -133,7 +133,7 @@
         android:id="@+id/label4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="TextView"
+        android:text="@string/label_citta4"
         app:layout_constraintTop_toTopOf="@id/guidelinelabel2"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
