@@ -1,7 +1,9 @@
 package com.example.test.appancona;
 
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
 
 public class CittaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
@@ -9,4 +11,5 @@ public class CittaActivity extends AppCompatActivity {
         setContentView(R.layout.citta);
 
     }
+
 }
