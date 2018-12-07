@@ -84,9 +84,9 @@
         app:layout_constraintTop_toTopOf="@id/guidelineO1"
         app:srcCompat="@drawable/visitarla" />
     <ImageView
-        android:id="@+id/image3"
-        android:layout_width="191dp"
-        android:layout_height="259dp"
+        android:id="@+id/image319"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/guidelinelabel2"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
@@ -94,8 +94,8 @@
         app:srcCompat="@drawable/negozi" />
     <ImageView
         android:id="@+id/image4"
-        android:layout_width="191dp"
-        android:layout_height="259dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="@id/guidelinelabel2"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
