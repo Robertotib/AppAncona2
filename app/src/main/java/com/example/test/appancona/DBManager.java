@@ -2,7 +2,10 @@ package com.example.test.appancona;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+
+import java.io.IOException;
 
 public class DBManager {
 
@@ -12,9 +15,29 @@ public class DBManager {
 
     DBManager(Context context)
     {
+        MyDBHelper myDbHelper = new MyDBHelper(context);
+        myDbHelper = new MyDBHelper(context);
 
-        helper=new MyDBHelper(context, DATABASE,
-                null, VERSIONE_DATABASE);
+        try {
+
+            helper.createDataBase();
+
+        } catch (IOException ioe) {
+
+            throw new Error("Unable to create database");
+
+        }
+
+        try {
+
+            myDbHelper.openDataBase();
+
+        }catch(SQLException sqle){
+
+            throw sqle;
+
+        }
+
     }
 
     public Cursor elencoLibri()
