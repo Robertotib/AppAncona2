@@ -15,8 +15,7 @@ public class DBManager {
 
     DBManager(Context context)
     {
-        MyDBHelper myDbHelper = new MyDBHelper(context);
-        myDbHelper = new MyDBHelper(context);
+        this.helper =new MyDBHelper(context);
 
         try {
 
@@ -30,7 +29,7 @@ public class DBManager {
 
         try {
 
-            myDbHelper.openDataBase();
+            helper.openDataBase();
 
         }catch(SQLException sqle){
 
