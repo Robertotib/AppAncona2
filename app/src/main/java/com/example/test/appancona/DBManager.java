@@ -10,9 +10,7 @@ import java.io.IOException;
 public class DBManager {
 
     MyDBHelper helper=null;
-    private final static String DATABASE="biblio";
-    private final static int VERSIONE_DATABASE=1;
-
+    
     DBManager(Context context)
     {
         this.helper =new MyDBHelper(context);
