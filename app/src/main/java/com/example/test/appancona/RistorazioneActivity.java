@@ -24,10 +24,10 @@ public class RistorazioneActivity extends AppCompatActivity {
 
         adapter=new SimpleCursorAdapter(
                 this,
-                R.layout.row_layout,
+                R.layout.row_ristorazione,
                 db.elencoLibri(),
-                new String[]{"titolo","autore","numero_pagine"},
-                new int[]{R.id.titolo, R.id.autore, R.id.nrpagine},
+                new String[]{"_id","indirizzo"},
+                new int[]{R.id.titolo, R.id.autore},
                 0
         );
 

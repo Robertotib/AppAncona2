@@ -1,16 +1,20 @@
 package com.example.test.appancona;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteCantOpenDatabaseException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 public class MyDBHelper extends SQLiteOpenHelper {
@@ -18,7 +22,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
     //The Android's default system path of your application database.
     private static File DB_PATH;
 
-    private static String DB_NAME = "biblio.sql";
+    private static String DB_NAME = "ancona.sql";
 
     private SQLiteDatabase myDataBase;
 
@@ -70,21 +74,6 @@ public class MyDBHelper extends SQLiteOpenHelper {
      */
     private boolean checkDataBase(){
 
-        SQLiteDatabase checkDB = null;
-    /*
-        try{
-            String myPath = DB_PATH + DB_NAME;
-            checkDB = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
-
-        }catch(SQLiteCantOpenDatabaseException e){
-
-            //database does't exist yet.
-            return false;
-        }
-
-
-
-        return true;*/
         return DB_PATH.exists();
     }
 
@@ -94,27 +83,37 @@ public class MyDBHelper extends SQLiteOpenHelper {
      * This is done by transfering bytestream.
      * */
     private void copyDataBase() throws IOException{
+        AssetManager assetManager = myContext.getAssets();
+        BufferedReader reader = null;
+        StringBuilder stringB = new StringBuilder();
+        try {
+            reader = new BufferedReader(
+                    new InputStreamReader(myContext.getAssets().open(DB_NAME), "UTF-8"));
 
-        //Open your local db as the input stream
-        InputStream myInput = myContext.getAssets().open(DB_NAME);
+            String mLine;
+            while ((mLine = reader.readLine()) != null) {
+                stringB.append(mLine);
+            }
+        } catch (IOException e) {
+            System.out.println("IMPOSSIBILE APRIRE IL FILER");
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    System.out.println("IMPOSSIBILE CHIUDERE IL FILEREADER");
+                }
+            }
+        }
+        String sql = stringB.toString();
+        String [] comandi = sql.split(";");
+        SQLiteDatabase db = getReadableDatabase();
+        for (int i=0;i < comandi.length;i++)
+        {
+            db.execSQL(comandi[i]);
 
-        // Path to the just created empty db
-        String outFileName = DB_PATH.getPath();
-
-        //Open the empty db as the output stream
-        OutputStream myOutput = new FileOutputStream(outFileName);
-
-        //transfer bytes from the inputfile to the outputfile
-        byte[] buffer = new byte[1024];
-        int length;
-        while ((length = myInput.read(buffer))>0){
-            myOutput.write(buffer, 0, length);
         }
 
-        //Close the streams
-        myOutput.flush();
-        myOutput.close();
-        myInput.close();
 
     }
 
