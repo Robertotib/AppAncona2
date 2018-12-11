@@ -1,7 +1,9 @@
 package com.example.test.appancona;
 
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -16,7 +18,6 @@ public class RistorazioneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ristorazione);
-
         lv=new ListView(this);
         setContentView(lv);
 
@@ -26,11 +27,13 @@ public class RistorazioneActivity extends AppCompatActivity {
                 this,
                 R.layout.row_ristorazione,
                 db.elencoLibri(),
-                new String[]{"_id","indirizzo"},
-                new int[]{R.id.titolo, R.id.autore},
+                new String[]{"immagine","nome","indirizzo"},
+                new int[]{R.id.image1,R.id.nome, R.id.indirizzo},
                 0
         );
 
         lv.setAdapter(adapter);
+
     }
+
 }

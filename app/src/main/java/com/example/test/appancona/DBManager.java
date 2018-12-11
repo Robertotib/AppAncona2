@@ -39,7 +39,7 @@ public class DBManager {
 
     public Cursor elencoLibri()
     {
-        String query="SELECT _id,indirizzo FROM ristorazione";
+        String query="SELECT * FROM ristorazione";
 
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
