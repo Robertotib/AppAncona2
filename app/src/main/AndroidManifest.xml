@@ -8,9 +8,11 @@
         android:supportsRtl="true"
         android:icon="@mipmap/ic_launcher_round"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,26 +20,33 @@
             </intent-filter>
         </activity>
         <activity android:name=".Punti_interesseActivity"
-                  android:label="@string/label_icona1">
+                  android:label="@string/label_icona1"
+            android:screenOrientation="portrait">
 
         </activity>
         <activity android:name=".RistorazioneActivity"
-                  android:label="@string/label_icona2">
+                  android:label="@string/label_icona2"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".PernottamentoActivity"
-                  android:label="@string/label_icona3">
+                  android:label="@string/label_icona3"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".PercorsiActivity"
-                  android:label="@string/label_icona4">
+                  android:label="@string/label_icona4"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".ServiziActivity"
-                  android:label="@string/label_icona5">
+                  android:label="@string/label_icona5"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".CittaActivity"
-                  android:label="@string/label_icona6">
+                  android:label="@string/label_icona6"
+            android:screenOrientation="portrait">
         </activity>
         <activity android:name=".RicercaActivity"
-                  android:label="Ricerca">
+                  android:label="Ricerca"
+            android:screenOrientation="portrait">
         </activity>
 
     </application>

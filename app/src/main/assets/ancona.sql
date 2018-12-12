@@ -61,6 +61,12 @@ INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','via indirzzo 2','descrizione'
 INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
 INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','via indirzzo 4','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
 INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','via indirzzo 5','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (6,'pizzeria 6','via indirzzo 6','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (7,'pizzeria 7','via indirzzo 7','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (8,'pizzeria 8','via indirzzo 8','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (9,'pizzeria 9','via indirzzo 9','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (10,'pizzeria 10','via indirzzo 10','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+
 CREATE TABLE IF NOT EXISTS `rist_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_ristorazione`	int ( 11 ) NOT NULL,
