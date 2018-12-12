@@ -44,5 +44,34 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
     }
+    public Cursor elencoHotel()
+    {
+        String query="SELECT * FROM pernottamento";
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+    public Cursor tipiServizi()
+    {
+        String query="SELECT * FROM tipi_servizi";
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+    public Cursor tipiPuntiinteresse()
+    {
+        String query="SELECT * FROM tipi_punti_interesse";
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+    public Cursor Percorsi()
+    {
+        String query="SELECT * FROM percorsi";
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+
 
 }

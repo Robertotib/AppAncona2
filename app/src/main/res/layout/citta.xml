@@ -108,7 +108,7 @@
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3"
         app:layout_constraintTop_toTopOf="@id/guidelineO2"
-        app:srcCompat="@drawable/rist2" />
+        app:srcCompat="@drawable/tradizioni" />
 
     <TextView
         android:id="@+id/label1"
