@@ -3,7 +3,6 @@ package com.example.test.appancona;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -22,13 +21,12 @@ public class RistorazioneActivity extends AppCompatActivity {
         setContentView(lv);
 
         db=new DBManager(this);
-
         adapter=new SimpleCursorAdapter(
                 this,
                 R.layout.row_ristorazione,
-                db.elencoLibri(),
+                db.elencoRistoranti(),
                 new String[]{"immagine","nome","indirizzo"},
-                new int[]{R.id.image1,R.id.nome, R.id.indirizzo},
+                new int[]{R.id.imagerist,R.id.nome, R.id.indirizzo},
                 0
         );
 

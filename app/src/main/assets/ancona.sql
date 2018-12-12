@@ -56,11 +56,11 @@ CREATE TABLE IF NOT EXISTS `ristorazione` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`parcheggio`	tinyint ( 1 ) NOT NULL
 );
-INSERT INTO `ristorazione` VALUES (1,'pizzeria 1','via indirzzo 1','descrizione','drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','via indirzzo 2','descrizione','drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','via indirzzo 3','descrizione','drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','via indirzzo 4','descrizione','drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','via indirzzo 5','descrizione','drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (1,'pizzeria 1','via indirzzo 1','descrizione','rist2.jpg','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','via indirzzo 2','descrizione','rist2.jpg','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','via indirzzo 3','descrizione','rist2.jpg','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','via indirzzo 4','descrizione','rist2.jpg','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','via indirzzo 5','descrizione','rist2.jpg','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
 CREATE TABLE IF NOT EXISTS `rist_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_ristorazione`	int ( 11 ) NOT NULL,

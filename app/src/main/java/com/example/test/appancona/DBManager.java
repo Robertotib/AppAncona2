@@ -37,7 +37,7 @@ public class DBManager {
 
     }
 
-    public Cursor elencoLibri()
+    public Cursor elencoRistoranti()
     {
         String query="SELECT * FROM ristorazione";
 
