@@ -1,9 +1,13 @@
 package com.example.test.appancona;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class ServiziActivity extends AppCompatActivity {
 
@@ -29,6 +33,20 @@ public class ServiziActivity extends AppCompatActivity {
         );
 
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i;
+                TextView textView =  view.findViewById(R.id.nome);
+                String tipo = textView.getText().toString();
+
+                i = new Intent(ServiziActivity.this, Servizi2Activity.class);
+                i.putExtra("tipo", tipo);
+                startActivity(i);
+
+
+            }
+        });
     }
     }
 

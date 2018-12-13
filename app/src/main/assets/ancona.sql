@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `tappe` (
 	`descrizione`	varchar ( 250 ) NOT NULL
 );
 CREATE TABLE IF NOT EXISTS `servizi` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`nome`	varchar ( 50 ) NOT NULL,
 	`cod_tipo_servizi`	varchar ( 50 ) NOT NULL,
 	`descrizione`	varchar ( 300 ) NOT NULL,
@@ -43,9 +43,14 @@ CREATE TABLE IF NOT EXISTS `servizi` (
 	`telefono`	varchar ( 10 ) NOT NULL,
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`email`	varchar ( 50 ) NOT NULL,
-	`immagini`	varchar ( 50 ) NOT NULL,
 	FOREIGN KEY(`cod_tipo_servizi`) REFERENCES `tipi_servizi`(`_id`)
 );
+INSERT INTO `servizi` VALUES (1,'Ospedale 1','Ospedali','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirzzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (2,'Stazione 1','Stazione','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirzzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (3,'Centrale 1','Carabinieri','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirzzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (4,'Farmacia 1','Farmacie','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirzzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (5,'Supermercato 1','Supermercati','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirzzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (6,'Ufficio Postale 1','Ufficio Postale','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirzzo 1','0714345621','www.sito.it','email@email.it');
 CREATE TABLE IF NOT EXISTS `serv_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_serv`	int ( 11 ) NOT NULL,
@@ -98,7 +103,11 @@ CREATE TABLE IF NOT EXISTS `punti_interesse` (
 INSERT INTO `punti_interesse` VALUES (1,'Monumento 1','Monumenti Storici','via indirzzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento');
 INSERT INTO `punti_interesse` VALUES (2,'Monumento 2','Monumenti Storici','via indirzzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta');
 INSERT INTO `punti_interesse` VALUES (3,'Monumento 3','Monumenti Religiosi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
-
+INSERT INTO `punti_interesse` VALUES (4,'Monumento 4','Monumenti Religiosi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
+INSERT INTO `punti_interesse` VALUES (5,'Monumento 5','Parchi e Aree Verdi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
+INSERT INTO `punti_interesse` VALUES (6,'Monumento 6','Parchi e Aree Verdi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
+INSERT INTO `punti_interesse` VALUES (7,'Monumento 7','Luoghi Culturali','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/percorsi');
+INSERT INTO `punti_interesse` VALUES (8,'Monumento 8','Luoghi Culturali','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/rist2');
 CREATE TABLE IF NOT EXISTS `pun_int_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pun_int`	int ( 11 ) NOT NULL,
@@ -142,7 +151,7 @@ INSERT INTO `percorsi` VALUES (3,'Percorso 3',3,'android.resource://com.example.
 INSERT INTO `percorsi` VALUES (4,'Percorso 4',4,'android.resource://com.example.test.appancona/drawable/farmacia');
 INSERT INTO `percorsi` VALUES (5,'Percorso 5',5,'android.resource://com.example.test.appancona/drawable/stazione');
 CREATE TABLE IF NOT EXISTS `negozi_tipici` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`nome`	varchar ( 50 ) NOT NULL,
 	`indirizzo`	varchar ( 50 ) NOT NULL,
 	`descrizione`	varchar ( 300 ) NOT NULL,
@@ -153,11 +162,13 @@ CREATE TABLE IF NOT EXISTS `negozi_tipici` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`immagine`	varchar ( 50 ) NOT NULL
 );
+INSERT INTO `negozi_tipici` VALUES (1,'negozio 1','via indirzzo 1','descrizione','9:00:00','19:00:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/rist2');
+INSERT INTO `negozi_tipici` VALUES (2,'negozio 2','via indirzzo 2','descrizione','9:00:00','19:00:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/lacitta');
 CREATE TABLE IF NOT EXISTS `negoz_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_negoz`	int ( 11 ) NOT NULL,
 	`cod_tappa`	int ( 11 ) NOT NULL,
 	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`),
-	FOREIGN KEY(`cod_negoz`) REFERENCES `negozi_tipici`(`id`)
+	FOREIGN KEY(`cod_negoz`) REFERENCES `negozi_tipici`(`_id`)
 );
 COMMIT;

@@ -79,6 +79,20 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
     }
+    public Cursor getServiziByTipo(String tipo)
+    {
+        String query="SELECT * FROM servizi WHERE cod_tipo_servizi ="+tipo;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+    public Cursor NegoziTipici()
+    {
+        String query="SELECT * FROM negozi_tipici";
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
 
 
 
