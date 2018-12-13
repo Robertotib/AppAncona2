@@ -5,19 +5,12 @@
 
     >
 
-    <ImageView
-        android:id="@+id/imagetipipuntint"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="5dp"
-        />
 
 
     <TextView
         android:id="@+id/nome"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_toRightOf="@id/imagetipipuntint"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold" />

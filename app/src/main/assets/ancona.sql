@@ -87,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `rist_tappa` (
 	FOREIGN KEY(`cod_ristorazione`) REFERENCES `ristorazione`(`id`)
 );
 CREATE TABLE IF NOT EXISTS `punti_interesse` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`nome`	varchar ( 50 ) NOT NULL,
 	`cod_tipo`	varchar ( 50 ) NOT NULL,
 	`indirizzo`	varchar ( 50 ) NOT NULL,
@@ -95,11 +95,15 @@ CREATE TABLE IF NOT EXISTS `punti_interesse` (
 	`immagine`	varchar ( 50 ) NOT NULL,
 	FOREIGN KEY(`cod_tipo`) REFERENCES `tipi_punti_interesse`(`_id`)
 );
+INSERT INTO `punti_interesse` VALUES (1,'Monumento 1','Monumenti Storici','via indirzzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento');
+INSERT INTO `punti_interesse` VALUES (2,'Monumento 2','Monumenti Storici','via indirzzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta');
+INSERT INTO `punti_interesse` VALUES (3,'Monumento 3','Monumenti Religiosi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
+
 CREATE TABLE IF NOT EXISTS `pun_int_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pun_int`	int ( 11 ) NOT NULL,
 	`cod_tappa`	int ( 11 ) NOT NULL,
-	FOREIGN KEY(`cod_pun_int`) REFERENCES `punti_interesse`(`id`),
+	FOREIGN KEY(`cod_pun_int`) REFERENCES `punti_interesse`(`_id`),
 	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`)
 );
 CREATE TABLE IF NOT EXISTS `pernottamento` (

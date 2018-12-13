@@ -72,6 +72,14 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
     }
+    public Cursor getPuntiinteresseByTipo(String tipo)
+    {
+        String query="SELECT * FROM punti_interesse WHERE cod_tipo ="+tipo;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+
 
 
 }

@@ -24,6 +24,10 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".Punti_interesse2Activity"
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity android:name=".RistorazioneActivity"
                   android:label="@string/label_icona2"
             android:screenOrientation="portrait">
