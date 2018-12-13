@@ -14,18 +14,20 @@ public class Punti_interesse2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.punti_interesse2);
-        setTitle(R.string.label_punti1);
 
         lv = new ListView(this);
         setContentView(lv);
+        String t=getIntent().getStringExtra("tipo");
 
+        setTitle(t);
+       t=  "'" + t + "'";
         db = new DBManager(this);
         adapter = new SimpleCursorAdapter(
                 this,
                 R.layout.row_punti_interesse2,
-                db.getPuntiinteresseByTipo("'Monumenti Storici'"),
-                new String[]{"nome"},
-                new int[]{R.id.nome},
+                db.getPuntiinteresseByTipo(t),
+                new String[]{"immagine","nome","indirizzo"},
+                new int[]{R.id.imagepi2,R.id.nome,R.id.indirizzo},
                 0
         );
 

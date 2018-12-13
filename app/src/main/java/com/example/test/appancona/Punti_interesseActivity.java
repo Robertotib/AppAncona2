@@ -12,6 +12,9 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
+
+
 
 public class Punti_interesseActivity extends AppCompatActivity {
 
@@ -43,8 +46,12 @@ public class Punti_interesseActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i;
-                i = new Intent(Punti_interesseActivity.this,Punti_interesse2Activity.class);
-                startActivity(i);
+                TextView textView =  view.findViewById(R.id.nome);
+                String tipo = textView.getText().toString();
+
+                    i = new Intent(Punti_interesseActivity.this, Punti_interesse2Activity.class);
+                    i.putExtra("tipo", tipo);
+                    startActivity(i);
 
 
             }
