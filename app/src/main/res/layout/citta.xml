@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <android.support.constraint.Guideline
         android:id="@+id/guidelineO1"
@@ -14,29 +15,37 @@
         app:layout_constraintGuide_percent="0.0" />
 
     <android.support.constraint.Guideline
-        android:id="@+id/guidelineO2"
+        android:id="@+id/guidelineimm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.28" />
+
 
     <android.support.constraint.Guideline
-        android:id="@+id/guidelinelabel1"
+        android:id="@+id/guidelineO2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.40" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guidelinelabel2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
-
+        app:layout_constraintGuide_percent="0.46" />
     <android.support.constraint.Guideline
         android:id="@+id/guidelineO3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintGuide_percent="0.64" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineO4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineO5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -56,7 +65,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.3"/>
     <android.support.constraint.Guideline
         android:id="@+id/guidelineV3"
         android:layout_width="wrap_content"
@@ -66,96 +75,109 @@
         app:layout_constraintGuide_percent="1.0"/>
 
     <ImageView
+        android:id="@+id/sfondo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineimm"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineO1"
+        app:srcCompat="@drawable/ancona" />
+    <ImageView
         android:id="@+id/image1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clickable="true"
         android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinelabel1"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO2"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
-        app:layout_constraintTop_toTopOf="@id/guidelineO1"
+        app:layout_constraintTop_toTopOf="@id/guidelineimm"
         app:srcCompat="@drawable/arrivarci" />
-    <ImageView
-        android:id="@+id/image2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinelabel1"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
-        app:layout_constraintRight_toRightOf="@id/guidelineV3"
-        app:layout_constraintTop_toTopOf="@id/guidelineO1"
-        app:srcCompat="@drawable/visitarla" />
-    <ImageView
-        android:id="@+id/image3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinelabel2"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
-        app:layout_constraintRight_toRightOf="@id/guidelineV2"
-        app:layout_constraintTop_toTopOf="@id/guidelineO2"
-        app:srcCompat="@drawable/negozi" />
-    <ImageView
-        android:id="@+id/image4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="@id/guidelinelabel2"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
-        app:layout_constraintRight_toRightOf="@id/guidelineV3"
-        app:layout_constraintTop_toTopOf="@id/guidelineO2"
-        app:srcCompat="@drawable/tradizioni" />
-
     <TextView
         android:id="@+id/label1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_citta1"
         android:textSize="25dp"
-        android:textAlignment="center"
+        android:gravity="center"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/guidelineO2"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"
+        app:layout_constraintTop_toTopOf="@id/guidelineimm" />
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
         app:layout_constraintRight_toRightOf="@id/guidelineV2"
-        app:layout_constraintTop_toTopOf="@id/guidelinelabel1" />
+        app:layout_constraintTop_toTopOf="@id/guidelineO2"
+        app:srcCompat="@drawable/visitarla" />
     <TextView
         android:id="@+id/label2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_citta2"
         android:textSize="25dp"
-        android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/guidelinelabel1"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineO2"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/guidelineO2"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3" />
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO4"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineO3"
+        app:srcCompat="@drawable/negozi" />
     <TextView
         android:id="@+id/label3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_citta3"
         android:textSize="25dp"
-        android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/guidelinelabel2"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/guidelineO3"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO4"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3" />
+    <ImageView
+        android:id="@+id/image4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO5"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
-        app:layout_constraintRight_toRightOf="@id/guidelineV2" />
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"
+        app:layout_constraintTop_toTopOf="@id/guidelineO4"
+        app:srcCompat="@drawable/tradizioni" />
     <TextView
         android:id="@+id/label4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/label_citta4"
         android:textSize="25dp"
-        android:textAlignment="center"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/guidelinelabel2"
-        app:layout_constraintBottom_toBottomOf="@id/guidelineO3"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="@id/guidelineO4"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineO5"
         app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
         app:layout_constraintRight_toRightOf="@id/guidelineV3" />
 </android.support.constraint.ConstraintLayout>

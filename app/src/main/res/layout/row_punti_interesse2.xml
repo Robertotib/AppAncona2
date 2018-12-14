@@ -26,6 +26,14 @@
         android:layout_toRightOf="@id/imagepi2"
         android:textAlignment="center"
         android:layout_below="@id/nome" />
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        android:layout_toRightOf="@id/imagepi2"
+        android:textAlignment="center"
+        android:layout_below="@id/nome" />
 
 
 </RelativeLayout>

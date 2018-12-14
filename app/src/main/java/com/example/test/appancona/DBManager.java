@@ -93,6 +93,13 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
     }
+    public Cursor getPuntoInteresseById(String id)
+    {
+        String query="SELECT * FROM punti_interesse WHERE _id ="+id;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query,null);
+    }
 
 
 
