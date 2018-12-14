@@ -18,7 +18,8 @@
         android:layout_height="100dp"
         android:textSize="20sp"
         android:layout_toRightOf="@id/imagepercorsi"
-        android:textAlignment="center"
+
+        android:gravity="center_vertical"
         android:textStyle="bold" />
 
 

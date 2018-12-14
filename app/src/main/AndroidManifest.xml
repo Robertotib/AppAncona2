@@ -55,6 +55,14 @@
             android:label="@string/label_citta3"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".VisitarlaActivity"
+            android:label="@string/label_citta2"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".TradizioniActivity"
+            android:label="@string/label_citta4"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".RicercaActivity"
                   android:label="Ricerca"
             android:screenOrientation="portrait">

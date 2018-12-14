@@ -35,9 +35,20 @@
     <string name="label_citta3">Negozi Tipicità</string>
     <string name="label_citta4">Tradizioni</string>
 
-    <!--ESCRIZIONI PUNTI D'INTERESSE -->
+    <!--DESCRIZIONI PUNTI D'INTERESSE -->
     <string name="desc_citta1">icona 1</string>
     <string name="desc_citta2">icona 2</string>
     <string name="desc_citta3">icona 1</string>
     <string name="desc_citta4">icona 4</string>
+    <!--DESCRIZIONI COME ARRIVARCI' -->
+    <string name="apiedi">La città è visitabile a piedi,con numerose zone chiuse al traffico ed accessibili solo ai pedoni.</string>
+    <string name="autobus">La città è servita da numerose linee urbane che collegono in maniera efficiente sie le zone centrali che quelle periferiche.</string>
+    <string name="auto">La città è visitabile in auto  grazie ad un sistema stradale ben strutturato con una buona viabilità.</string>
+    <!--DESCRIZIONI TRADIZIONI' -->
+    <string name="titolo1">Festa di San Ciriaco</string>
+    <string name="titolo2">Festa del Mare</string>
+    <string name="titolo3">Fiera degli Archi</string>
+    <string name="testo1">Durante la festa di San Ciriaco, antichissima festa patronale (pare risalente al XIV secolo), che si celebra la prima settimana di maggio, i fedeli della città ascendono al Duomo per onorare il corpo del Martire, mentre la città si riempie di bancarelle..</string>
+    <string name="testo2">La Festa del Mare si tiene nella prima domenica di settembre e consiste in una animatissima processione di centinaia di imbarcazioni che dal porto si recano al largo per onorare i caduti del mare con una cerimonia religiosa. A questa ricorrenza si legano annualmente moltissimi eventi correlati, la fiera nel rione marinaro e, a conclusione di tutto un grande spettacolo di fuochi artificiali sull\'acqua.</string>
+    <string name="testo3">Un importante appuntamento per gli abitanti del quartiere e di tutta la città è la fiera degli Archi. Si racconta che durava tre giorni, si svolgeva verso il 20 di Agosto e comprendeva sempre la domenica..</string>
 </resources>
