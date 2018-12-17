@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AppAncona</string>
     <string name="desc_logo">logo applicazione</string>
+    <string name="mappa">Vedi Percorso</string>
     <!-- LABEL ICONE   -->
     <string name="label_icona1">Punti di interesse</string>
     <string name="label_icona2">Ristorazione</string>

@@ -45,12 +45,12 @@ CREATE TABLE IF NOT EXISTS `servizi` (
 	`email`	varchar ( 50 ) NOT NULL,
 	FOREIGN KEY(`cod_tipo_servizi`) REFERENCES `tipi_servizi`(`_id`)
 );
-INSERT INTO `servizi` VALUES (1,'Ospedale 1','Ospedali','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirzzo 1','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (2,'Stazione 1','Stazione','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirzzo 1','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (3,'Centrale 1','Carabinieri','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirzzo 1','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (4,'Farmacia 1','Farmacie','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirzzo 1','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (5,'Supermercato 1','Supermercati','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirzzo 1','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (6,'Ufficio Postale 1','Ufficio Postale','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirzzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (1,'Ospedale 1','Ospedali','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirizzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (2,'Stazione 1','Stazione','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirizzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (3,'Centrale 1','Carabinieri','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirizzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (4,'Farmacia 1','Farmacie','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirizzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (5,'Supermercato 1','Supermercati','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','via indirizzo 1','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (6,'Ufficio Postale 1','Ufficio Postale','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','via indirizzo 1','0714345621','www.sito.it','email@email.it');
 CREATE TABLE IF NOT EXISTS `serv_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_serv`	int ( 11 ) NOT NULL,
@@ -73,16 +73,16 @@ CREATE TABLE IF NOT EXISTS `ristorazione` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`parcheggio`	tinyint ( 1 ) NOT NULL
 );
-INSERT INTO `ristorazione` VALUES (1,'pizzeria 1','via indirzzo 1','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','via indirzzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','via indirzzo 4','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','via indirzzo 5','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (6,'pizzeria 6','via indirzzo 6','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (7,'pizzeria 7','via indirzzo 7','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (8,'pizzeria 8','via indirzzo 8','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (9,'pizzeria 9','via indirzzo 9','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
-INSERT INTO `ristorazione` VALUES (10,'pizzeria 10','via indirzzo 10','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (1,'pizzeria 1','via indirizzo 1','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','via indirizzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','via indirizzo 4','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','via indirizzo 5','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (6,'pizzeria 6','via indirizzo 6','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (7,'pizzeria 7','via indirizzo 7','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (8,'pizzeria 8','via indirizzo 8','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (9,'pizzeria 9','via indirizzo 9','descrizione','android.resource://com.example.test.appancona/drawable/rist2','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
+INSERT INTO `ristorazione` VALUES (10,'pizzeria 10','via indirizzo 10','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','9:00:00','19:00:00','domenica',10,10.25,'071123456','www.sito.it',0);
 
 CREATE TABLE IF NOT EXISTS `rist_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -100,14 +100,14 @@ CREATE TABLE IF NOT EXISTS `punti_interesse` (
 	`immagine`	varchar ( 50 ) NOT NULL,
 	FOREIGN KEY(`cod_tipo`) REFERENCES `tipi_punti_interesse`(`_id`)
 );
-INSERT INTO `punti_interesse` VALUES (1,'Monumento 1','Monumenti Storici','via indirzzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento');
-INSERT INTO `punti_interesse` VALUES (2,'Monumento 2','Monumenti Storici','via indirzzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta');
-INSERT INTO `punti_interesse` VALUES (3,'Monumento 3','Monumenti Religiosi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
-INSERT INTO `punti_interesse` VALUES (4,'Monumento 4','Monumenti Religiosi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
-INSERT INTO `punti_interesse` VALUES (5,'Monumento 5','Parchi e Aree Verdi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
-INSERT INTO `punti_interesse` VALUES (6,'Monumento 6','Parchi e Aree Verdi','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
-INSERT INTO `punti_interesse` VALUES (7,'Monumento 7','Luoghi Culturali','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/percorsi');
-INSERT INTO `punti_interesse` VALUES (8,'Monumento 8','Luoghi Culturali','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/rist2');
+INSERT INTO `punti_interesse` VALUES (1,'Monumento 1','Monumenti Storici','via indirizzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento');
+INSERT INTO `punti_interesse` VALUES (2,'Monumento 2','Monumenti Storici','via indirizzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta');
+INSERT INTO `punti_interesse` VALUES (3,'Monumento 3','Monumenti Religiosi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
+INSERT INTO `punti_interesse` VALUES (4,'Monumento 4','Monumenti Religiosi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
+INSERT INTO `punti_interesse` VALUES (5,'Monumento 5','Parchi e Aree Verdi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
+INSERT INTO `punti_interesse` VALUES (6,'Monumento 6','Parchi e Aree Verdi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
+INSERT INTO `punti_interesse` VALUES (7,'Monumento 7','Luoghi Culturali','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/percorsi');
+INSERT INTO `punti_interesse` VALUES (8,'Monumento 8','Luoghi Culturali','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/rist2');
 CREATE TABLE IF NOT EXISTS `pun_int_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pun_int`	int ( 11 ) NOT NULL,
@@ -126,12 +126,12 @@ CREATE TABLE IF NOT EXISTS `pernottamento` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`parcheggio`	tinyint ( 1 ) NOT NULL
 );
-INSERT INTO `pernottamento` VALUES (1,'hotel 1','via indirzzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (2,'hotel 2','via indirzzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (3,'hotel 3','via indirzzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (4,'hotel 4','via indirzzo 4','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (5,'hotel 5','via indirzzo 5','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (6,'hotel 6','via indirzzo 6','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it',0);
+INSERT INTO `pernottamento` VALUES (1,'hotel 1','via indirizzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it',0);
+INSERT INTO `pernottamento` VALUES (2,'hotel 2','via indirizzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it',0);
+INSERT INTO `pernottamento` VALUES (3,'hotel 3','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it',0);
+INSERT INTO `pernottamento` VALUES (4,'hotel 4','via indirizzo 4','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it',0);
+INSERT INTO `pernottamento` VALUES (5,'hotel 5','via indirizzo 5','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it',0);
+INSERT INTO `pernottamento` VALUES (6,'hotel 6','via indirizzo 6','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it',0);
 CREATE TABLE IF NOT EXISTS `pern_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pern`	int ( 11 ) NOT NULL,
@@ -162,8 +162,8 @@ CREATE TABLE IF NOT EXISTS `negozi_tipici` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`immagine`	varchar ( 50 ) NOT NULL
 );
-INSERT INTO `negozi_tipici` VALUES (1,'negozio 1','via indirzzo 1','descrizione','9:00:00','19:00:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/rist2');
-INSERT INTO `negozi_tipici` VALUES (2,'negozio 2','via indirzzo 2','descrizione','9:00:00','19:00:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/lacitta');
+INSERT INTO `negozi_tipici` VALUES (1,'negozio 1','via indirizzo 1','descrizione','9:00:00','19:00:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/rist2');
+INSERT INTO `negozi_tipici` VALUES (2,'negozio 2','via indirizzo 2','descrizione','9:00:00','19:00:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/lacitta');
 CREATE TABLE IF NOT EXISTS `negoz_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_negoz`	int ( 11 ) NOT NULL,
