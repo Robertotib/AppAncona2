@@ -39,19 +39,23 @@
         app:layout_constraintTop_toTopOf="@id/guideline3"
         app:layout_constraintBottom_toBottomOf="@id/guideline4"
         />
-    <TextView
+
+    <Button
         android:id="@+id/mappa"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
         android:text="@string/mappa"
         android:textColor="@color/colorText"
-        android:gravity="center"
         android:textStyle="bold"
-        android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="@id/guideline4"
         app:layout_constraintBottom_toBottomOf="@id/guideline5"
-
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline4"
+        app:layout_constraintVertical_bias="0.7" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline1"
