@@ -36,7 +36,9 @@
     <string name="label_citta3">Negozi Tipicità</string>
     <string name="label_citta4">Tradizioni</string>
     <!--LABEL RISTORAZIONE' -->
-    <string name="orarioap">Orario Apertura:</string>
+    <string name="indirizzo">Indirizzo:</string>
+    <string name="email">E-mail:</string>
+    <string name="orari">Orari:</string>
     <string name="giornochius">Giorno Chiusura</string>
     <string name="ncoperti">Numero Coperti</string>
     <string name="prezzo">Prezzo Medio</string>

@@ -18,7 +18,7 @@ public class Pernottamento2Activity extends AppCompatActivity {
         setContentView(lv);
         String t=getIntent().getStringExtra("nome");
         String myid=getIntent().getStringExtra("id");
-        System.out.println(myid);
+
 
         setTitle(t);
         db = new DBManager(this);

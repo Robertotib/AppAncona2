@@ -55,12 +55,18 @@
         <activity android:name=".Servizi2Activity"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".Servizi3Activity"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".CittaActivity"
                   android:label="@string/label_icona6"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Negozi_tipiciActivity"
             android:label="@string/label_citta3"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Negozi_tipici2Activity"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".VisitarlaActivity"

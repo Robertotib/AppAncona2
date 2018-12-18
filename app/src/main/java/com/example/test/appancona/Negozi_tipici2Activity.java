@@ -5,14 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-public class Ristorazione2Activity extends AppCompatActivity {
+public class Negozi_tipici2Activity extends AppCompatActivity {
     private ListView lv = null;
     private SimpleCursorAdapter adapter = null;
     private DBManager db = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ristorazione2);
+        setContentView(R.layout.negozi_tipici2);
 
         lv = new ListView(this);
         setContentView(lv);
@@ -24,10 +24,10 @@ public class Ristorazione2Activity extends AppCompatActivity {
         db = new DBManager(this);
         adapter = new SimpleCursorAdapter(
                 this,
-                R.layout.ristorazione2,
-                db.getRistoranteById(myid),
-                new String[]{"immagine","descrizione","indirizzo","orari","giorno_chiusura","numero_coperti","prezzo_medio","telefono","sito_internet","parcheggio"},
-                new int[]{R.id.sfondo,R.id.descr,R.id.indirizzo,R.id.orari,R.id.giochius,R.id.coperti,R.id.prezzo,R.id.tel,R.id.sito,R.id.parcheggio},
+                R.layout.negozi_tipici2,
+                db.getNegoziById(myid),
+                new String[]{"immagine","indirizzo","orari","giorno_chiusura","telefono","descrizione","sito_internet"},
+                new int[]{R.id.sfondo,R.id.indirizzo,R.id.orari,R.id.giochius,R.id.tel,R.id.descr,R.id.sito},
                 0
         );
 
