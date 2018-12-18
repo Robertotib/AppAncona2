@@ -41,6 +41,9 @@
                   android:label="@string/label_icona3"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".Pernottamento2Activity"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".PercorsiActivity"
                   android:label="@string/label_icona4"
             android:screenOrientation="portrait">

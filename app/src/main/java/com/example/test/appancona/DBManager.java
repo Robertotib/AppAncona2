@@ -108,6 +108,14 @@ public class DBManager {
         return db.rawQuery(query,null);
     }
 
+    public Cursor getHotelById(String id)
+    {
+        String query="SELECT * FROM pernottamento WHERE _id ="+id;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query,null);
+    }
+
 
 
 }

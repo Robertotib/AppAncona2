@@ -19,13 +19,12 @@ public class Punti_interesse3Activity extends AppCompatActivity
         setContentView(lv);
         String t=getIntent().getStringExtra("nome");
         String myid=getIntent().getStringExtra("id");
-        System.out.println(myid);
 
         setTitle(t);
         db = new DBManager(this);
         adapter = new SimpleCursorAdapter(
                 this,
-                R.layout.row_punti_interesse3,
+                R.layout.punti_interesse3,
                 db.getPuntoInteresseById(myid),
                 new String[]{"immagine","descrizione","indirizzo"},
                 new int[]{R.id.sfondo,R.id.descr,R.id.indirizzo},

@@ -124,14 +124,14 @@ CREATE TABLE IF NOT EXISTS `pernottamento` (
 	`prezzo_medio`	float NOT NULL,
 	`telefono`	varchar ( 10 ) NOT NULL,
 	`sito_internet`	varchar ( 50 ) NOT NULL,
-	`parcheggio`	tinyint ( 1 ) NOT NULL
+	`parcheggio`	varchar ( 50 ) NOT NULL
 );
-INSERT INTO `pernottamento` VALUES (1,'hotel 1','via indirizzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (2,'hotel 2','via indirizzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (3,'hotel 3','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (4,'hotel 4','via indirizzo 4','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (5,'hotel 5','via indirizzo 5','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it',0);
-INSERT INTO `pernottamento` VALUES (6,'hotel 6','via indirizzo 6','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it',0);
+INSERT INTO `pernottamento` VALUES (1,'hotel 1','via indirizzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it','si');
+INSERT INTO `pernottamento` VALUES (2,'hotel 2','via indirizzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it','no');
+INSERT INTO `pernottamento` VALUES (3,'hotel 3','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it','no');
+INSERT INTO `pernottamento` VALUES (4,'hotel 4','via indirizzo 4','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20,'0723123456','www.sito.it','si');
+INSERT INTO `pernottamento` VALUES (5,'hotel 5','via indirizzo 5','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',20,'0723123456','www.sito.it','no');
+INSERT INTO `pernottamento` VALUES (6,'hotel 6','via indirizzo 6','descrizione','android.resource://com.example.test.appancona/drawable/servizi',20,'0723123456','www.sito.it','si');
 CREATE TABLE IF NOT EXISTS `pern_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pern`	int ( 11 ) NOT NULL,
