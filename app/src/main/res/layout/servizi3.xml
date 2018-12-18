@@ -47,14 +47,13 @@
         app:layout_constraintRight_toRightOf="@id/guidelineV2"/>
     <TextView
         android:id="@+id/indirizzo"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingLeft="5dp"
         android:contentDescription="@string/indirizzo"
-        app:layout_constraintBottom_toBottomOf="@id/guideline5"
-        app:layout_constraintTop_toTopOf="@id/guideline4"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
-        app:layout_constraintRight_toRightOf="@id/guidelineV2"/>
+        app:layout_constraintBottom_toBottomOf="@id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guideline3"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3"/>
     <TextView
         android:id="@+id/labelemail"
         android:layout_width="0dp"
@@ -65,10 +64,11 @@
         android:text="@string/email"
         android:textStyle="bold"
         android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@id/guideline4"
-        app:layout_constraintTop_toTopOf="@id/guideline3"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
-        app:layout_constraintRight_toRightOf="@id/guidelineV3"/>
+        android:paddingLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guideline4"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"/>
 
     <TextView
         android:id="@+id/email"
@@ -84,31 +84,26 @@
 
     <TextView
         android:id="@+id/labeltel"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="206dp"
+        android:layout_height="60dp"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
+        android:background="@color/colorPrimary"
         android:contentDescription="@string/telefono"
+        android:paddingLeft="5dp"
         android:text="@string/telefono"
         android:textStyle="bold"
-        android:paddingLeft="5dp"
-        android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@id/guideline6"
-        app:layout_constraintTop_toTopOf="@id/guideline5"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
-        app:layout_constraintRight_toRightOf="@id/guidelineV2"/>
+        tools:layout_editor_absoluteY="422dp" />
 
     <TextView
         android:id="@+id/tel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_alignParentStart="true"
-        android:paddingLeft="5dp"
         android:contentDescription="@string/desc_punti1"
-        app:layout_constraintBottom_toBottomOf="@id/guideline7"
-        app:layout_constraintTop_toTopOf="@id/guideline6"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
-        app:layout_constraintRight_toRightOf="@id/guidelineV2" />
+        app:layout_constraintBottom_toBottomOf="@id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guideline5"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
+        app:layout_constraintRight_toRightOf="@id/guidelineV3" />
     <TextView
         android:id="@+id/labelsito"
         android:layout_width="0dp"
@@ -119,10 +114,11 @@
         android:text="@string/sito"
         android:textStyle="bold"
         android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="@id/guideline6"
-        app:layout_constraintTop_toTopOf="@id/guideline5"
-        app:layout_constraintLeft_toLeftOf="@id/guidelineV2"
-        app:layout_constraintRight_toRightOf="@id/guidelineV3"/>
+        android:paddingLeft="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline7"
+        app:layout_constraintTop_toTopOf="@id/guideline6"
+        app:layout_constraintLeft_toLeftOf="@id/guidelineV1"
+        app:layout_constraintRight_toRightOf="@id/guidelineV2"/>
 
     <TextView
         android:id="@+id/sito"
@@ -148,6 +144,7 @@
         android:text="@string/mappa"
         android:textColor="@color/colorText"
         android:textStyle="bold"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
