@@ -1,10 +1,14 @@
 package com.example.test.appancona;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 
 public class RistorazioneActivity extends AppCompatActivity {
 
@@ -25,12 +29,30 @@ public class RistorazioneActivity extends AppCompatActivity {
                 this,
                 R.layout.row_ristorazione,
                 db.elencoRistoranti(),
-                new String[]{"immagine","nome","indirizzo"},
-                new int[]{R.id.imagerist,R.id.nome, R.id.indirizzo},
+                new String[]{"immagine","nome","indirizzo","_id"},
+                new int[]{R.id.imagerist,R.id.nome, R.id.indirizzo,R.id.id},
                 0
         );
 
         lv.setAdapter(adapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i;
+                TextView textView =  view.findViewById(R.id.nome);
+                String nome = textView.getText().toString();
+                TextView textView2 =  view.findViewById(R.id.id);
+                String myid= textView2.getText().toString();
+
+
+                i = new Intent(RistorazioneActivity.this, Ristorazione2Activity.class);
+                i.putExtra("nome", nome);
+                i.putExtra("id", myid);
+                startActivity(i);
+
+
+            }
+        });
 
     }
 

@@ -100,6 +100,13 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query,null);
     }
+    public Cursor getRistoranteById(String id)
+    {
+        String query="SELECT * FROM ristorazione WHERE _id ="+id;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query,null);
+    }
 
 
 

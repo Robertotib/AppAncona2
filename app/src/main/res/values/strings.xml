@@ -30,11 +30,21 @@
     <string name="desc_punti3">Monumenti Religiosi</string>
     <string name="desc_punti4">Luoghi Culturali</string>
 
-    <!--LABEL PUNTI D'INTERESSE -->
+    <!--LABEL CITTA' -->
     <string name="label_citta1">Come Arrivarci</string>
     <string name="label_citta2">Come Visitarla</string>
     <string name="label_citta3">Negozi Tipicità</string>
     <string name="label_citta4">Tradizioni</string>
+    <!--LABEL RISTORAZIONE' -->
+    <string name="orarioap">Orario Apertura:</string>
+    <string name="giornochius">Giorno Chiusura</string>
+    <string name="ncoperti">Numero Coperti</string>
+    <string name="prezzo">Prezzo Medio</string>
+    <string name="telefono">Telefono</string>
+    <string name="orariochiu">Orario Chiusura</string>
+    <string name="sito">Sito Internet</string>
+    <string name="parcheggio">Parcheggio</string>
+
 
     <!--DESCRIZIONI PUNTI D'INTERESSE -->
     <string name="desc_citta1">icona 1</string>
