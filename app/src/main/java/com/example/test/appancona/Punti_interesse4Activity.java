@@ -8,6 +8,7 @@ public class Punti_interesse4Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.punti_interesse4);
-        System.out.print("cavallo");
+        String t =getIntent().getStringExtra("nome");
+        setTitle(t);
     }
 }
