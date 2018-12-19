@@ -1,7 +1,11 @@
 package com.example.test.appancona;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
@@ -14,6 +18,7 @@ public class Punti_interesse3Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.punti_interesse3);
+
 
         lv = new ListView(this);
         setContentView(lv);
@@ -32,6 +37,14 @@ public class Punti_interesse3Activity extends AppCompatActivity
         );
 
         lv.setAdapter(adapter);
+        findViewById(R.id.mappa_punti_interesse).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent i;
+                i = new Intent(Punti_interesse3Activity.this,Punti_interesse4Activity.class);
+                startActivity(i);
+            }
+        });
     }
+
 }
 

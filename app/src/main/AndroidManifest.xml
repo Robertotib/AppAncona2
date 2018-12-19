@@ -28,6 +28,9 @@
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Punti_interesse3Activity"
+        android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Punti_interesse4Activity"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".RistorazioneActivity"
