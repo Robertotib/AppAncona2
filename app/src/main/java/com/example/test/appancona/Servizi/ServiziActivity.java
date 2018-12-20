@@ -1,4 +1,4 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Servizi;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import com.example.test.appancona.*;
+
+import com.example.test.appancona.Database.DBManager;
 
 public class ServiziActivity extends AppCompatActivity {
 

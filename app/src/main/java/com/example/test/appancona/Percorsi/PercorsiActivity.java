@@ -1,9 +1,12 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Percorsi;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import com.example.test.appancona.*;
+
+import com.example.test.appancona.Database.DBManager;
 
 public class PercorsiActivity extends AppCompatActivity {
 

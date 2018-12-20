@@ -1,11 +1,13 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Città;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import com.example.test.appancona.*;
 
-public class TradizioniActivity extends AppCompatActivity {
+public class VisitarlaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tradizioni);
+        setContentView(R.layout.visitarla);
+
     }
 }

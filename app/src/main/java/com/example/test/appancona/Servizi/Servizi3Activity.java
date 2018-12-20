@@ -1,4 +1,4 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Servizi;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -9,14 +9,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.example.test.appancona.*;
 
-public class Negozi_tipici2Activity extends AppCompatActivity {
+import com.example.test.appancona.Database.DBManager;
+
+public class Servizi3Activity extends AppCompatActivity {
 
     private DBManager db = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.negozi_tipici2);
+        setContentView(R.layout.servizi3);
 
 
         final String t=getIntent().getStringExtra("nome");
@@ -25,13 +28,12 @@ public class Negozi_tipici2Activity extends AppCompatActivity {
 
         setTitle(t);
         db = new DBManager(this);
-        Cursor punto = db.getNegoziById(myid);
+        Cursor punto = db.getServiziById(myid);
         if (punto.moveToFirst()) {
             String ind = punto.getString(punto.getColumnIndex("indirizzo"));
             String descr = punto.getString(punto.getColumnIndex("descrizione"));
             String imm = punto.getString(punto.getColumnIndex("immagine"));
-            String ora = punto.getString(punto.getColumnIndex("orari"));
-            String day = punto.getString(punto.getColumnIndex("giorno_chiusura"));
+            String ema = punto.getString(punto.getColumnIndex("email"));
             String tel = punto.getString(punto.getColumnIndex("telefono"));
             String si = punto.getString(punto.getColumnIndex("sito_internet"));
 
@@ -42,10 +44,8 @@ public class Negozi_tipici2Activity extends AppCompatActivity {
             Uri myuri = Uri.parse(imm);
             ImageView image = findViewById(R.id.sfondo);
             image.setImageURI(myuri);
-            TextView orari =findViewById(R.id.orari);
-            orari.setText(ora);
-            TextView giorno =findViewById(R.id.giochius);
-            giorno.setText(day);
+            TextView email = findViewById(R.id.email);
+            email.setText(ema);
             TextView telefono = findViewById(R.id.tel);
             telefono.setText(tel);
             TextView sito = findViewById(R.id.sito);
@@ -57,7 +57,7 @@ public class Negozi_tipici2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Negozi_tipici2Activity.this,Negozi_tipici3Activity.class);
+                i = new Intent(Servizi3Activity.this,Servizi4Activity.class);
                 i.putExtra("nome",t);
                 startActivity(i);
 

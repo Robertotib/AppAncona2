@@ -15,80 +15,81 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Punti_interesseActivity"
+        <activity android:name=".Punti_interesse.Punti_interesseActivity"
                   android:label="@string/label_icona1"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".Punti_interesse2Activity"
+        <activity android:name=".Punti_interesse.Punti_interesse2Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Punti_interesse3Activity"
+        <activity android:name=".Punti_interesse.Punti_interesse3Activity"
         android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Punti_interesse4Activity"
+        <activity android:name=".Punti_interesse.Punti_interesse4Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".RistorazioneActivity"
+        <activity android:name=".Ristorazione.RistorazioneActivity"
                   android:label="@string/label_icona2"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ristorazione2Activity"
+        <activity android:name=".Ristorazione.Ristorazione2Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ristorazione3Activity"
+        <activity android:name=".Ristorazione.Ristorazione3Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".PernottamentoActivity"
+        <activity android:name=".Pernottamento.PernottamentoActivity"
                   android:label="@string/label_icona3"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Pernottamento2Activity"
+        <activity android:name=".Pernottamento.Pernottamento2Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Pernottamento3Activity"
+        <activity android:name=".Pernottamento.Pernottamento3Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".PercorsiActivity"
+        <activity android:name=".Percorsi.PercorsiActivity"
                   android:label="@string/label_icona4"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ServiziActivity"
+        <activity android:name=".Servizi.ServiziActivity"
                   android:label="@string/label_icona5"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Servizi2Activity"
+        <activity android:name=".Servizi.Servizi2Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Servizi3Activity"
+        <activity android:name=".Servizi.Servizi3Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Servizi4Activity"
+        <activity android:name=".Servizi.Servizi4Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".CittaActivity"
+        <activity android:name=".Città.CittaActivity"
                   android:label="@string/label_icona6"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Negozi_tipiciActivity"
+        <activity android:name=".Città.Negozi_tipiciActivity"
             android:label="@string/label_citta3"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Negozi_tipici2Activity"
+        <activity android:name=".Città.Negozi_tipici2Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Negozi_tipici3Activity"
+        <activity android:name=".Città.Negozi_tipici3Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".VisitarlaActivity"
+        <activity android:name=".Città.VisitarlaActivity"
             android:label="@string/label_citta2"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".TradizioniActivity"
+        <activity android:name=".Città.TradizioniActivity"
             android:label="@string/label_citta4"
             android:screenOrientation="portrait">
         </activity>

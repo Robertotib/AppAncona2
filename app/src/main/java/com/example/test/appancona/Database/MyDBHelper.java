@@ -1,21 +1,15 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Database;
 
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.SQLException;
-import android.database.sqlite.SQLiteCantOpenDatabaseException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.io.BufferedReader;
+import java.io.*;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 
 public class MyDBHelper extends SQLiteOpenHelper {
 
@@ -95,13 +89,13 @@ public class MyDBHelper extends SQLiteOpenHelper {
                 stringB.append(mLine);
             }
         } catch (IOException e) {
-            System.out.println("IMPOSSIBILE APRIRE IL FILER");
+            new Error("IMPOSSIBILE APRIRE IL FILE");
         } finally {
             if (reader != null) {
                 try {
                     reader.close();
                 } catch (IOException e) {
-                    System.out.println("IMPOSSIBILE CHIUDERE IL FILEREADER");
+                    new Error("IMPOSSIBILE CHIUDERE IL FILEREADER");
                 }
             }
         }

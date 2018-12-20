@@ -1,4 +1,4 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Ristorazione;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -8,17 +8,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import com.example.test.appancona.*;
+import com.example.test.appancona.Database.DBManager;
 
-public class Pernottamento2Activity extends AppCompatActivity {
+public class Ristorazione2Activity extends AppCompatActivity {
 
     private DBManager db = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pernottamento2);
+        setContentView(R.layout.ristorazione2);
 
 
         final String t=getIntent().getStringExtra("nome");
@@ -27,11 +27,14 @@ public class Pernottamento2Activity extends AppCompatActivity {
 
         setTitle(t);
         db = new DBManager(this);
-        Cursor punto = db.getHotelById(myid);
+        Cursor punto = db.getRistoranteById(myid);
         if (punto.moveToFirst()) {
             String ind = punto.getString(punto.getColumnIndex("indirizzo"));
             String descr = punto.getString(punto.getColumnIndex("descrizione"));
             String imm = punto.getString(punto.getColumnIndex("immagine"));
+            String ora = punto.getString(punto.getColumnIndex("orari"));
+            String day = punto.getString(punto.getColumnIndex("giorno_chiusura"));
+            String cop = punto.getString(punto.getColumnIndex("numero_coperti"));
             String pre = punto.getString(punto.getColumnIndex("prezzo_medio"));
             String tel = punto.getString(punto.getColumnIndex("telefono"));
             String si = punto.getString(punto.getColumnIndex("sito_internet"));
@@ -45,6 +48,12 @@ public class Pernottamento2Activity extends AppCompatActivity {
             Uri myuri = Uri.parse(imm);
             ImageView image = findViewById(R.id.sfondo);
             image.setImageURI(myuri);
+            TextView orari =findViewById(R.id.orari);
+            orari.setText(ora);
+            TextView giorno =findViewById(R.id.giochius);
+            giorno.setText(day);
+            TextView coperti = findViewById(R.id.coperti);
+            coperti.setText(cop);
             TextView prezzo = findViewById(R.id.prezzo);
             prezzo.setText(pre);
             TextView telefono = findViewById(R.id.tel);
@@ -60,12 +69,11 @@ public class Pernottamento2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Pernottamento2Activity.this,Pernottamento3Activity.class);
+                i = new Intent(Ristorazione2Activity.this,Ristorazione3Activity.class);
                 i.putExtra("nome",t);
                 startActivity(i);
 
             }
         });
-
     }
 }

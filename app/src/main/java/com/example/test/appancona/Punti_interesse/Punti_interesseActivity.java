@@ -1,4 +1,6 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Punti_interesse;
+
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,30 +10,33 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import com.example.test.appancona.*;
 
-public class Punti_interesse2Activity extends AppCompatActivity {
+import com.example.test.appancona.Database.DBManager;
+
+
+public class Punti_interesseActivity extends AppCompatActivity {
 
     private ListView lv = null;
     private SimpleCursorAdapter adapter = null;
     private DBManager db = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.punti_interesse2);
+        setContentView(R.layout.punti_interesse);
+
 
         lv = new ListView(this);
         setContentView(lv);
-        String t=getIntent().getStringExtra("tipo");
 
-        setTitle(t);
-        t=  "'" + t + "'";
         db = new DBManager(this);
         adapter = new SimpleCursorAdapter(
                 this,
-                R.layout.row_punti_interesse2,
-                db.getPuntiinteresseByTipo(t),
-                new String[]{"immagine","nome","indirizzo","_id"},
-                new int[]{R.id.imagepi2,R.id.nome,R.id.indirizzo,R.id.id},
+                R.layout.row_tipi_punti_interesse,
+                db.tipiPuntiinteresse(),
+                new String[]{"immagine", "_id"},
+                new int[]{R.id.imagetipipuntint, R.id.nome},
                 0
         );
 
@@ -41,18 +46,20 @@ public class Punti_interesse2Activity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i;
                 TextView textView =  view.findViewById(R.id.nome);
-                String nome = textView.getText().toString();
-                TextView textView2 =  view.findViewById(R.id.id);
-                String myid= textView2.getText().toString();
+                String tipo = textView.getText().toString();
 
-
-                i = new Intent(Punti_interesse2Activity.this, Punti_interesse3Activity.class);
-                i.putExtra("nome", nome);
-                i.putExtra("id", myid);
-                startActivity(i);
+                    i = new Intent(Punti_interesseActivity.this, Punti_interesse2Activity.class);
+                    i.putExtra("tipo", tipo);
+                    startActivity(i);
 
 
             }
         });
+
     }
-}
+
+    }
+
+
+
+

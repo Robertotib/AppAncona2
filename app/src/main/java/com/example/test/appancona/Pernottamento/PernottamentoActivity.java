@@ -1,5 +1,4 @@
-package com.example.test.appancona;
-
+package com.example.test.appancona.Pernottamento;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,28 +8,29 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import com.example.test.appancona.*;
 
-public class RistorazioneActivity extends AppCompatActivity {
+import com.example.test.appancona.Database.DBManager;
 
+public class PernottamentoActivity extends AppCompatActivity {
 
     private ListView lv=null;
     private SimpleCursorAdapter adapter=null;
     private DBManager db=null;
 
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ristorazione);
+        setContentView(R.layout.pernottamento);
         lv=new ListView(this);
         setContentView(lv);
 
         db=new DBManager(this);
         adapter=new SimpleCursorAdapter(
                 this,
-                R.layout.row_ristorazione,
-                db.elencoRistoranti(),
+                R.layout.row_pernottamento,
+                db.elencoHotel(),
                 new String[]{"immagine","nome","indirizzo","_id"},
-                new int[]{R.id.imagerist,R.id.nome, R.id.indirizzo,R.id.id},
+                new int[]{R.id.imagehotel,R.id.nome, R.id.indirizzo,R.id.id},
                 0
         );
 
@@ -45,7 +45,7 @@ public class RistorazioneActivity extends AppCompatActivity {
                 String myid= textView2.getText().toString();
 
 
-                i = new Intent(RistorazioneActivity.this, Ristorazione2Activity.class);
+                i = new Intent(PernottamentoActivity.this, Pernottamento2Activity.class);
                 i.putExtra("nome", nome);
                 i.putExtra("id", myid);
                 startActivity(i);
@@ -53,7 +53,5 @@ public class RistorazioneActivity extends AppCompatActivity {
 
             }
         });
-
     }
-
 }

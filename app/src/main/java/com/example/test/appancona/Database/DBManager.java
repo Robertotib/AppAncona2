@@ -1,4 +1,4 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Database;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -11,7 +11,7 @@ public class DBManager {
 
     MyDBHelper helper=null;
     
-    DBManager(Context context)
+    public DBManager(Context context)
     {
         this.helper =new MyDBHelper(context);
 

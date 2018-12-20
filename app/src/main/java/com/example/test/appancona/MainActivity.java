@@ -10,6 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.example.test.appancona.Percorsi.PercorsiActivity;
+import com.example.test.appancona.Punti_interesse.Punti_interesseActivity;
+import com.example.test.appancona.Ristorazione.RistorazioneActivity;
+import com.example.test.appancona.Servizi.ServiziActivity;
+import com.example.test.appancona.Pernottamento.PernottamentoActivity;
+import com.example.test.appancona.Città.CittaActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
