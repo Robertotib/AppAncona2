@@ -174,11 +174,11 @@
         android:text="@string/mappa"
         android:textColor="@color/colorText"
         android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toBottomOf="@id/guideline9"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/guideline8"
+        app:layout_constraintTop_toTopOf="@id/guideline9"
         app:layout_constraintVertical_bias="0.7" />
 
     <android.support.constraint.Guideline
