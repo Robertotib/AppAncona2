@@ -28,8 +28,8 @@ public class Punti_interesse4Activity extends FragmentActivity implements OnMapR
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-        LatLng firenze = new LatLng(43.776366, 11.247822);
+        
+        LatLng firenze = new LatLng(43.5942, 13.50337);
         mMap.addMarker(new MarkerOptions().position(firenze).title("Siamo a Firenze!"));
         CameraPosition cameraPosition = new CameraPosition.Builder().target(firenze).zoom(15).build();
 
