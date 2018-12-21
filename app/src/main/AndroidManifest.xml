@@ -83,8 +83,12 @@
             android:label="@string/label_citta4"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".RicercaActivity"
+        <activity android:name=".Ricerca.RicercaActivity"
                   android:label="Ricerca"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Ricerca.Ricerca_punti_interesseActivity"
+            android:label="Ricerca Punti d'interesse"
             android:screenOrientation="portrait">
         </activity>
 

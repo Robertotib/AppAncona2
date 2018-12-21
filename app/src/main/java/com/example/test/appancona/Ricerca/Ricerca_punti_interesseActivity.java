@@ -1,47 +1,30 @@
-package com.example.test.appancona;
+package com.example.test.appancona.Ricerca;
 
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
+import com.example.test.appancona.MappaActivity;
+import com.example.test.appancona.MappaActivity.*;
+import com.example.test.appancona.R;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class MappaActivity extends FragmentActivity implements OnMapReadyCallback  {
-    private GoogleMap mMap;
-    @Override
+public class Ricerca_punti_interesseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mappa);
-        String t =getIntent().getStringExtra("nome");
+        setContentView(R.layout.ricerca_punti_interesse);
+        TextView tv = findViewById(R.id.distanza);
+        tv.setText(CalcoloDistanza("via piave 5 ancona ","via piave 4 ancona").toString());
 
-        setTitle(t);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
-        String ind =getIntent().getStringExtra("indirizzo");
-
-        LatLng luogo = getSingleLocationFromAddress(ind+" ancona");
-        mMap.addMarker(new MarkerOptions().position(luogo).title(getIntent().getStringExtra("nome")));
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(luogo).zoom(15).build();
-
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
     public LatLng getSingleLocationFromAddress(String strAddress)
     {
@@ -71,6 +54,18 @@ public class MappaActivity extends FragmentActivity implements OnMapReadyCallbac
         }
         return temp;
     }
+    public Float CalcoloDistanza(String inizio,String fine)
+    {
 
+    LatLng start = getSingleLocationFromAddress(inizio);
+    LatLng end = getSingleLocationFromAddress(fine);
+    Location locstart= new Location("undici");
+    Location locend= new Location("dodici");
+        locstart.setLatitude(start.latitude);
+        locstart.setLongitude(start.longitude);
+        locend.setLatitude(end.latitude);
+        locend.setLongitude(end.longitude);
+    Float distanza = locend.distanceTo(locstart);
+    return distanza;
+    }
 }
-
