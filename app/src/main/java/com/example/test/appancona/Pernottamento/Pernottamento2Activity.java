@@ -29,8 +29,9 @@ public class Pernottamento2Activity extends AppCompatActivity {
         setTitle(t);
         db = new DBManager(this);
         Cursor punto = db.getHotelById(myid);
+        String ind = null;
         if (punto.moveToFirst()) {
-            String ind = punto.getString(punto.getColumnIndex("indirizzo"));
+            ind = punto.getString(punto.getColumnIndex("indirizzo"));
             String descr = punto.getString(punto.getColumnIndex("descrizione"));
             String imm = punto.getString(punto.getColumnIndex("immagine"));
             String pre = punto.getString(punto.getColumnIndex("prezzo_medio"));
@@ -57,12 +58,14 @@ public class Pernottamento2Activity extends AppCompatActivity {
         }
 
         Button a = findViewById(R.id.mappa);
+        final String finalInd = ind;
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Pernottamento2Activity.this,Pernottamento3Activity.class);
+                i = new Intent(Pernottamento2Activity.this,MappaActivity.class);
                 i.putExtra("nome",t);
+                i.putExtra("indirizzo", finalInd);
                 startActivity(i);
 
             }

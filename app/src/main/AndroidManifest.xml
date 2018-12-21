@@ -50,9 +50,6 @@
         <activity android:name=".Pernottamento.Pernottamento2Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Pernottamento.Pernottamento3Activity"
-            android:screenOrientation="portrait">
-        </activity>
         <activity android:name=".Percorsi.PercorsiActivity"
                   android:label="@string/label_icona4"
             android:screenOrientation="portrait">
@@ -67,9 +64,6 @@
         <activity android:name=".Servizi.Servizi3Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Servizi.Servizi4Activity"
-            android:screenOrientation="portrait">
-        </activity>
         <activity android:name=".Città.CittaActivity"
                   android:label="@string/label_icona6"
             android:screenOrientation="portrait">
@@ -79,9 +73,6 @@
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Città.Negozi_tipici2Activity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Città.Negozi_tipici3Activity"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Città.VisitarlaActivity"
