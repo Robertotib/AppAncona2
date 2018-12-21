@@ -30,9 +30,10 @@ public class Punti_interesse3Activity extends AppCompatActivity
 
         setTitle(t);
         db = new DBManager(this);
-        Cursor punto = db.getPuntoInteresseById(myid);
+        final Cursor punto = db.getPuntoInteresseById(myid);
+        String ind=null;
         if (punto.moveToFirst()) {
-            String ind = punto.getString(punto.getColumnIndex("indirizzo"));
+            ind = punto.getString(punto.getColumnIndex("indirizzo"));
             String descr = punto.getString(punto.getColumnIndex("descrizione"));
             String imm = punto.getString(punto.getColumnIndex("immagine"));
             TextView indir = findViewById(R.id.indirizzo);
@@ -45,12 +46,14 @@ public class Punti_interesse3Activity extends AppCompatActivity
         }
 
        Button a = findViewById(R.id.mappa_punti_interesse);
+        final String finalInd = ind;
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(Punti_interesse3Activity.this,Punti_interesse4Activity.class);
                 i.putExtra("nome",t);
+                i.putExtra("indirizzo", finalInd);
                 startActivity(i);
 
             }

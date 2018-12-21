@@ -101,14 +101,14 @@ CREATE TABLE IF NOT EXISTS `punti_interesse` (
 	`immagine`	varchar ( 50 ) NOT NULL,
 	FOREIGN KEY(`cod_tipo`) REFERENCES `tipi_punti_interesse`(`_id`)
 );
-INSERT INTO `punti_interesse` VALUES (1,'Monumento 1','Monumenti Storici','via indirizzo 1','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento');
-INSERT INTO `punti_interesse` VALUES (2,'Monumento 2','Monumenti Storici','via indirizzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta');
-INSERT INTO `punti_interesse` VALUES (3,'Monumento 3','Monumenti Religiosi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
-INSERT INTO `punti_interesse` VALUES (4,'Monumento 4','Monumenti Religiosi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
-INSERT INTO `punti_interesse` VALUES (5,'Monumento 5','Parchi e Aree Verdi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
-INSERT INTO `punti_interesse` VALUES (6,'Monumento 6','Parchi e Aree Verdi','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
-INSERT INTO `punti_interesse` VALUES (7,'Monumento 7','Luoghi Culturali','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/percorsi');
-INSERT INTO `punti_interesse` VALUES (8,'Monumento 8','Luoghi Culturali','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/rist2');
+INSERT INTO `punti_interesse` VALUES (1,'Monumento 1','Monumenti Storici','Piazza Cavour','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento');
+INSERT INTO `punti_interesse` VALUES (2,'Monumento 2','Monumenti Storici','Via Piave 5','descrizione','android.resource://com.example.test.appancona/drawable/lacitta');
+INSERT INTO `punti_interesse` VALUES (3,'Monumento 3','Monumenti Religiosi','Via Villarey 8','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
+INSERT INTO `punti_interesse` VALUES (4,'Monumento 4','Monumenti Religiosi','Via delle Tavernelle','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
+INSERT INTO `punti_interesse` VALUES (5,'Monumento 5','Parchi e Aree Verdi','Piazza Roma','descrizione','android.resource://com.example.test.appancona/drawable/servizi');
+INSERT INTO `punti_interesse` VALUES (6,'Monumento 6','Parchi e Aree Verdi','Via Giordano Bruno 5','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse');
+INSERT INTO `punti_interesse` VALUES (7,'Monumento 7','Luoghi Culturali','Via Torresi 8','descrizione','android.resource://com.example.test.appancona/drawable/percorsi');
+INSERT INTO `punti_interesse` VALUES (8,'Monumento 8','Luoghi Culturali','Piazzale Loreto','descrizione','android.resource://com.example.test.appancona/drawable/rist2');
 CREATE TABLE IF NOT EXISTS `pun_int_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pun_int`	int ( 11 ) NOT NULL,
