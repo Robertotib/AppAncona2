@@ -1,14 +1,12 @@
-package com.example.test.appancona.Punti_interesse;
+package com.example.test.appancona;
 
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.test.appancona.*;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -21,12 +19,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class Punti_interesse4Activity extends FragmentActivity implements OnMapReadyCallback  {
+public class MappaActivity extends FragmentActivity implements OnMapReadyCallback  {
     private GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.punti_interesse4);
+        setContentView(R.layout.mappa);
         String t =getIntent().getStringExtra("nome");
 
         setTitle(t);

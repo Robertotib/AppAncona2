@@ -28,8 +28,9 @@ public class Ristorazione2Activity extends AppCompatActivity {
         setTitle(t);
         db = new DBManager(this);
         Cursor punto = db.getRistoranteById(myid);
+        String ind = null;
         if (punto.moveToFirst()) {
-            String ind = punto.getString(punto.getColumnIndex("indirizzo"));
+            ind = punto.getString(punto.getColumnIndex("indirizzo"));
             String descr = punto.getString(punto.getColumnIndex("descrizione"));
             String imm = punto.getString(punto.getColumnIndex("immagine"));
             String ora = punto.getString(punto.getColumnIndex("orari"));
@@ -65,12 +66,14 @@ public class Ristorazione2Activity extends AppCompatActivity {
         }
 
         Button a = findViewById(R.id.mappa);
+        final String finalInd = ind;
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Ristorazione2Activity.this,Ristorazione3Activity.class);
+                i = new Intent(Ristorazione2Activity.this,MappaActivity.class);
                 i.putExtra("nome",t);
+                i.putExtra("indirizzo", finalInd);
                 startActivity(i);
 
             }

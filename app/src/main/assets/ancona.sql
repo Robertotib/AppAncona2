@@ -74,16 +74,16 @@ CREATE TABLE IF NOT EXISTS `ristorazione` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`parcheggio`	varchar ( 10 ) NOT NULL
 );
-INSERT INTO `ristorazione` VALUES (1,'pizzeria 1','via indirizzo 1','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','via indirizzo 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','no');
-INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','via indirizzo 3','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','via indirizzo 4','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','via indirizzo 5','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','no');
-INSERT INTO `ristorazione` VALUES (6,'pizzeria 6','via indirizzo 6','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','no');
-INSERT INTO `ristorazione` VALUES (7,'pizzeria 7','via indirizzo 7','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (8,'pizzeria 8','via indirizzo 8','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (9,'pizzeria 9','via indirizzo 9','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (10,'pizzeria 10','via indirizzo 10','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (1,'pizzeria 1','Via Piave 5','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','Via Breccie Bianche 13','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','no');
+INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','Via Francesco Petrarca 30','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','Via Cingoli 2','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','Via Valle Miano 23','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','no');
+INSERT INTO `ristorazione` VALUES (6,'pizzeria 6','Via Guglielmo Marconi 171','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','no');
+INSERT INTO `ristorazione` VALUES (7,'pizzeria 7','Pizza del Plebiscito','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (8,'pizzeria 8','Via Astagno 70','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (9,'pizzeria 9','Via Marsala 20','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (10,'pizzeria 10','Piazza Cavour','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
 
 CREATE TABLE IF NOT EXISTS `rist_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,

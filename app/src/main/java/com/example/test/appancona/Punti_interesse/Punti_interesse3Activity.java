@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.*;
 
 public class Punti_interesse3Activity extends AppCompatActivity
 {
@@ -51,7 +50,7 @@ public class Punti_interesse3Activity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Punti_interesse3Activity.this,Punti_interesse4Activity.class);
+                i = new Intent(Punti_interesse3Activity.this,MappaActivity.class);
                 i.putExtra("nome",t);
                 i.putExtra("indirizzo", finalInd);
                 startActivity(i);

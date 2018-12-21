@@ -33,7 +33,7 @@
         <activity android:name=".Punti_interesse.Punti_interesse3Activity"
         android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Punti_interesse.Punti_interesse4Activity"
+        <activity android:name=".MappaActivity"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Ristorazione.RistorazioneActivity"
@@ -41,9 +41,6 @@
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Ristorazione.Ristorazione2Activity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".Ristorazione.Ristorazione3Activity"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Pernottamento.PernottamentoActivity"
