@@ -11,6 +11,11 @@
     <string name="label_icona5">Servizi</string>
     <string name="label_icona6">La Città</string>
 
+    <!-- LABEL RICERCA   -->
+    <string name="distanza">Distanza massima</string>
+    <string name="categoria">Categoria</string>
+    <string name="ricerca">Cerca</string>
+
     <!-- DESCRIZIONE ICONE   -->
     <string name="desc_icona1">icona 1</string>
     <string name="desc_icona2">icona 2</string>
