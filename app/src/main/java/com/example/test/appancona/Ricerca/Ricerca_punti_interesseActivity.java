@@ -1,9 +1,9 @@
 package com.example.test.appancona.Ricerca;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.test.appancona.Database.DBManager;
 import com.example.test.appancona.MappaActivity;
 import com.example.test.appancona.MappaActivity.*;
+import com.example.test.appancona.Punti_interesse.Punti_interesse2Activity;
+import com.example.test.appancona.Punti_interesse.Punti_interesseActivity;
 import com.example.test.appancona.R;
 import com.google.android.gms.maps.model.LatLng;
 
@@ -123,7 +125,12 @@ public class Ricerca_punti_interesseActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Spinner ris =findViewById(R.id.categoria);
                 TextView di =findViewById(R.id.valoredist);
+                String tipo = ris.getSelectedItem().toString();
                 Toast.makeText(Ricerca_punti_interesseActivity.this, di.getText()+" "+ ris.getSelectedItem().toString() , Toast.LENGTH_SHORT).show();
+                Intent i;
+                i = new Intent(Ricerca_punti_interesseActivity.this, Punti_interesse2Activity.class);
+                i.putExtra("tipo", tipo);
+                startActivity(i);
             }
         });
     }

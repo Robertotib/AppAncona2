@@ -1,6 +1,7 @@
 package com.example.test.appancona.Punti_interesse;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -24,15 +25,24 @@ public class Punti_interesse2Activity extends AppCompatActivity {
 
         lv = new ListView(this);
         setContentView(lv);
-        String t=getIntent().getStringExtra("tipo");
-
-        setTitle(t);
-        t=  "'" + t + "'";
         db = new DBManager(this);
+        String t=getIntent().getStringExtra("tipo");
+        Cursor puntiInt;
+        setTitle(t);
+        if(!t.equals("Tutte")) {
+            t=  "'" + t + "'";
+            puntiInt = db.getPuntiinteresseByTipo(t);
+        }else {
+            puntiInt = db.getPuntiInteresse();
+        }
+
+
+
+
         adapter = new SimpleCursorAdapter(
                 this,
                 R.layout.row_punti_interesse2,
-                db.getPuntiinteresseByTipo(t),
+                puntiInt,
                 new String[]{"immagine","nome","indirizzo","_id"},
                 new int[]{R.id.imagepi2,R.id.nome,R.id.indirizzo,R.id.id},
                 0
