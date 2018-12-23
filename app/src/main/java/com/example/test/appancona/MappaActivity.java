@@ -2,6 +2,7 @@ package com.example.test.appancona;
 
 import android.location.Address;
 import android.location.Geocoder;
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -70,6 +71,21 @@ public class MappaActivity extends FragmentActivity implements OnMapReadyCallbac
             e.printStackTrace();
         }
         return temp;
+    }
+
+    public Float CalcoloDistanza(String inizio,String fine)
+    {
+
+        LatLng start = getSingleLocationFromAddress(inizio);
+        LatLng end = getSingleLocationFromAddress(fine);
+        Location locstart= new Location("undici");
+        Location locend= new Location("dodici");
+        locstart.setLatitude(start.latitude);
+        locstart.setLongitude(start.longitude);
+        locend.setLatitude(end.latitude);
+        locend.setLongitude(end.longitude);
+        Float distanza = locend.distanceTo(locstart);
+        return distanza;
     }
 
 }

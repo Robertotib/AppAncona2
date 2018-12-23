@@ -31,23 +31,7 @@ public class Ricerca_punti_interesseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ricerca_punti_interesse);
         valoreSeekBar(R.id.distanza,R.id.valoredist);
-        SeekBar dis = findViewById(R.id.distanza);
-        dis.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                valoreSeekBar(R.id.distanza,R.id.valoredist);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
+        addSeekerListener(R.id.distanza,R.id.valoredist);
         inizializzaSpinner();
         addListenerRicerca();
 
@@ -83,20 +67,28 @@ public class Ricerca_punti_interesseActivity extends AppCompatActivity {
         }
         return temp;
     }
-    public Float CalcoloDistanza(String inizio,String fine)
-    {
 
-    LatLng start = getSingleLocationFromAddress(inizio);
-    LatLng end = getSingleLocationFromAddress(fine);
-    Location locstart= new Location("undici");
-    Location locend= new Location("dodici");
-        locstart.setLatitude(start.latitude);
-        locstart.setLongitude(start.longitude);
-        locend.setLatitude(end.latitude);
-        locend.setLongitude(end.longitude);
-    Float distanza = locend.distanceTo(locstart);
-    return distanza;
+    public void addSeekerListener(final int idseeker, final int idtext)
+    {
+        SeekBar dis = findViewById(idseeker);
+        dis.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                valoreSeekBar(idseeker,idtext);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
+
 
     public void valoreSeekBar(int idseeker, int idtext )
     {
