@@ -124,12 +124,14 @@ public class Ricerca_punti_interesseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Spinner ris =findViewById(R.id.categoria);
-                TextView di =findViewById(R.id.valoredist);
+                SeekBar di =findViewById(R.id.distanza);
+               Integer dis= di.getProgress()+100;
+
                 String tipo = ris.getSelectedItem().toString();
-                Toast.makeText(Ricerca_punti_interesseActivity.this, di.getText()+" "+ ris.getSelectedItem().toString() , Toast.LENGTH_SHORT).show();
                 Intent i;
                 i = new Intent(Ricerca_punti_interesseActivity.this, Punti_interesse2Activity.class);
                 i.putExtra("tipo", tipo);
+                i.putExtra("distanza",dis);
                 startActivity(i);
             }
         });

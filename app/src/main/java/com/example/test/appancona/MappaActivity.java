@@ -1,5 +1,6 @@
 package com.example.test.appancona;
 
+import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -38,15 +39,15 @@ public class MappaActivity extends FragmentActivity implements OnMapReadyCallbac
         mMap = googleMap;
         String ind =getIntent().getStringExtra("indirizzo");
 
-        LatLng luogo = getSingleLocationFromAddress(ind+" ancona");
+        LatLng luogo = getSingleLocationFromAddress(ind+" ancona",this);
         mMap.addMarker(new MarkerOptions().position(luogo).title(getIntent().getStringExtra("nome")));
         CameraPosition cameraPosition = new CameraPosition.Builder().target(luogo).zoom(15).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
-    public LatLng getSingleLocationFromAddress(String strAddress)
+    public LatLng getSingleLocationFromAddress(String strAddress, Context c)
     {
-        Geocoder coder = new Geocoder(this, Locale.getDefault());
+        Geocoder coder = new Geocoder(c, Locale.getDefault());
         List<Address> address = null;
         Address location = null;
         LatLng temp = null;
@@ -73,11 +74,9 @@ public class MappaActivity extends FragmentActivity implements OnMapReadyCallbac
         return temp;
     }
 
-    public Float CalcoloDistanza(String inizio,String fine)
+    public Integer CalcoloDistanza(LatLng start,LatLng end,Context c)
     {
 
-        LatLng start = getSingleLocationFromAddress(inizio);
-        LatLng end = getSingleLocationFromAddress(fine);
         Location locstart= new Location("undici");
         Location locend= new Location("dodici");
         locstart.setLatitude(start.latitude);
@@ -85,7 +84,7 @@ public class MappaActivity extends FragmentActivity implements OnMapReadyCallbac
         locend.setLatitude(end.latitude);
         locend.setLongitude(end.longitude);
         Float distanza = locend.distanceTo(locstart);
-        return distanza;
+        return distanza.intValue();
     }
 
 }
