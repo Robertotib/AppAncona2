@@ -36,13 +36,22 @@ public class Punti_interesse2Activity extends AppCompatActivity {
         String t=getIntent().getStringExtra("tipo");
         Integer dist = getIntent().getIntExtra("distanza",0);
         Cursor puntiInt;
-        setTitle(t);
+
+        /**
+         * Blocco filtaggio Categoria
+         */
         if(!t.equals("Tutte")) {
+            setTitle(t);
             t=  "'" + t + "'";
             puntiInt = db.getPuntiinteresseByTipo(t);
         }else {
+            setTitle("Punti D'interesse");
             puntiInt = db.getPuntiInteresse();
         }
+
+        /**
+         * Blocco filtaggio distanza
+         */
         Cursor filtro = new MatrixCursor(new String[] {"immagine","nome","indirizzo","_id"});
         if (dist != 0)
         {
@@ -67,11 +76,10 @@ public class Punti_interesse2Activity extends AppCompatActivity {
                 }
             }
         }
-        else
-            {filtro = puntiInt;}
-
-
-
+        else {
+            filtro = puntiInt;
+        }
+        
         adapter = new SimpleCursorAdapter(
                 this,
                 R.layout.row_punti_interesse2,
