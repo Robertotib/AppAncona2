@@ -34,7 +34,7 @@ public class Punti_interesse2Activity extends AppCompatActivity {
         setContentView(lv);
         db = new DBManager(this);
         String t=getIntent().getStringExtra("tipo");
-        Integer dist = getIntent().getIntExtra("distanza",0);
+        Integer dist = getIntent().getIntExtra("distanza",0)*20;
         Cursor puntiInt;
 
         /**
@@ -52,15 +52,21 @@ public class Punti_interesse2Activity extends AppCompatActivity {
         /**
          * Blocco filtaggio distanza
          */
+        GPSTracker gps = new GPSTracker(this);
+
         Cursor filtro = new MatrixCursor(new String[] {"immagine","nome","indirizzo","_id"});
         if (dist != 0)
         {
-
+            LatLng inizio = null ;
+            if(gps.canGetLocation()){
+                inizio = new LatLng(gps.getLatitude(),gps.getLongitude());
+            }
+            Toast.makeText(this, inizio.toString(), Toast.LENGTH_SHORT).show();
             while (puntiInt.moveToNext())
             {
                 String posizione = puntiInt.getString(puntiInt.getColumnIndex("indirizzo"));
                 MappaActivity ma = new MappaActivity();
-                LatLng inizio = ma.getSingleLocationFromAddress("via piave 5 ancona",this);
+
                 LatLng fine = ma.getSingleLocationFromAddress(posizione+" ancona",this);
                 Integer diffdist = ma.CalcoloDistanza(inizio,fine,this);
                 if(diffdist <= dist)
