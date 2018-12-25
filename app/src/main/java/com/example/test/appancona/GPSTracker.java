@@ -1,5 +1,6 @@
 package com.example.test.appancona;
 
+
 import android.app.AlertDialog;
 import android.app.Service;
 import android.content.Context;
@@ -63,6 +64,7 @@ public class GPSTracker extends Service implements LocationListener {
                 this.canGetLocation = true;
                 // First get location from Network Provider
                 if (isNetworkEnabled) {
+
                     locationManager.requestLocationUpdates(
                             LocationManager.NETWORK_PROVIDER,
                             MIN_TIME_BW_UPDATES,

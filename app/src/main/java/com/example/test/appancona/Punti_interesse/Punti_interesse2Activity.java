@@ -3,8 +3,6 @@ package com.example.test.appancona.Punti_interesse;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.MatrixCursor;
-import android.location.Location;
-import android.location.LocationListener;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -115,25 +113,5 @@ public class Punti_interesse2Activity extends AppCompatActivity {
             }
         });
     }
-    private final LocationListener currentLoc = new LocationListener() {
-        @Override
-        public void onLocationChanged(Location location) {
 
-        }
-
-        @Override
-        public void onStatusChanged(String s, int i, Bundle bundle) {
-
-        }
-
-        @Override
-        public void onProviderEnabled(String s) {
-
-        }
-
-        @Override
-        public void onProviderDisabled(String s) {
-
-        }
-    };
 }

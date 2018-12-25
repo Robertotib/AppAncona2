@@ -38,10 +38,12 @@ public class MappaActivity extends FragmentActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         String ind =getIntent().getStringExtra("indirizzo");
-
+        GPSTracker gps = new GPSTracker(this);
+        LatLng mypos = new LatLng(gps.getLatitude(),gps.getLongitude());
         LatLng luogo = getSingleLocationFromAddress(ind+" ancona",this);
         mMap.addMarker(new MarkerOptions().position(luogo).title(getIntent().getStringExtra("nome")));
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(luogo).zoom(15).build();
+        mMap.addMarker(new MarkerOptions().position(mypos).title("La tua posizione"));
+        CameraPosition cameraPosition = new CameraPosition.Builder().target(luogo).zoom(10).build();
 
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }

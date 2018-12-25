@@ -7,6 +7,7 @@
         android:allowBackup="true"
         android:supportsRtl="true"
         android:icon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
         <meta-data
@@ -89,6 +90,18 @@
         </activity>
         <activity android:name=".Ricerca.Ricerca_punti_interesseActivity"
             android:label="Ricerca Punti d'interesse"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Ricerca.Ricerca_ristorazioneActivity"
+            android:label="Ricerca Ristorazione"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Ricerca.Ricerca_pernottamentoActivity"
+            android:label="Ricerca Pernottamento"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Ricerca.Ricerca_serviziActivity"
+            android:label="Ricerca Servizi"
             android:screenOrientation="portrait">
         </activity>
 

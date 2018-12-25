@@ -2,36 +2,27 @@ package com.example.test.appancona.Ricerca;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.MappaActivity;
-import com.example.test.appancona.MappaActivity.*;
 import com.example.test.appancona.Punti_interesse.Punti_interesse2Activity;
-import com.example.test.appancona.Punti_interesse.Punti_interesseActivity;
 import com.example.test.appancona.R;
-import com.google.android.gms.maps.model.LatLng;
+import com.example.test.appancona.Servizi.Servizi2Activity;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
-public class Ricerca_punti_interesseActivity extends AppCompatActivity {
+public class Ricerca_serviziActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ricerca_punti_interesse);
+        setContentView(R.layout.ricerca_servizi);
         valoreSeekBar(R.id.distanza,R.id.valoredist);
         addSeekerListener(R.id.distanza,R.id.valoredist);
         inizializzaSpinner();
@@ -64,16 +55,16 @@ public class Ricerca_punti_interesseActivity extends AppCompatActivity {
 
     public void valoreSeekBar(int idseeker, int idtext )
     {
-    SeekBar dist = findViewById(idseeker);
-    Integer numero =dist.getProgress()+100;
-    TextView valore = findViewById(idtext);
+        SeekBar dist = findViewById(idseeker);
+        Integer numero =dist.getProgress()+100;
+        TextView valore = findViewById(idtext);
         valore.setText(numero.toString()+ " m");
     }
     public void inizializzaSpinner()
     {
         List<String> spinnerArray =  new ArrayList<String>();
         DBManager db = new DBManager(this);
-        Cursor tipi = db.tipiPuntiinteresse();
+        Cursor tipi = db.tipiServizi();
         spinnerArray.add("Tutte");
         while (tipi.moveToNext())
         {
@@ -95,11 +86,11 @@ public class Ricerca_punti_interesseActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Spinner ris =findViewById(R.id.categoria);
                 SeekBar di =findViewById(R.id.distanza);
-               Integer dis= di.getProgress()+100;
+                Integer dis= di.getProgress()+100;
 
                 String tipo = ris.getSelectedItem().toString();
                 Intent i;
-                i = new Intent(Ricerca_punti_interesseActivity.this, Punti_interesse2Activity.class);
+                i = new Intent(Ricerca_serviziActivity.this, Servizi2Activity.class);
                 i.putExtra("tipo", tipo);
                 i.putExtra("distanza",dis);
                 startActivity(i);

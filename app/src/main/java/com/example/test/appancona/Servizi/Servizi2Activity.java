@@ -1,6 +1,8 @@
 package com.example.test.appancona.Servizi;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,9 +10,12 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.test.appancona.*;
 
 import com.example.test.appancona.Database.DBManager;
+import com.google.android.gms.maps.model.LatLng;
 
 public class Servizi2Activity extends AppCompatActivity {
     private ListView lv = null;
@@ -23,15 +28,64 @@ public class Servizi2Activity extends AppCompatActivity {
 
         lv = new ListView(this);
         setContentView(lv);
-        String t=getIntent().getStringExtra("tipo");
-
-        setTitle(t);
-        t=  "'" + t + "'";
         db = new DBManager(this);
+        String t=getIntent().getStringExtra("tipo");
+        Integer dist = getIntent().getIntExtra("distanza",0)*20;
+        Cursor puntiInt;
+
+        /**
+         * Blocco filtaggio Categoria
+         */
+        if(!t.equals("Tutte")) {
+            setTitle(t);
+            t=  "'" + t + "'";
+            puntiInt = db.getServiziByTipo(t);
+        }else {
+            setTitle("Servizi");
+            puntiInt = db.getServizi();
+        }
+
+        /**
+         * Blocco filtaggio distanza
+         */
+        GPSTracker gps = new GPSTracker(this);
+
+        Cursor filtro = new MatrixCursor(new String[] {"immagine","nome","indirizzo","_id"});
+        if (dist != 0)
+        {
+            LatLng inizio = null ;
+            if(gps.canGetLocation()){
+                inizio = new LatLng(gps.getLatitude(),gps.getLongitude());
+            }
+            Toast.makeText(this, inizio.toString(), Toast.LENGTH_SHORT).show();
+            while (puntiInt.moveToNext())
+            {
+                String posizione = puntiInt.getString(puntiInt.getColumnIndex("indirizzo"));
+                MappaActivity ma = new MappaActivity();
+
+                LatLng fine = ma.getSingleLocationFromAddress(posizione+" ancona",this);
+                Integer diffdist = ma.CalcoloDistanza(inizio,fine,this);
+                if(diffdist <= dist)
+                {
+                    String [] colonne = {
+                            puntiInt.getString(puntiInt.getColumnIndex("immagine")),
+                            puntiInt.getString(puntiInt.getColumnIndex("nome")),
+                            puntiInt.getString(puntiInt.getColumnIndex("indirizzo")),
+                            puntiInt.getString(puntiInt.getColumnIndex("_id"))
+                    };
+                    ((MatrixCursor) filtro).addRow(colonne);
+
+                }
+            }
+        }
+        else {
+            filtro = puntiInt;
+        }
+
         adapter = new SimpleCursorAdapter(
                 this,
                 R.layout.row_servizi2,
-                db.getServiziByTipo(t),
+                filtro,
                 new String[]{"immagine","nome","indirizzo","_id"},
                 new int[]{R.id.imageserv2,R.id.nome,R.id.indirizzo,R.id.id},
                 0

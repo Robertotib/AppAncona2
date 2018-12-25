@@ -107,9 +107,23 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query,null);
     }
+    public Cursor getServizi()
+    {
+        String query="SELECT * FROM servizi";
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query,null);
+    }
     public Cursor getRistoranteById(String id)
     {
         String query="SELECT * FROM ristorazione WHERE _id ="+id;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query,null);
+    }
+    public Cursor getRistorantiByPrezzo(int prez)
+    {
+        String query="SELECT * FROM ristorazione WHERE prezzo_medio <="+prez;
 
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query,null);
@@ -125,6 +139,13 @@ public class DBManager {
     public Cursor getHotelById(String id)
     {
         String query="SELECT * FROM pernottamento WHERE _id ="+id;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query,null);
+    }
+    public Cursor getHotelByPrezzo(int prez)
+    {
+        String query="SELECT * FROM pernottamento WHERE prezzo_medio <="+prez;
 
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query,null);

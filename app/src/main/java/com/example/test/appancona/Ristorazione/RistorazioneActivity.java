@@ -2,6 +2,8 @@ package com.example.test.appancona.Ristorazione;
 
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.MatrixCursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -9,8 +11,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
+import com.google.android.gms.maps.model.LatLng;
 
 public class RistorazioneActivity extends AppCompatActivity {
 
@@ -23,14 +28,64 @@ public class RistorazioneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ristorazione);
+        db=new DBManager(this);
         lv=new ListView(this);
         setContentView(lv);
+        Integer prez = getIntent().getIntExtra("prezzo",-1);
+        Integer dist = getIntent().getIntExtra("distanza",0)*20;
+        Cursor puntiInt;
 
-        db=new DBManager(this);
+        /**
+         * Blocco filtaggio Categoria
+         */
+        if(prez < 0) {
+            puntiInt = db.elencoRistoranti();
+        }else {
+            puntiInt = db.getRistorantiByPrezzo(prez);
+        }
+
+        /**
+         * Blocco filtaggio distanza
+         */
+        GPSTracker gps = new GPSTracker(this);
+
+        Cursor filtro = new MatrixCursor(new String[] {"immagine","nome","indirizzo","_id"});
+        if (dist != 0)
+        {
+            LatLng inizio = null ;
+            if(gps.canGetLocation()){
+                inizio = new LatLng(gps.getLatitude(),gps.getLongitude());
+            }
+            Toast.makeText(this, inizio.toString(), Toast.LENGTH_SHORT).show();
+            while (puntiInt.moveToNext())
+            {
+                String posizione = puntiInt.getString(puntiInt.getColumnIndex("indirizzo"));
+                MappaActivity ma = new MappaActivity();
+
+                LatLng fine = ma.getSingleLocationFromAddress(posizione+" ancona",this);
+                Integer diffdist = ma.CalcoloDistanza(inizio,fine,this);
+                if(diffdist <= dist)
+                {
+                    String [] colonne = {
+                            puntiInt.getString(puntiInt.getColumnIndex("immagine")),
+                            puntiInt.getString(puntiInt.getColumnIndex("nome")),
+                            puntiInt.getString(puntiInt.getColumnIndex("indirizzo")),
+                            puntiInt.getString(puntiInt.getColumnIndex("_id"))
+                    };
+                    ((MatrixCursor) filtro).addRow(colonne);
+
+                }
+            }
+        }
+        else {
+            filtro = puntiInt;
+        }
+
+
         adapter=new SimpleCursorAdapter(
                 this,
                 R.layout.row_ristorazione,
-                db.elencoRistoranti(),
+                filtro,
                 new String[]{"immagine","nome","indirizzo","_id"},
                 new int[]{R.id.imagerist,R.id.nome, R.id.indirizzo,R.id.id},
                 0
