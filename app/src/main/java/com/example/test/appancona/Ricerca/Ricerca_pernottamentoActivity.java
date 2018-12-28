@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.example.test.appancona.Pernottamento.PernottamentoActivity;
 import com.example.test.appancona.R;
-import com.example.test.appancona.Ristorazione.RistorazioneActivity;
 
 public class Ricerca_pernottamentoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {

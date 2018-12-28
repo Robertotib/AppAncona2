@@ -1,23 +1,15 @@
 package com.example.test.appancona.Ricerca;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.example.test.appancona.Database.DBManager;
 import com.example.test.appancona.R;
 import com.example.test.appancona.Ristorazione.RistorazioneActivity;
-import com.example.test.appancona.Servizi.Servizi2Activity;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Ricerca_ristorazioneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {

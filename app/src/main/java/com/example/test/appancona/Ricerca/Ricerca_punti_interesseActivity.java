@@ -2,31 +2,22 @@ package com.example.test.appancona.Ricerca;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.location.Address;
-import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.MappaActivity;
-import com.example.test.appancona.MappaActivity.*;
 import com.example.test.appancona.Punti_interesse.Punti_interesse2Activity;
-import com.example.test.appancona.Punti_interesse.Punti_interesseActivity;
 import com.example.test.appancona.R;
-import com.google.android.gms.maps.model.LatLng;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public class Ricerca_punti_interesseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {

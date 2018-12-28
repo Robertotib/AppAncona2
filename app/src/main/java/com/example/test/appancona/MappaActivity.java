@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.osmdroid.api.IMapController;
@@ -29,21 +28,23 @@ import java.util.List;
 import java.util.Locale;
 
 public class MappaActivity extends AppCompatActivity  {
-    private GoogleMap mMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mappa);
         String t =getIntent().getStringExtra("nome");
         String ind =getIntent().getStringExtra("indirizzo");
+        setTitle(t);
+        inizializzaMappa(ind);
+
+    }
+
+    public void inizializzaMappa(String indirizzo){
         GPSTracker gps = new GPSTracker(this);
-
-        LatLng luogo = getSingleLocationFromAddress(ind+" ancona",this);
-
+        LatLng luogo = getSingleLocationFromAddress(indirizzo+" ancona",this);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-
-        setTitle(t);
         /**
          * TUTORIAL 0
          */
@@ -66,6 +67,7 @@ public class MappaActivity extends AppCompatActivity  {
          * TUTORIAL 1
          */
         RoadManager roadManager = new MapQuestRoadManager("3Vky6DRJBdJ0JdN4twC0Amiw3JV0yFMF");
+
         roadManager.addRequestOption("routeType=fastest");
         ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
         waypoints.add(startPoint);
