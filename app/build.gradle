@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
+
     defaultConfig {
         applicationId "com.example.test.appancona"
         minSdkVersion 23
@@ -9,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -16,6 +18,27 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    applicationVariants.all { variant ->
+        variant.buildConfigField "String", "API_KEY", getApiKey() // Provides key for the Navigation SDK
+        variant.resValue "string", "API_KEY", getApiKey()         // Provides key for the MapView used in app layouts
+    }
+
+}
+def getApiKey() {
+    def props = new Properties()
+    file("mapquest.properties").withInputStream { props.load(it) }
+    return "\"" + props.getProperty("api_key") + "\""
+}
+repositories {
+
+    jcenter()
+    maven {
+        url "https://maven.google.com"
+    }
+    maven {
+        url "http://artifactory.cloud.mapquest.com/artifactory/et-android-binaries"
+    }
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -25,6 +48,10 @@ dependencies {
     implementation 'com.android.support:support-media-compat:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
+    implementation 'com.github.MKergall:osmbonuspack:6.5.2'
+    implementation 'com.mapquest:navigation:3.4.0'
+    implementation "com.google.android.gms:play-services-location:16.0.0"
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'

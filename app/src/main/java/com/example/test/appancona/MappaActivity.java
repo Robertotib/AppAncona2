@@ -5,48 +5,85 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+import android.os.StrictMode;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.routing.MapQuestRoadManager;
+import org.osmdroid.bonuspack.routing.Road;
+import org.osmdroid.bonuspack.routing.RoadManager;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.Polyline;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class MappaActivity extends FragmentActivity implements OnMapReadyCallback  {
+public class MappaActivity extends AppCompatActivity  {
     private GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mappa);
         String t =getIntent().getStringExtra("nome");
-
-        setTitle(t);
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
-    }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
         String ind =getIntent().getStringExtra("indirizzo");
         GPSTracker gps = new GPSTracker(this);
-        LatLng mypos = new LatLng(gps.getLatitude(),gps.getLongitude());
-        LatLng luogo = getSingleLocationFromAddress(ind+" ancona",this);
-        mMap.addMarker(new MarkerOptions().position(luogo).title(getIntent().getStringExtra("nome")));
-        mMap.addMarker(new MarkerOptions().position(mypos).title("La tua posizione"));
-        CameraPosition cameraPosition = new CameraPosition.Builder().target(luogo).zoom(10).build();
 
-        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+        LatLng luogo = getSingleLocationFromAddress(ind+" ancona",this);
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
+        setTitle(t);
+        /**
+         * TUTORIAL 0
+         */
+        MapView map = (MapView) findViewById(R.id.map);
+        map.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
+        map.setBuiltInZoomControls(true);
+        map.setMultiTouchControls(true);
+
+        GeoPoint startPoint = new GeoPoint(gps.getLatitude(),gps.getLongitude());
+        IMapController mapController = map.getController();
+        mapController.setZoom(9.0);
+        mapController.setCenter(startPoint);
+        Marker startMarker = new Marker(map);
+        startMarker.setPosition(startPoint);
+        startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        startMarker.setTitle("Start point");
+        map.getOverlays().add(startMarker);
+        map.invalidate();
+        /**
+         * TUTORIAL 1
+         */
+        RoadManager roadManager = new MapQuestRoadManager("3Vky6DRJBdJ0JdN4twC0Amiw3JV0yFMF");
+        roadManager.addRequestOption("routeType=fastest");
+        ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
+        waypoints.add(startPoint);
+        GeoPoint endPoint = new GeoPoint(luogo.latitude, luogo.longitude);
+        waypoints.add(endPoint);
+        Marker endMarker = new Marker(map);
+        endMarker.setPosition(endPoint);
+        endMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
+        endMarker.setTitle("End point");
+        map.getOverlays().add(endMarker);
+        Road road = roadManager.getRoad(waypoints);
+        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
+        map.getOverlays().add(roadOverlay);
+        map.invalidate();
+
+
     }
+
     public LatLng getSingleLocationFromAddress(String strAddress, Context c)
     {
         Geocoder coder = new Geocoder(c, Locale.getDefault());

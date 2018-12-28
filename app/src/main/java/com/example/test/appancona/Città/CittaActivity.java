@@ -17,6 +17,36 @@ public class CittaActivity extends AppCompatActivity {
         addListenerOnNegozi();
         addListenerOnVisitarla();
         addListenerOnTradizioni();
+        addListenerOnArrivarci();
+    }
+    public void addListenerOnArrivarci(){
+        ImageView a;
+        TextView b;
+        a  =  findViewById(R.id.image1);
+        b = findViewById(R.id.label1);
+        a.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i;
+                i = new Intent(CittaActivity.this,MappaActivity.class);
+                i.putExtra("nome", "Come visitarla");
+                i.putExtra("indirizzo", "Piazza Cavour");
+                startActivity(i);
+
+            }
+        });
+
+        b.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i;
+                i = new Intent(CittaActivity.this,MappaActivity.class);
+                i.putExtra("nome", "Come visitarla");
+                i.putExtra("indirizzo", "Piazza Cavour");
+                startActivity(i);
+
+            }
+        });
     }
     public void addListenerOnNegozi(){
         ImageView a;
