@@ -138,13 +138,18 @@ public class MappaActivity extends AppCompatActivity  {
         String [] indicazioni = new String[this.road.mNodes.size()];
         for (int i = 0; i < this.road.mNodes.size();i++)
         {
+            String istruzione =this.road.mNodes.get(i).mInstructions.replace('/',' ');
+            Integer k = i+1;
+            indicazioni[i]=k.toString()+"\t"+istruzione;
 
-            indicazioni[i]=this.road.mNodes.get(i).mInstructions;
 
         }
-
+        System.out.println(this.road.mNodes.get(21).mInstructions);
+        System.out.println(this.road.mNodes.get(21).mLength);
+        System.out.println(this.road.mNodes.get(25).mInstructions);
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,R.layout.indicazioni,R.id.ind,indicazioni);
         lv.setAdapter(arrayAdapter);
+
     }
 }
 
