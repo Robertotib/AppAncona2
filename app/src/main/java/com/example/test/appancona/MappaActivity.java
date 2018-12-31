@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.LatLng;
@@ -29,6 +32,7 @@ import java.util.Locale;
 
 public class MappaActivity extends AppCompatActivity  {
 
+    private Road road = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +41,7 @@ public class MappaActivity extends AppCompatActivity  {
         String ind =getIntent().getStringExtra("indirizzo");
         setTitle(t);
         inizializzaMappa(ind);
+        Indicazioni();
 
     }
 
@@ -82,7 +87,7 @@ public class MappaActivity extends AppCompatActivity  {
         Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
         map.getOverlays().add(roadOverlay);
         map.invalidate();
-
+        this.road=road;
 
     }
 
@@ -127,6 +132,19 @@ public class MappaActivity extends AppCompatActivity  {
         Float distanza = locend.distanceTo(locstart);
         return distanza.intValue();
     }
+    public void Indicazioni ()
+    {
+        ListView lv = findViewById(R.id.indicazioni);
+        String [] indicazioni = new String[this.road.mNodes.size()];
+        for (int i = 0; i < this.road.mNodes.size();i++)
+        {
 
+            indicazioni[i]=this.road.mNodes.get(i).mInstructions;
+
+        }
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,R.layout.indicazioni,R.id.ind,indicazioni);
+        lv.setAdapter(arrayAdapter);
+    }
 }
 

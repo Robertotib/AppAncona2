@@ -2,6 +2,7 @@ package com.example.test.appancona.Città;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
