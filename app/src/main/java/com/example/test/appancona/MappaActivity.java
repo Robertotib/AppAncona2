@@ -30,6 +30,8 @@ import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Polyline;
 
 import java.io.IOException;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -45,7 +47,7 @@ public class MappaActivity extends AppCompatActivity  {
         String ind =getIntent().getStringExtra("indirizzo");
         setTitle(t);
         inizializzaMappa(ind);
-        Indicazioni();
+        Indicazioni(road);
 
     }
 
@@ -136,30 +138,38 @@ public class MappaActivity extends AppCompatActivity  {
         Float distanza = locend.distanceTo(locstart);
         return distanza.intValue();
     }
-    public void Indicazioni ()
+    public void Indicazioni (Road strada)
     {
         ListView lv = findViewById(R.id.indicazioni);
         String [] indicazioni = new String[this.road.mNodes.size()];
-        Road strada = this.road;
         ArrayList<RoadNode> nodi = strada.mNodes;
-        for (int i = 0; i < this.road.mNodes.size();i++)
+
+        Integer k;
+        int i;
+
+        for (i = 0; i < this.road.mNodes.size()-1;i++)
         {
             String istruzione;
-            Double distanza =this.road.mNodes.get(i).mLength;
+            Double distanza =strada.mNodes.get(i).mLength;
             if(distanza < 1)
             {
                 distanza= (distanza*1000);
                 Integer metri = distanza.intValue();
-                istruzione = this.road.mNodes.get(i).mInstructions+"\n"+metri+" m";
-            }else {
-                Integer Kmetri = distanza.intValue();
-                istruzione = this.road.mNodes.get(i).mInstructions + "\n" + distanza + " km";
+                istruzione = strada.mNodes.get(i).mInstructions+"\n\t"+metri+" m";
+            }else
+            {
+                DecimalFormat df = new DecimalFormat("#.##");
+                df.setRoundingMode(RoundingMode.HALF_EVEN);
+
+                istruzione = strada.mNodes.get(i).mInstructions + "\n\t" + df.format(distanza) + " km";
             }
-            Integer k = i+1;
+            k = i+1;
             indicazioni[i]=k.toString()+"\t"+istruzione;
 
 
         }
+        k = i+1;
+        indicazioni[strada.mNodes.size()-1]=k.toString()+"\t"+strada.mNodes.get(i).mInstructions ;
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,R.layout.indicazioni,R.id.ind,indicazioni);
         lv.setAdapter(arrayAdapter);
