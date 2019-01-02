@@ -161,15 +161,23 @@ public class MappaActivity extends AppCompatActivity  {
                 DecimalFormat df = new DecimalFormat("#.##");
                 df.setRoundingMode(RoundingMode.HALF_EVEN);
 
-                istruzione = strada.mNodes.get(i).mInstructions + "\n\t" + df.format(distanza) + " km";
+                istruzione = strada.mNodes.get(i).mInstructions + "\n\t\t" + df.format(distanza) + " km";
             }
             k = i+1;
-            indicazioni[i]=k.toString()+"\t"+istruzione;
+            indicazioni[i]=k.toString()+"\t\t"+istruzione+"\t\t";
+
+            if(strada.mNodes.get(i).mDuration < 60){
+                Double secondi =strada.mNodes.get(i).mDuration;
+                indicazioni[i]=indicazioni[i]+secondi.intValue()+" sec";
+            }else{
+                Double minuti = strada.mNodes.get(i).mDuration/60;
+                indicazioni[i]=indicazioni[i]+minuti.intValue()+" min";
+            }
 
 
         }
         k = i+1;
-        indicazioni[strada.mNodes.size()-1]=k.toString()+"\t"+strada.mNodes.get(i).mInstructions ;
+        indicazioni[strada.mNodes.size()-1]=k.toString()+"\t\t"+strada.mNodes.get(i).mInstructions ;
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,R.layout.indicazioni,R.id.ind,indicazioni);
         lv.setAdapter(arrayAdapter);
