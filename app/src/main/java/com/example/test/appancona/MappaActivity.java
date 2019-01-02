@@ -16,9 +16,13 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.routing.GoogleRoadManager;
+import org.osmdroid.bonuspack.routing.GraphHopperRoadManager;
 import org.osmdroid.bonuspack.routing.MapQuestRoadManager;
+import org.osmdroid.bonuspack.routing.OSRMRoadManager;
 import org.osmdroid.bonuspack.routing.Road;
 import org.osmdroid.bonuspack.routing.RoadManager;
+import org.osmdroid.bonuspack.routing.RoadNode;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -71,9 +75,9 @@ public class MappaActivity extends AppCompatActivity  {
         /**
          * TUTORIAL 1
          */
-        RoadManager roadManager = new MapQuestRoadManager("3Vky6DRJBdJ0JdN4twC0Amiw3JV0yFMF");
-
-        roadManager.addRequestOption("routeType=fastest");
+        //RoadManager roadManager = new MapQuestRoadManager("3Vky6DRJBdJ0JdN4twC0Amiw3JV0yFMF");
+        //roadManager.addRequestOption("routeType=fastest");
+        RoadManager roadManager = new GraphHopperRoadManager("0b4fbc1c-22f4-4a8e-af38-3a4d422a395c&locale=it",true);
         ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
         waypoints.add(startPoint);
         GeoPoint endPoint = new GeoPoint(luogo.latitude, luogo.longitude);
@@ -136,17 +140,27 @@ public class MappaActivity extends AppCompatActivity  {
     {
         ListView lv = findViewById(R.id.indicazioni);
         String [] indicazioni = new String[this.road.mNodes.size()];
+        Road strada = this.road;
+        ArrayList<RoadNode> nodi = strada.mNodes;
         for (int i = 0; i < this.road.mNodes.size();i++)
         {
-            String istruzione =this.road.mNodes.get(i).mInstructions.replace('/',' ');
+            String istruzione;
+            Double distanza =this.road.mNodes.get(i).mLength;
+            if(distanza < 1)
+            {
+                distanza= (distanza*1000);
+                Integer metri = distanza.intValue();
+                istruzione = this.road.mNodes.get(i).mInstructions+"\n"+metri+" m";
+            }else {
+                Integer Kmetri = distanza.intValue();
+                istruzione = this.road.mNodes.get(i).mInstructions + "\n" + distanza + " km";
+            }
             Integer k = i+1;
             indicazioni[i]=k.toString()+"\t"+istruzione;
 
 
         }
-        System.out.println(this.road.mNodes.get(21).mInstructions);
-        System.out.println(this.road.mNodes.get(21).mLength);
-        System.out.println(this.road.mNodes.get(25).mInstructions);
+
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,R.layout.indicazioni,R.id.ind,indicazioni);
         lv.setAdapter(arrayAdapter);
 
