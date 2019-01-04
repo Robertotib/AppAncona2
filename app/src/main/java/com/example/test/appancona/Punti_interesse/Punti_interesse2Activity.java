@@ -10,7 +10,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.test.appancona.MappaActivity;
 import com.example.test.appancona.*;
@@ -59,14 +58,13 @@ public class Punti_interesse2Activity extends AppCompatActivity {
             if(gps.canGetLocation()){
                 inizio = new LatLng(gps.getLatitude(),gps.getLongitude());
             }
-            Toast.makeText(this, inizio.toString(), Toast.LENGTH_SHORT).show();
             while (puntiInt.moveToNext())
             {
                 String posizione = puntiInt.getString(puntiInt.getColumnIndex("indirizzo"));
                 MappaActivity ma = new MappaActivity();
 
                 LatLng fine = ma.getSingleLocationFromAddress(posizione+" ancona",this);
-                Integer diffdist = ma.CalcoloDistanza(inizio,fine,this);
+                Integer diffdist = ma.calcoloDistanza(inizio,fine,this);
                 if(diffdist <= dist)
                 {
                     String [] colonne = {

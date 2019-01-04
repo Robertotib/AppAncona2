@@ -17,21 +17,20 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.model.LatLng;
 
+import com.google.android.gms.maps.model.LatLng;
 import org.osmdroid.api.IMapController;
-import org.osmdroid.bonuspack.routing.GoogleRoadManager;
 import org.osmdroid.bonuspack.routing.GraphHopperRoadManager;
 import org.osmdroid.bonuspack.routing.MapQuestRoadManager;
-import org.osmdroid.bonuspack.routing.OSRMRoadManager;
 import org.osmdroid.bonuspack.routing.Road;
 import org.osmdroid.bonuspack.routing.RoadManager;
-import org.osmdroid.bonuspack.routing.RoadNode;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
@@ -40,7 +39,6 @@ import org.osmdroid.views.overlay.Polyline;
 
 import java.io.IOException;
 import java.math.RoundingMode;
-import java.security.Provider;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +51,8 @@ public class MappaActivity extends AppCompatActivity {
     private Road road = null;
     private String indirizzo;
     private MapView map;
+    private IMapController mapController;
+    private String opzione = "vehicle=car";
 
     @SuppressLint("MissingPermission")
     @Override
@@ -62,6 +62,7 @@ public class MappaActivity extends AppCompatActivity {
         String t = getIntent().getStringExtra("nome");
         indirizzo = getIntent().getStringExtra("indirizzo");
         map =  findViewById(R.id.map);
+        mapController = map.getController();
         setTitle(t);
 
         locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
@@ -70,8 +71,8 @@ public class MappaActivity extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 Log.d("My Location: ", location.toString());
                 myLocation = location;
-                percorso(myLocation);
-                Indicazioni(road);
+                percorso(myLocation,opzione);
+                indicazioni(road);
             }
 
             @Override
@@ -110,10 +111,14 @@ public class MappaActivity extends AppCompatActivity {
         }
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
         }
-        myLocation=locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+        GPSTracker gps = new GPSTracker(this);
+        myLocation= gps.getLocation();
         inizializzaMappa();
-        percorso(myLocation);
-        Indicazioni(road);
+        GeoPoint mypos = new GeoPoint(myLocation);
+        mapController.setCenter(mypos);
+        percorso(myLocation,opzione);
+        addListenerPulsanti();
+        indicazioni(road);
 
     }
 
@@ -138,37 +143,38 @@ public class MappaActivity extends AppCompatActivity {
         map.setTileSource(TileSourceFactory.DEFAULT_TILE_SOURCE);
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
-
+        mapController.setZoom(10.0);
 
 
 
 
     }
-    public void percorso (Location location)
+    public void percorso (Location location,String opzione)
     {
+        map.getOverlays().clear();
         GeoPoint startPoint = new GeoPoint(location);
         LatLng luogo = getSingleLocationFromAddress(indirizzo+" ancona",this);
-        IMapController mapController = map.getController();
-        mapController.setZoom(9.0);
-        mapController.setCenter(startPoint);
         Marker startMarker = new Marker(map);
         startMarker.setPosition(startPoint);
         startMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        startMarker.setTitle("Start point");
+        startMarker.setTitle("La tua posizione");
+        startMarker.closeInfoWindow();
         map.getOverlays().add(startMarker);
         map.invalidate();
-    RoadManager roadManager = new GraphHopperRoadManager("0b4fbc1c-22f4-4a8e-af38-3a4d422a395c&locale=it",true);
-    ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
+        RoadManager roadManager = new GraphHopperRoadManager("0b4fbc1c-22f4-4a8e-af38-3a4d422a395c&locale=it", true);
+        roadManager.addRequestOption(opzione);
+        ArrayList<GeoPoint> waypoints = new ArrayList<GeoPoint>();
         waypoints.add(startPoint);
-    GeoPoint endPoint = new GeoPoint(luogo.latitude, luogo.longitude);
+        GeoPoint endPoint = new GeoPoint(luogo.latitude, luogo.longitude);
         waypoints.add(endPoint);
-    Marker endMarker = new Marker(map);
+        Marker endMarker = new Marker(map);
         endMarker.setPosition(endPoint);
         endMarker.setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM);
-        endMarker.setTitle("End point");
+        endMarker.setTitle("Destinazione");
+        endMarker.closeInfoWindow();
         map.getOverlays().add(endMarker);
-    Road road = roadManager.getRoad(waypoints);
-    Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
+        Road road = roadManager.getRoad(waypoints);
+        Polyline roadOverlay = RoadManager.buildRoadOverlay(road);
         map.getOverlays().add(roadOverlay);
         map.invalidate();
         this.road=road;
@@ -202,7 +208,7 @@ public class MappaActivity extends AppCompatActivity {
         return temp;
     }
 
-    public Integer CalcoloDistanza(LatLng start,LatLng end,Context c)
+    public Integer calcoloDistanza(LatLng start, LatLng end, Context c)
     {
 
         Location locstart= new Location("undici");
@@ -214,12 +220,35 @@ public class MappaActivity extends AppCompatActivity {
         Float distanza = locend.distanceTo(locstart);
         return distanza.intValue();
     }
-    public void Indicazioni (Road strada)
+    public void indicazioni(Road strada)
     {
         ListView lv = findViewById(R.id.indicazioni);
         String [] indicazioni = new String[this.road.mNodes.size()];
-        ArrayList<RoadNode> nodi = strada.mNodes;
+        TextView totale = findViewById(R.id.tot);
+        String durata;
+        String lunghezza;
+        if(strada.mLength < 1)
+        {
+            Integer metri = (int) strada.mLength*1000;
+            lunghezza = metri+" m";
+        }else{
+            DecimalFormat df = new DecimalFormat("#.#");
+            df.setRoundingMode(RoundingMode.HALF_EVEN);
+            lunghezza =df.format(strada.mLength) + " km";
+        }
+        if(strada.mDuration < 60){
+            Double secondi =strada.mDuration;
+            durata=secondi.intValue()+" sec";
+        }else if(strada.mDuration < 3600){
+            Double minuti = strada.mDuration/60;
+            durata = minuti.intValue()+" min";
+        }else{
+            Double ore = strada.mDuration/3600;
+            Double resto = (strada.mDuration%3600)/60;
+            durata= ore.intValue()+" h "+resto.intValue()+" min";
+        }
 
+        totale.setText("Lunghezza totale: "+lunghezza+"  Tempo totale: "+durata );
         Integer k;
         int i;
 
@@ -234,7 +263,7 @@ public class MappaActivity extends AppCompatActivity {
                 istruzione = strada.mNodes.get(i).mInstructions+"\n\t"+metri+" m";
             }else
             {
-                DecimalFormat df = new DecimalFormat("#.##");
+                DecimalFormat df = new DecimalFormat("#.#");
                 df.setRoundingMode(RoundingMode.HALF_EVEN);
 
                 istruzione = strada.mNodes.get(i).mInstructions + "\n\t\t" + df.format(distanza) + " km";
@@ -258,6 +287,48 @@ public class MappaActivity extends AppCompatActivity {
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,R.layout.indicazioni,R.id.ind,indicazioni);
         lv.setAdapter(arrayAdapter);
 
+    }
+    public void addListenerPulsanti()
+    {
+        ImageButton a;
+        a  =  findViewById(R.id.piedi);
+        a.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opzione = "vehicle=foot";
+                percorso(myLocation,opzione);
+                indicazioni(road);
+            }
+        });
+        ImageButton b;
+        b  =  findViewById(R.id.macchina);
+        b.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             opzione = "vehicle=car";
+             percorso(myLocation,opzione);
+             indicazioni(road);
+            }
+        });
+        ImageButton c;
+        c  =  findViewById(R.id.bici);
+        c.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opzione = "vehicle=bike";
+                percorso(myLocation,opzione);
+                indicazioni(road);
+            }
+        });
+        ImageButton d;
+        d  =  findViewById(R.id.center);
+        d.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              GeoPoint center = new GeoPoint(myLocation);
+              mapController.setCenter(center);
+            }
+        });
     }
 }
 

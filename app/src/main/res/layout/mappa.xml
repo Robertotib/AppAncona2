@@ -9,18 +9,75 @@
     android:orientation="vertical"
     android:weightSum="10"
     >
-
+    <LinearLayout
+        android:id="@+id/pulsanti"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        >
+        <ImageButton
+            android:id="@+id/piedi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/pedone"
+            android:scaleType="fitCenter"
+            android:background="#ffffff"/>
+        <ImageButton
+            android:id="@+id/macchina"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/auto"
+            android:scaleType="fitCenter"
+            android:background="#ffffff"/>
+        <ImageButton
+            android:id="@+id/bici"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/bici"
+            android:scaleType="fitCenter"
+            android:background="#ffffff"/>
+        <ImageButton
+            android:id="@+id/center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/centro"
+            android:scaleType="fitCenter"
+            android:background="#ffffff"/>
+    </LinearLayout>
     <org.osmdroid.views.MapView
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7" />
+        android:layout_weight="6.5"
+        />
+    <TextView
+        android:id="@+id/tot"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center_vertical"
+        android:textStyle="bold"
+        android:paddingLeft="10dp"/>
     <ListView
         android:id="@+id/indicazioni"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:scrollbars="vertical">
+        android:scrollbars="vertical"
+        android:paddingLeft="10dp">
     </ListView>
 
 
