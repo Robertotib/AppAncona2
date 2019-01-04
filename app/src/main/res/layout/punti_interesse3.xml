@@ -36,10 +36,11 @@
         android:layout_alignParentStart="true"
         android:layout_marginStart="0dp"
         android:paddingLeft="5dp"
+        android:textSize="18sp"
         android:contentDescription="@string/desc_punti1"
-        android:textSize="18dp"
         app:layout_constraintTop_toTopOf="@id/guideline3"
         app:layout_constraintBottom_toBottomOf="@id/guideline4"
+        android:scrollbars="vertical"
         />
 
     <Button
@@ -56,6 +57,7 @@
         android:text="@string/mappa"
         android:textColor="@color/colorText"
         android:textStyle="bold"
+        android:paddingTop="10dp"
         app:layout_constraintBottom_toBottomOf="@id/guideline5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

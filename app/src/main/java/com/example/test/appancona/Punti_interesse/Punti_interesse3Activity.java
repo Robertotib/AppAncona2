@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -39,6 +40,7 @@ public class Punti_interesse3Activity extends AppCompatActivity
             indir.setText(ind);
             TextView de = findViewById(R.id.descr);
             de.setText(descr);
+            de.setMovementMethod(new ScrollingMovementMethod());
             Uri myuri = Uri.parse(imm);
             ImageView image = findViewById(R.id.sfondo);
             image.setImageURI(myuri);
