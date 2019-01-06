@@ -179,6 +179,7 @@ public class MappaActivity extends AppCompatActivity {
         map.invalidate();
         this.road=road;
 }
+
     public LatLng getSingleLocationFromAddress(String strAddress, Context c)
     {
         Geocoder coder = new Geocoder(c, Locale.getDefault());

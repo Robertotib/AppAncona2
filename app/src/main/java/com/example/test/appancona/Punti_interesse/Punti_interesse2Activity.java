@@ -112,4 +112,5 @@ public class Punti_interesse2Activity extends AppCompatActivity {
         });
     }
 
+
 }

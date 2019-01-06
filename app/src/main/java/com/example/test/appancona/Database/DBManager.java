@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class DBManager {
 
-    MyDBHelper helper=null;
+    public MyDBHelper helper=null;
     
     public DBManager(Context context)
     {
