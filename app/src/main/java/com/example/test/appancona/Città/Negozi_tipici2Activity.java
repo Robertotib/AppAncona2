@@ -6,6 +6,9 @@ import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,6 +47,7 @@ public class Negozi_tipici2Activity extends AppCompatActivity {
             indir.setText(ind);
             TextView de = findViewById(R.id.descr);
             de.setText(descr);
+            de.setMovementMethod(new ScrollingMovementMethod());
             Uri myuri = Uri.parse(imm);
             ImageView image = findViewById(R.id.sfondo);
             image.setImageURI(myuri);
@@ -54,7 +58,10 @@ public class Negozi_tipici2Activity extends AppCompatActivity {
             TextView telefono = findViewById(R.id.tel);
             telefono.setText(tel);
             TextView sito = findViewById(R.id.sito);
-            sito.setText(si);
+            sito.setClickable(true);
+            sito.setMovementMethod(LinkMovementMethod.getInstance());
+            String text = "<a href='http://"+si+"'> Vai al sito </a>";
+            sito.setText(Html.fromHtml(text));
         }
 
         Button a = findViewById(R.id.mappa);

@@ -5,6 +5,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -32,7 +34,6 @@ public class Servizi3Activity extends AppCompatActivity {
         String ind = null;
         if (punto.moveToFirst()) {
             ind = punto.getString(punto.getColumnIndex("indirizzo"));
-            String descr = punto.getString(punto.getColumnIndex("descrizione"));
             String imm = punto.getString(punto.getColumnIndex("immagine"));
             String ema = punto.getString(punto.getColumnIndex("email"));
             String tel = punto.getString(punto.getColumnIndex("telefono"));
@@ -40,8 +41,6 @@ public class Servizi3Activity extends AppCompatActivity {
 
             TextView indir = findViewById(R.id.indirizzo);
             indir.setText(ind);
-            TextView de = findViewById(R.id.descr);
-            de.setText(descr);
             Uri myuri = Uri.parse(imm);
             ImageView image = findViewById(R.id.sfondo);
             image.setImageURI(myuri);
@@ -50,7 +49,10 @@ public class Servizi3Activity extends AppCompatActivity {
             TextView telefono = findViewById(R.id.tel);
             telefono.setText(tel);
             TextView sito = findViewById(R.id.sito);
-            sito.setText(si);
+            sito.setClickable(true);
+            sito.setMovementMethod(LinkMovementMethod.getInstance());
+            String text = "<a href='http://"+si+"'> Vai al sito </a>";
+            sito.setText(Html.fromHtml(text));
         }
 
         Button a = findViewById(R.id.mappa);

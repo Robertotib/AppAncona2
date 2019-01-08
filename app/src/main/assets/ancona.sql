@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS `servizi` (
 	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`nome`	varchar ( 50 ) NOT NULL,
 	`cod_tipo_servizi`	varchar ( 50 ) NOT NULL,
-	`descrizione`	varchar ( 300 ) NOT NULL,
 	`immagine`	varchar ( 50 ) NOT NULL,
 	`indirizzo`	varchar ( 50 ) NOT NULL,
 	`telefono`	varchar ( 10 ) NOT NULL,
@@ -46,13 +45,30 @@ CREATE TABLE IF NOT EXISTS `servizi` (
 	`email`	varchar ( 50 ) NOT NULL,
 	FOREIGN KEY(`cod_tipo_servizi`) REFERENCES `tipi_servizi`(`_id`)
 );
-INSERT INTO `servizi` VALUES (1,'Ospedale 1','Ospedali','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','Via Piave 5','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (2,'Stazione 1','Stazione','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','Via Torresi 15','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (3,'Centrale 1','Carabinieri','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','Via Oddo di Biagio 25','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (4,'Farmacia 1','Farmacie','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','Via Goito 30','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (5,'Supermercato 1','Supermercati','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','Corso Giuseppe Mazzini 18','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (6,'Ufficio Postale 1','Ufficio Postale','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','Via Lazzaro Bernabei 1','0714345621','www.sito.it','email@email.it');
-INSERT INTO `servizi` VALUES (7,'Parcheggio 1','Parcheggi','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','Via Volturno 3','0714345621','www.sito.it','email@email.it');
+INSERT INTO `servizi` VALUES (1,'Ospedale Umberto I','Ospedali','android.resource://com.example.test.appancona/drawable/torrette','Via Conca 71','071 5961','ospedaliriuniti.marche.it','aou.ancona@emarche.it');
+INSERT INTO `servizi` VALUES (2,'Ospedale Salesi','Ospedali','android.resource://com.example.test.appancona/drawable/salesi','Via Filippo Corridoni, 16','071 5961','ospedaliriuniti.marche.it','aou.ancona@emarche.it');
+INSERT INTO `servizi` VALUES (3,'Stazione Centrale Ancona','Stazione','android.resource://com.example.test.appancona/drawable/stazcentrale','Piazza Rosselli','892 021','www.trenitalia.com','non presente');
+INSERT INTO `servizi` VALUES (4,'Stazione Torrette Ancona','Stazione','android.resource://com.example.test.appancona/drawable/staztorrette','Via Flaminia 230','892 021','www.trenitalia.com','non presente');
+INSERT INTO `servizi` VALUES (5,'Comando Stazione Ancona Centro','Carabinieri','android.resource://com.example.test.appancona/drawable/carabicentrale','Via Piave 24','071 200666','www.carabinieri.it','carabinieri@carabinieri.it');
+INSERT INTO `servizi` VALUES (6,'Nucleo Presidio Banca d''Italia','Carabinieri','android.resource://com.example.test.appancona/drawable/carabibanca','Piazza J.F.Kennedy 9','071 22851','www.carabinieri.it','carabinieri@carabinieri.it');
+INSERT INTO `servizi` VALUES (7,'Comando Stazione Ancona Principale','Carabinieri','android.resource://com.example.test.appancona/drawable/carabiprincipale','Via della Montagnola 81a','071 5031','www.carabinieri.it','stan221120@carabinieri.it');
+INSERT INTO `servizi` VALUES (8,'Farmacia Ferranti G.& A.','Farmacie','android.resource://com.example.test.appancona/drawable/farmaciaferranti','Piazza Rosselli 2','071 43395','non presente','non presente');
+INSERT INTO `servizi` VALUES (9,'Farmacia Valla Dr.Paolo','Farmacie','android.resource://com.example.test.appancona/drawable/farmaciavalla','Corso Giuseppe Garibaldi 116','071 2070220','www.farmaciavalla.it','ecommerce@farmaciavalla.it');
+INSERT INTO `servizi` VALUES (10,'Farmacia Palmieri e Gaffuri','Farmacie','android.resource://com.example.test.appancona/drawable/farmaciapalmieri','Corso Giuseppe Garibaldi 62','071 202771','www.farmaciapalmieriegaffuri.it','info@farmaciapalmieriegaffuri.it');
+INSERT INTO `servizi` VALUES (11,'Farmacia delle Grazie','Farmacie','android.resource://com.example.test.appancona/drawable/farmaciagrazie','Via Torresi 135','071 898332','www.farmaciadellegrazie.it','farmaciaciccioli@alice.it');
+INSERT INTO `servizi` VALUES (12,'Farmacia del Passetto','Farmacie','android.resource://com.example.test.appancona/drawable/farmaciapassetto','Viale della Vittoria 75','071 32366','www.farmaciadelpassetto.it','info@farmaciadelpassetto.it');
+INSERT INTO `servizi` VALUES (13,'Sì con Te','Supermercati','android.resource://com.example.test.appancona/drawable/siconte','Via Piave 27','071 205515','www.siconte.it','non presente');
+INSERT INTO `servizi` VALUES (14,'MyAuchan','Supermercati','android.resource://com.example.test.appancona/drawable/myauchan','Via Trieste 45','071 32906 ','www.auchan.it/it-IT-it/Custom/Organa/PuntoVendita.aspx?codiceNegozio=7311','non presente');
+INSERT INTO `servizi` VALUES (15,'Coal di Fiore','Supermercati','android.resource://com.example.test.appancona/drawable/coal','Via S. Martino 27','non presente ','www.coal.it','non presente');
+INSERT INTO `servizi` VALUES (16,'Maxi Coal Archi','Supermercati','android.resource://com.example.test.appancona/drawable/maxicoal','Via Terenzio Mamiani 14','071 9884419 ','www.maxi-coal-supermercato.business.site/','non presente');
+INSERT INTO `servizi` VALUES (17,'Conad City','Supermercati','android.resource://com.example.test.appancona/drawable/conad','Corso Carlo Alberto 2','071 44640 ','www.conad.it/ricerca-negozi/negozio.008619.html?utm_source=google&utm_medium=organic&utm_content=GMB','non presente');
+INSERT INTO `servizi` VALUES (18,'Ufficio Postale P.Rosselli','Ufficio Postale','android.resource://com.example.test.appancona/drawable/poste2','Piazza Rosselli 31','071 43956','www.poste.it','servizio.clienti@posteitaliane.it');
+INSERT INTO `servizi` VALUES (19,'Ufficio Postale XXIV Maggio','Ufficio Postale','android.resource://com.example.test.appancona/drawable/poste1','Largo XXIV Maggio 2','071 5012260','www.poste.it','servizio.clienti@posteitaliane.it');
+INSERT INTO `servizi` VALUES (20,'Ufficio Postale Maratta','Ufficio Postale','android.resource://com.example.test.appancona/drawable/poste3','Via Carlo Maratta 39','071 3581211','www.poste.it','servizio.clienti@posteitaliane.it');
+INSERT INTO `servizi` VALUES (21,'Ufficio Postale Torrette','Ufficio Postale','android.resource://com.example.test.appancona/drawable/poste4','Via Esino 60','071 880579','www.poste.it','servizio.clienti@posteitaliane.it');
+INSERT INTO `servizi` VALUES (22,'Parcheggio degli Archi','Parcheggi','android.resource://com.example.test.appancona/drawable/parkarchi','Via Terenzio Mamiani 9','071 203748','www.anconaparcheggi.it','parcheggiancona@legalmail.it');
+INSERT INTO `servizi` VALUES (23,'Parcheggio Traiano','Parcheggi','android.resource://com.example.test.appancona/drawable/parktraiano','Via XXIX Settembre 2','071 203834','www.anconaparcheggi.it','parcheggiancona@legalmail.it');
+INSERT INTO `servizi` VALUES (24,'Parcheggio Stamira','Parcheggi','android.resource://com.example.test.appancona/drawable/parkstamira','Via Sandro Pertini 1','071 206511','www.anconaparcheggi.it','parcheggiancona@legalmail.it');
 CREATE TABLE IF NOT EXISTS `serv_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_serv`	int ( 11 ) NOT NULL,
@@ -68,22 +84,21 @@ CREATE TABLE IF NOT EXISTS `ristorazione` (
 	`immagine`	varchar ( 50 ) NOT NULL,
 	`orari`	varchar ( 20 ) NOT NULL,
 	`giorno_chiusura`	varchar ( 50 ) NOT NULL,
-	`numero_coperti`	int ( 3 ) NOT NULL,
 	`prezzo_medio`	float NOT NULL,
 	`telefono`	varchar ( 10 ) NOT NULL,
-	`sito_internet`	varchar ( 50 ) NOT NULL,
-	`parcheggio`	varchar ( 10 ) NOT NULL
+	`sito_internet`	varchar ( 50 ) NOT NULL
+
 );
-INSERT INTO `ristorazione` VALUES (1,'pizzeria 1','Via Piave 5','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (2,'pizzeria 2','Via Breccie Bianche 13','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','08:00-13:00 16:00-20:00','domenica',10,30.0,'071123456','www.sito.it','no');
-INSERT INTO `ristorazione` VALUES (3,'pizzeria 3','Via Francesco Petrarca 30','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','08:00-13:00 16:00-20:00','domenica',10,200.0,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (4,'pizzeria 4','Via Cingoli 2','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,10.25,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (5,'pizzeria 5','Via Valle Miano 23','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','08:00-13:00 16:00-20:00','domenica',10,120.0,'071123456','www.sito.it','no');
-INSERT INTO `ristorazione` VALUES (6,'pizzeria 6','Via Guglielmo Marconi 171','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,60.0,'071123456','www.sito.it','no');
-INSERT INTO `ristorazione` VALUES (7,'pizzeria 7','Pizza del Plebiscito','descrizione','android.resource://com.example.test.appancona/drawable/lacitta','08:00-13:00 16:00-20:00','domenica',10,70.0,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (8,'pizzeria 8','Via Astagno 70','descrizione','android.resource://com.example.test.appancona/drawable/puntiinteresse','08:00-13:00 16:00-20:00','domenica',10,153.0,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (9,'pizzeria 9','Via Marsala 20','descrizione','android.resource://com.example.test.appancona/drawable/rist2','08:00-13:00 16:00-20:00','domenica',10,27.0,'071123456','www.sito.it','si');
-INSERT INTO `ristorazione` VALUES (10,'pizzeria 10','Piazza Cavour','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento','08:00-13:00 16:00-20:00','domenica',10,94.0,'071123456','www.sito.it','si');
+INSERT INTO `ristorazione` VALUES (1,'La luna al passetto','Piazza IV Novembre','Ristorante specialità pesce situato sulla palafitta nella spiaggia del Passetto, in pieno centro di Ancona','android.resource://com.example.test.appancona/drawable/ristluna','12:30-15:30 19:30-00:30','Nessuno',40,'071 34136','www.lalunaalpassetto.it');
+INSERT INTO `ristorazione` VALUES (2,'Rosa Cremeria Food','Corso Giuseppe Mazzini 61','In uno degli angoli piu suggestivi del centro storico di Ancona, accanto alla fontana delle 13 Cannelle e a due passi dal porto e dal Teatro delle Muse, Rosa Cremeria & Food, il locale giusto ad ogni ora del giorno.','android.resource://com.example.test.appancona/drawable/ristrosa','07:00-00:00 ','Domenica mattina',30.0,'071 203408','www.facebook.com/rosacremeriafood/');
+INSERT INTO `ristorazione` VALUES (3,'Ristorante pizzeria il Pincio','Va Circonvallazione 63','Il Ristorante Pizzeria Il Pincio è conosciuto come una deliziosa oasi di gusto e tranquillità in cui è gradevole trascorrere il tempo con la famiglia, gli amici o con la persona che ami.','android.resource://com.example.test.appancona/drawable/ristpincio','12:30-14:30 19:30-23:30','Nessuno',40,'071 56672','www.ilpincio.it');
+INSERT INTO `ristorazione` VALUES (4,'Avalon','Via Sacco e Vanzetti 13','La pizzeria Avalon è conosciuta per la bontà della sua pizza.Ideale per una serata in famiglia o con gli amici.','android.resource://com.example.test.appancona/drawable/ristavalon','19:30-00:00','Lunedi',25,'071 2900672','www.facebook.com/AvalonAncona/');
+INSERT INTO `ristorazione` VALUES (5,'Zucchero a velo''','Via Mario Torresi 18','Zucchero a Velò nasce dalla passione di Elisabetta per il cibo e per l’american bakery e di Gabriele per le due ruote: Zucchero a Velò è il primo Bike Café di Ancona e, proprio per la sua natura,  parla di cibo, dolci e di biciclette.','android.resource://com.example.test.appancona/drawable/ristavelo','10:00-20:00','Lunedi e Martedi',15.0,'071 9692935','www.zuccheroaveloancona.it');
+INSERT INTO `ristorazione` VALUES (6,'Il Ristorante Giardino',' Via Fabio Filzi, 2 ','Pizza e pietanze di pesce in un locale elegante all''interno di un palazzo del ''700 con veranda e giardino.','android.resource://com.example.test.appancona/drawable/ristgiardino','12:30-15:00 19:30-23:00','Lunedi',30.0,'071 2074660','www.ristorantegiardinoancona.it');
+INSERT INTO `ristorazione` VALUES (7,'Pizzeria Sassi Neri','Via Trieste 59','Mangiare è uno dei quattro scopi della vita…quali siano gli altri tre, nessuno lo ha mai saputo. (Proverbio cinese)','android.resource://com.example.test.appancona/drawable/ristsassi','08:00-00:00','Sabato e Domenica mattina',25,'071 36887','www.facebook.com/Sassi-Neri-1557415134539404/');
+INSERT INTO `ristorazione` VALUES (8,'Pizzeria Poldo''s Pizza','Via Montebello 85','Vieni a mangiare una bella e buona puccia!!!','android.resource://com.example.test.appancona/drawable/ristpoldo','18:00-23:00','Lunedi',8,'334 7352303','www.poldoancona.it');
+INSERT INTO `ristorazione` VALUES (9,'Pizzeria Rosticceria Paolo','Via Giacomo Matteotti 27','Primi piatti, secondi, rosticceria, pizza al piatto e al pezzo.','android.resource://com.example.test.appancona/drawable/ristpaolo','07:30-20:30','Domenica',8.0,'071123456','www.facebook.com/pizzeriarosticceriapaolo/');
+INSERT INTO `ristorazione` VALUES (10,'Pizzeria L''arte della pizza','Via Benincasa 7','L''Arte della pizza ad Ancona è una pizzeria aperta tutti i giorni, ed è il luogo ideale per un pranzo veloce, una cena gustosa o un aperitivo con gli amici. Il personale sempre accogliente, sarà a vostra disposizione anche per ottime pizze da asporto.','android.resource://com.example.test.appancona/drawable/ristarte','10:00-22:30','Nessuno',10.0,'071 55776','non disponibile');
 CREATE TABLE IF NOT EXISTS `rist_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_ristorazione`	int ( 11 ) NOT NULL,
@@ -137,12 +152,16 @@ CREATE TABLE IF NOT EXISTS `pernottamento` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`parcheggio`	varchar ( 50 ) NOT NULL
 );
-INSERT INTO `pernottamento` VALUES (1,'hotel 1','Via Marconi 22','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',20.0,'0723123456','www.sito.it','si');
-INSERT INTO `pernottamento` VALUES (2,'hotel 2','Via Tavernelle 2','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',40.0,'0723123456','www.sito.it','no');
-INSERT INTO `pernottamento` VALUES (3,'hotel 3','Via Piave 5','descrizione','android.resource://com.example.test.appancona/drawable/servizi',200.0,'0723123456','www.sito.it','no');
-INSERT INTO `pernottamento` VALUES (4,'hotel 4','Piazza Roma','descrizione','android.resource://com.example.test.appancona/drawable/pernottamento',130.0,'0723123456','www.sito.it','si');
-INSERT INTO `pernottamento` VALUES (5,'hotel 5','Via Kennedy','descrizione','android.resource://com.example.test.appancona/drawable/lacitta',70.0,'0723123456','www.sito.it','no');
-INSERT INTO `pernottamento` VALUES (6,'hotel 6','Via del Faro 6','descrizione','android.resource://com.example.test.appancona/drawable/servizi',160.0,'0723123456','www.sito.it','si');
+INSERT INTO `pernottamento` VALUES (1,'Grand Hotel Passetto','Via Thaon de Revel 1','Situato sulla costa adriatica, questo elegante hotel del centro dista 1 minuto a piedi dal Monumento dedicato ai Caduti della Prima Guerra Mondiale, nel quartiere del Passetto, e 2,6 km dal Duomo di Ancona.','android.resource://com.example.test.appancona/drawable/hotelpassetto',71.0,'071 31307','www.grandhotelpassetto.it','si');
+INSERT INTO `pernottamento` VALUES (2,'Grand Hotel Palace','Lungomare Luigi Vanvitelli 24','Affacciato sul porto e sull''Adriatico, questo hotel raffinato occupa un palazzo del XIX secolo dai soffitti affrescati, a 2 minuti a piedi dalla Loggia dei Mercanti e 13 minuti a piedi dal Duomo di Ancona.','android.resource://com.example.test.appancona/drawable/hotelpalace',103.0,'071 201813','www.grandhotelpalaceancona.com','no');
+INSERT INTO `pernottamento` VALUES (3,'Hotel NH Ancona','Via Rupi di Via XXIX Settembre 14','Situato a 7 minuti a piedi dal Teatro delle Muse, che ospita spettacoli dal vivo, questo moderno hotel dista 8 minuti a piedi dalla Loggia dei Mercanti.','android.resource://com.example.test.appancona/drawable/hotelnh',92.0,'071 201171','www.nh-hotels.com','si');
+INSERT INTO `pernottamento` VALUES (4,'Hotel della Vittoria','Via Fabio Filzi 2','Situato a 2,1 km dall''Arco di Traiano, questo confortevole hotel dista 10 minuti a piedi dal Monumento dedicato ai Caduti della Prima Guerra Mondiale, nel quartiere del Passetto.','android.resource://com.example.test.appancona/drawable/hotelvittoria',58.0,'071 55764','www.hoteldellavittoria.com','no');
+INSERT INTO `pernottamento` VALUES (5,'Ego Hotel Ancona','Via Flaminia 220','Ubicato sulla costa adriatica, questo moderno hotel di lusso dista 3 minuti a piedi dalla stazione ferroviaria di Ancona Torrette e 7 km dal Museo Archeologico Nazionale delle Marche.','android.resource://com.example.test.appancona/drawable/hotelego',107.0,'071 2181262','www.egohotelancona.it','si');
+INSERT INTO `pernottamento` VALUES (6,'Hotel Fortuna','Piazza Rosselli 15','Ubicato di fronte alla stazione ferroviaria di Ancona, questo hotel confortevole si trova nel centro città, a 1,8 km dal Teatro delle Muse e a 2,6 km dal Duomo.','android.resource://com.example.test.appancona/drawable/hotelfortuna',74.0,'071 42663','www.hotelfortuna.it','si');
+INSERT INTO `pernottamento` VALUES (7,'Albergo Gino','Via Flaminia 4','Situato in una strada con negozi e ristoranti di fronte alla stazione ferroviaria di Ancona, questo hotel sobrio a conduzione familiare dista 3 km sia dall''Arco di Traiano sia dalla Cattedrale di San Ciriaco, in stile romanico-bizantino e gotico','android.resource://com.example.test.appancona/drawable/hotelgino',61.0,'071 42996','www.albergogino.it','si');
+INSERT INTO `pernottamento` VALUES (8,'Hotel Europa','Via Sentino 3','Questo moderno hotel dista 5 minuti a piedi dalla stazione ferroviaria di Ancona Torrette e 7 km dalla storica Loggia dei Mercanti e dall''Arco di Traiano, preziosa testimonianza dell''architettura romana','android.resource://com.example.test.appancona/drawable/hoteleuropa',66.0,'071 888096','www.hoteleuropa-ancona.com','si');
+INSERT INTO `pernottamento` VALUES (9,'Agriturismo Fiori del Conero','Via della Ferrovia 28a','Situato sulla costa adriatica, questo hotel rurale in mattoni rossi dista 2,3 km dal Monumento dedicato ai Caduti della Prima Guerra Mondiale, nel quartiere del Passetto vicino al mare, 4,7 km dal Duomo di Ancona, in stile romanico-gotico, e 5 km dall''Arco di Traiano.','android.resource://com.example.test.appancona/drawable/hotelfiori',72.0,'388 4985967','www.fioridelconero.it','si');
+INSERT INTO `pernottamento` VALUES (10,'Conero Boat&Breakfast','Via Mascino','Passate la vostra notte speciale a bordo di un mini-yacht godendovi al meglio il vostro soggiorno nella splendida cornice di Marina Dorica','android.resource://com.example.test.appancona/drawable/hotelboat',45.0,'328 2540741','www.coneroboat.it','si');
 CREATE TABLE IF NOT EXISTS `pern_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pern`	int ( 11 ) NOT NULL,
@@ -172,8 +191,10 @@ CREATE TABLE IF NOT EXISTS `negozi_tipici` (
 	`sito_internet`	varchar ( 50 ) NOT NULL,
 	`immagine`	varchar ( 50 ) NOT NULL
 );
-INSERT INTO `negozi_tipici` VALUES (1,'negozio 1','Piazza Kennedy','descrizione','08:00-13:00 16:00-20:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/rist2');
-INSERT INTO `negozi_tipici` VALUES (2,'negozio 2','Piazza Roma','descrizione','08:00-13:00 16:00-20:00','domenica','071123456','www.sito.it','android.resource://com.example.test.appancona/drawable/lacitta');
+INSERT INTO `negozi_tipici` VALUES (1,'Bottega Monastica','Corso Stamira 13','Negozio di prodotti tipici legati ai monasteri.Più di 40 Monasteri produttori sparsi per l’Italia, la Francia, il Belgio e l’Olanda. Alcuni sono già conosciuti e affermati, altri stanno emergendo con produzioni particolari e ricercate (anche con certificazione biologica).','09:30-12:30 16:00-19:00','Domenica','329 9662526','www.bottegamonastica.com','android.resource://com.example.test.appancona/drawable/monastica');
+INSERT INTO `negozi_tipici` VALUES (2,'Bottega Re Formaggio','Piazza J.F.Kennedy 10','Negozio di specialità alimentari.','08:30-12:30 16:30-19:30','Domenica pomeriggio','071 201771','www.facebook.com/bottegareformaggio/','android.resource://com.example.test.appancona/drawable/reformaggio');
+INSERT INTO `negozi_tipici` VALUES (3,'La Congrega','Via degli Orefici 5','Progettiamo e realizziamo manufatti tessili d''arredo: tende,tovaglie,arazzi,cuscini e copriletti.I tessuti di base sono in fibra naturale: lino,cotone,canapa','10:30-12:30 16:00-19:30','Domenica e Lunedi','333 8288659','www.lacongrega.net','android.resource://com.example.test.appancona/drawable/congrega');
+INSERT INTO `negozi_tipici` VALUES (4,'Bontà delle marche','Corso Giuseppe Mazzini 96','Solo le eccellenze della tradizione enogastronomica marchigianae italiana, prodotti di qualità superiore, selezionati con cura.Piaceri per il palato e per l’anima. Vini D.O.C e D.O.C.G.,una ricca selezione di distillati, una selezione incredibile di pietanze d’asporto per tutti i gusti e per ogni necessità,dal single alla famiglia.','09:00-20:00','Domenica pomeriggio','071 53985','www.bontadellemarche.it','android.resource://com.example.test.appancona/drawable/bontamarche');
 CREATE TABLE IF NOT EXISTS `negoz_tappa` (
 	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_negoz`	int ( 11 ) NOT NULL,

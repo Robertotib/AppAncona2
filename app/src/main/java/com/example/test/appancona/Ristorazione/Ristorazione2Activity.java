@@ -5,6 +5,9 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -35,17 +38,16 @@ public class Ristorazione2Activity extends AppCompatActivity {
             String imm = punto.getString(punto.getColumnIndex("immagine"));
             String ora = punto.getString(punto.getColumnIndex("orari"));
             String day = punto.getString(punto.getColumnIndex("giorno_chiusura"));
-            String cop = punto.getString(punto.getColumnIndex("numero_coperti"));
             String pre = punto.getString(punto.getColumnIndex("prezzo_medio"));
             String tel = punto.getString(punto.getColumnIndex("telefono"));
             String si = punto.getString(punto.getColumnIndex("sito_internet"));
-            String par = punto.getString(punto.getColumnIndex("parcheggio"));
 
 
             TextView indir = findViewById(R.id.indirizzo);
             indir.setText(ind);
             TextView de = findViewById(R.id.descr);
             de.setText(descr);
+            de.setMovementMethod(new ScrollingMovementMethod());
             Uri myuri = Uri.parse(imm);
             ImageView image = findViewById(R.id.sfondo);
             image.setImageURI(myuri);
@@ -53,16 +55,16 @@ public class Ristorazione2Activity extends AppCompatActivity {
             orari.setText(ora);
             TextView giorno =findViewById(R.id.giochius);
             giorno.setText(day);
-            TextView coperti = findViewById(R.id.coperti);
-            coperti.setText(cop);
             TextView prezzo = findViewById(R.id.prezzo);
-            prezzo.setText(pre);
+            prezzo.setText(pre+" €");
             TextView telefono = findViewById(R.id.tel);
             telefono.setText(tel);
             TextView sito = findViewById(R.id.sito);
-            sito.setText(si);
-            TextView parcheggio = findViewById(R.id.parcheggio);
-            parcheggio.setText(par);
+            sito.setClickable(true);
+            sito.setMovementMethod(LinkMovementMethod.getInstance());
+            String text = "<a href='http://"+si+"'> Vai al sito </a>";
+            sito.setText(Html.fromHtml(text));
+
         }
 
         Button a = findViewById(R.id.mappa);

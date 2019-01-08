@@ -65,7 +65,6 @@ public class Ricerca_serviziActivity extends AppCompatActivity {
         List<String> spinnerArray =  new ArrayList<String>();
         DBManager db = new DBManager(this);
         Cursor tipi = db.tipiServizi();
-        spinnerArray.add("Tutte");
         while (tipi.moveToNext())
         {
             spinnerArray.add(tipi.getString(tipi.getColumnIndex("_id")));

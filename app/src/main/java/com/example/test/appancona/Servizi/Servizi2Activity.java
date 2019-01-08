@@ -32,17 +32,10 @@ public class Servizi2Activity extends AppCompatActivity {
         Integer dist = getIntent().getIntExtra("distanza",0)*20;
         Cursor puntiInt;
 
-        /**
-         * Blocco filtaggio Categoria
-         */
-        if(!t.equals("Tutte")) {
             setTitle(t);
             t=  "'" + t + "'";
             puntiInt = db.getServiziByTipo(t);
-        }else {
-            setTitle("Servizi");
-            puntiInt = db.getServizi();
-        }
+
 
         /**
          * Blocco filtaggio distanza
