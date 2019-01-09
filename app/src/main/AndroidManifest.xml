@@ -58,6 +58,9 @@
                   android:label="@string/label_icona4"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".Percorsi.Percorsi2Activity"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".Servizi.ServiziActivity"
                   android:label="@string/label_icona5"
             android:screenOrientation="portrait">

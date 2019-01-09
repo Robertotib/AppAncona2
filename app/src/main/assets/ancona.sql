@@ -29,36 +29,7 @@ CREATE TABLE IF NOT EXISTS `tappe_percorsi` (
 	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`_cod_tappa`),
 	FOREIGN KEY(`cod_percorso`) REFERENCES `percorsi`(`_id`)
 );
-INSERT INTO `tappe_percorsi` VALUES (1,1,1,1);
-INSERT INTO `tappe_percorsi` VALUES (2,1,2,2);
-INSERT INTO `tappe_percorsi` VALUES (3,1,3,3);
-INSERT INTO `tappe_percorsi` VALUES (4,1,4,4);
-INSERT INTO `tappe_percorsi` VALUES (5,1,5,5);
 
-INSERT INTO `tappe_percorsi` VALUES (6,2,6,1);
-INSERT INTO `tappe_percorsi` VALUES (7,2,7,2);
-INSERT INTO `tappe_percorsi` VALUES (8,2,8,3);
-INSERT INTO `tappe_percorsi` VALUES (9,2,9,4);
-INSERT INTO `tappe_percorsi` VALUES (10,2,10,5);
-INSERT INTO `tappe_percorsi` VALUES (11,2,11,6);
-
-INSERT INTO `tappe_percorsi` VALUES (12,3,12,1);
-INSERT INTO `tappe_percorsi` VALUES (13,3,13,2);
-INSERT INTO `tappe_percorsi` VALUES (14,3,14,3);
-INSERT INTO `tappe_percorsi` VALUES (15,3,15,4);
-INSERT INTO `tappe_percorsi` VALUES (16,3,16,5);
-
-INSERT INTO `tappe_percorsi` VALUES (17,4,17,1);
-INSERT INTO `tappe_percorsi` VALUES (18,4,18,2);
-INSERT INTO `tappe_percorsi` VALUES (19,4,19,3);
-INSERT INTO `tappe_percorsi` VALUES (20,4,20,4);
-INSERT INTO `tappe_percorsi` VALUES (21,4,7,5);
-
-INSERT INTO `tappe_percorsi` VALUES (22,5,21,1);
-INSERT INTO `tappe_percorsi` VALUES (23,5,22,2);
-INSERT INTO `tappe_percorsi` VALUES (24,5,23,3);
-INSERT INTO `tappe_percorsi` VALUES (25,5,24,4);
-INSERT INTO `tappe_percorsi` VALUES (26,5,25,5);
 
 CREATE TABLE IF NOT EXISTS `tappe` (
 	`_cod_tappa`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -72,7 +43,7 @@ INSERT INTO `tappe` VALUES (3,'Lungomare Vanvitelli 100','Arco di Traiano','L''a
 INSERT INTO `tappe` VALUES (4,'Lungomare Vanvitelli 200','Arco Clementino','Fu eretto, su proposta del Vanvitelli, in onore di papa Clemente XII, per volontà del Senato anconetano, riconoscente nei confronti del pontefice che, vero e proprio mecenate di Ancona, concesse alla città il porto franco, dando nuovo impulso ai secolari traffici navali, ed incaricò il famoso architetto di ridisegnarne il porto. Fu così che sorsero il Lazzaretto e il Molo nuovo.L''arco Clementino è la porta di ingresso in città dal mare. Sorge nel punto in cui il Molo nuovo si innesta nell''antico molo romano, sul quale già si ergeva dal I secolo d.C. l''arco di Traiano. Nelle intenzioni dei promotori del progetto, l''Arco Clementino avrebbe dovuto oscurare la vista del pagano Arco di Traiano, sul suo attico avrebbe dovuto essere collocata la statua benedicente di Clemente XII e il conio di una medaglia onorifica fatta realizzare dagli anconetani e donata al pontefice, rappresentando così, assieme al Duomo in alto sul colle Guasco, la prima immagine che si sarebbe proposta ai naviganti al momento dell''ingresso nel porto dorico');
 INSERT INTO `tappe` VALUES (5,'Lanterna Rossa di Ancona','Lanterna Rossa di Ancona','La lanterna rossa è uno dei simboli del porto di Ancona.Accanto alla lanterna è stata collocata una panchina per tutti gli innamorati del mare da cui godere della bellezza dell''Adriatico. La lanterna, con Ancona nelle vesti del porto di Brighton, è stata protagonista del film ''La ragazza con la pistola'' di Mario Monicelli.');
 INSERT INTO `tappe` VALUES (6,'Piazza Anfiteatro','Anfiteatro Romano','L''anfiteatro romano di Ancona, situato tra i colli Guasco e dei Cappuccini, costituisce, dopo l''arco di Traiano, l''opera architettonica di epoca romana più importante della città. Lo scavo è pressoché completato nel settore meridionale, dove è visibile un lungo tratto del muro di cinta, l''ingresso principale e alcuni ingressi per gli spettatori.Vi erano due ingressi all''arena, situati ai due estremi dell''asse maggiore dell''ellisse: la porta pompae, destinato all''ingresso della processione gladiatoria, e la porta libitinensis, consacrata alla dea che presiedeva il passaggio all''aldilà, da cui uscivano i gladiatori moribondi e morti durante i combattimenti. Esistevano inoltre diversi ingressi utilizzati dagli spettatori, che conducevano ai vari settori della cavea.A volte questi ingressi non erano dotati di scale, ma arrivavano direttamente nel settore, sfruttando la pendenza naturale del terreno.');
-INSERT INTO `tappe` VALUES (7,'Piazzale del Duomo 9','Duomo','Il duomo di Ancona è dedicato a san Ciriaco ed è la cattedrale metropolitana dell''arcidiocesi di Ancona-Osimo. È una chiesa medioevale in cui lo stile romanico si fonde con quello bizantino, evidente nella pianta e in molte decorazioni. Sorge in scenografica posizione alla sommità del colle Guasco, già occupata dall''Acropoli della città greco-dorica, da dove domina tutta la città di Ancona e il suo golfo. Nel maggio del 1926 papa Pio XI l''ha elevata alla dignità di basilica minore.');
+INSERT INTO `tappe` VALUES (7,'Piazzale del Duomo 9','Duomo di Ancona','Il duomo di Ancona è dedicato a san Ciriaco ed è la cattedrale metropolitana dell''arcidiocesi di Ancona-Osimo. È una chiesa medioevale in cui lo stile romanico si fonde con quello bizantino, evidente nella pianta e in molte decorazioni. Sorge in scenografica posizione alla sommità del colle Guasco, già occupata dall''Acropoli della città greco-dorica, da dove domina tutta la città di Ancona e il suo golfo. Nel maggio del 1926 papa Pio XI l''ha elevata alla dignità di basilica minore.');
 INSERT INTO `tappe` VALUES (8,'Piazza del Plebiscito','Chiesa di San Domenico','L''attuale chiesa fu progettata da Carlo Marchionni nel 1763. La prima pietra fu posta nel 1771. Con l''occupazione francese la chiesa venne nel 1778 adibita a caserma, la parte superiore del prospetto principale rimase perciò incompiuta. Fu riaperta al culto nel 1816, con la Restaurazione.In seguito al terremoto del 1930, la parte superiore della facciata venne alterata per riparare ai danni. Durante i bombardamenti della Seconda guerra mondiale la chiesa venne nuovamente danneggiata e fu riaperta al culto nel 1948.');
 INSERT INTO `tappe` VALUES (9,'Corso Giuseppe Mazzini','Fontana del Calamo','La fontana del Càlamo, chiamata anche fontana delle Tredici Cannelle è una fontana rinascimentale di Ancona.Sul luogo sorgeva già anticamente una fontana in epoca greca, che venne inglobata nelle mura cittadine durante il Medioevo. La sua denominazione sembra derivare dalla parola latina Càlamus, "Canna", a testimonianza che si era dominati da un ambiente di tipo palustre.Si presenta come una lunga serie di tredici riquadri separati da volute, incentrati su altrettanti mascheroni gettanti acqua, da cui deriva la comune denominazione di Fontana delle Tredici Cannelle. I mascheroni, di cui 12 bronzei ed il centrale in pietra, raffigurano satiri e fauni. Quello centrale è sormontato dal bassorilievo del Cavaliere all''assalto, emblema della città di Ancona.Oggi la fontana riceve le acque dell''acquedotto cittadino, ma, anticamente, attingeva l''acqua da una grande cisterna posta sotto il muro alle sue spalle. La cisterna riceveva le acque dall''acquedotto proveniente da Monte Conero. Essa, oggi, è vuota, ma visitabile tramite un passaggio che si apre alla destra della fontana.Secondo un''antica tradizione, il viaggiatore che volesse tornare in città dovrebbe bere l''acqua che sgorga dalla fontana.');
 INSERT INTO `tappe` VALUES (10,'Piazza Cavour','Monumento Cavour','Opera di Aristodemo Costoli, noto scultore risorgimentale. Sul basamento della statua, due bassorilievi rappresentano rispettivamente il Congresso di Parigi e la Proclamazione del Regno d''Italia ossia due momenti fondamentali dell''azione politica di Cavour.');
@@ -186,7 +157,7 @@ INSERT INTO `punti_interesse` VALUES (9,'Parco della Cittadella','Parchi e Natur
 INSERT INTO `punti_interesse` VALUES (10,'Parco Posatora','Parchi e Natura','Parco Posatora','Il parco Belvedere è compreso nel rione di Posatora ed offre un''ottima vista sul mare, sul porto e su tutto il nucleo del centro storico della città. Una leggenda narra che proprio qui gli angeli avrebbero posato la Santa Casa, in viaggio verso Loreto, per riposarsi (da questo fatto prende il nome il rione posa et ora).','android.resource://com.example.test.appancona/drawable/posatora');
 INSERT INTO `punti_interesse` VALUES (11,'Lanterna Rossa di Ancona','Parchi e Natura','Lanterna Rossa di Ancona','La lanterna rossa è uno dei simboli del porto di Ancona.Accanto alla lanterna è stata collocata una panchina per tutti gli innamorati del mare da cui godere della bellezza dell''Adriatico. La lanterna, con Ancona nelle vesti del porto di Brighton, è stata protagonista del film ''La ragazza con la pistola'' di Mario Monicelli.','android.resource://com.example.test.appancona/drawable/lanterna');
 INSERT INTO `punti_interesse` VALUES (12,'Terrazza del Passetto','Parchi e Natura','Terrazza del Passetto','Una bellissima terrazza che si affaccia sul mare collegata alla scalinata più famosa e maestosa di Ancona che dal monumento dei Caduti conduce alla spiaggia cittadina del Passetto, dove trovate le suggestive grotte dei pescatori dalle porticine in legno colorate e la Seggiola del Papa.Vista dal mare la scalinata prende la forma di un’aquila dove il Monumento ai Caduti ne rappresenta la corona.','android.resource://com.example.test.appancona/drawable/terrazza');
-INSERT INTO `punti_interesse` VALUES (13,'Duomo','Monumenti Religiosi','Piazzale del Duomo 9','Il duomo di Ancona è dedicato a san Ciriaco ed è la cattedrale metropolitana dell''arcidiocesi di Ancona-Osimo. È una chiesa medioevale in cui lo stile romanico si fonde con quello bizantino, evidente nella pianta e in molte decorazioni. Sorge in scenografica posizione alla sommità del colle Guasco, già occupata dall''Acropoli della città greco-dorica, da dove domina tutta la città di Ancona e il suo golfo. Nel maggio del 1926 papa Pio XI l''ha elevata alla dignità di basilica minore.','android.resource://com.example.test.appancona/drawable/duomo');
+INSERT INTO `punti_interesse` VALUES (13,'Duomo di Ancona','Monumenti Religiosi','Piazzale del Duomo 9','Il duomo di Ancona è dedicato a san Ciriaco ed è la cattedrale metropolitana dell''arcidiocesi di Ancona-Osimo. È una chiesa medioevale in cui lo stile romanico si fonde con quello bizantino, evidente nella pianta e in molte decorazioni. Sorge in scenografica posizione alla sommità del colle Guasco, già occupata dall''Acropoli della città greco-dorica, da dove domina tutta la città di Ancona e il suo golfo. Nel maggio del 1926 papa Pio XI l''ha elevata alla dignità di basilica minore.','android.resource://com.example.test.appancona/drawable/duomo');
 INSERT INTO `punti_interesse` VALUES (14,'Chiesa di San Domenico','Monumenti Religiosi','Piazza del Plebiscito','L''attuale chiesa fu progettata da Carlo Marchionni nel 1763. La prima pietra fu posta nel 1771. Con l''occupazione francese la chiesa venne nel 1778 adibita a caserma, la parte superiore del prospetto principale rimase perciò incompiuta. Fu riaperta al culto nel 1816, con la Restaurazione.In seguito al terremoto del 1930, la parte superiore della facciata venne alterata per riparare ai danni. Durante i bombardamenti della Seconda guerra mondiale la chiesa venne nuovamente danneggiata e fu riaperta al culto nel 1948. ','android.resource://com.example.test.appancona/drawable/sandomenico');
 INSERT INTO `punti_interesse` VALUES (15,'Chiesa di Santa Maria della Piazza','Monumenti Religiosi','Piazza Santa Maria','La chiesa di Santa Maria della Piazza si trova ad Ancona in piazza Santa Maria, nell''antico rione Porto.Eretta tra il XI e XII secolo, è un notevole esempio di stile romanico. Essa fu costruita su una chiesa paleocristiana del IV secolo restaurata nel VI. Una parte del pavimento della chiesa attuale è in vetro per permettere la visione dei mosaici paleocristiani sottostanti.','android.resource://com.example.test.appancona/drawable/santamaria');
 INSERT INTO `punti_interesse` VALUES (16,'Teatro delle Muse','Luoghi Culturali','Piazzale della Republica','Il Teatro delle Muse di Ancona è, tra i teatri in cui attualmente si tengono stagioni liriche, il 13º in Italia per capienza, è inoltre il più grande teatro delle Marche.L''edificio, in stile neoclassico, è stato inaugurato nel 1827 ed è opera dell''architetto Pietro Ghinelli. Sul timpano è presente un bassorilievo allegorico che ne spiega il nome, opera dello scultore neoclassico Giacomo De Maria. Vi sono raffigurate le nove Muse, dalle quali il teatro prende il nome, e tra esse è rappresentato anche Apollo, dio delle arti, e Palemone, dio dei porti. ','android.resource://com.example.test.appancona/drawable/teatromuse');
@@ -236,11 +207,11 @@ CREATE TABLE IF NOT EXISTS `percorsi` (
 	`descrizione`	varchar ( 300 ) NOT NULL,
 	`immagine`	varchar ( 50 ) NOT NULL
 );
-INSERT INTO `percorsi` VALUES (1,'Percorso del Porto Antico','Questo percorso parte dal Lazzaretto e percorre la costa fino ad immergersi nella suggestiva cornice del Porto Antico di Ancona','android.resource://com.example.test.appancona/drawable/iconaparchi');
-INSERT INTO `percorsi` VALUES (2,'Percorso del Centro Cittadino','Questo percorso parte dall''Anfiteatro romano e percorre il centro di Ancona racchiudendo,al suo interno, alcuni dei luoghi più caratteristici della città, fino ad arrivare al monumento dei caduti del Passetto.','android.resource://com.example.test.appancona/drawable/iconaculturali');
-INSERT INTO `percorsi` VALUES (3,'Percorso Naturale','Questo percorso è stato creato per tutte quelle persone che amano immergersi nella natura. Si inizia con un giro dei vari parchi che caratterizzano Ancona e si termina con il panorama mozzafiato della terrazza del Passetto. ','android.resource://com.example.test.appancona/drawable/parthenon');
-INSERT INTO `percorsi` VALUES (4,'Percorso Culturale','Questo percorso è l''ideale di ogni amante dell''arte e della cultura. Con una scelta varia di teatri e musei e finendo poi con la maestosità del Duomo di Ancona. ','android.resource://com.example.test.appancona/drawable/farmacia');
-INSERT INTO `percorsi` VALUES (5,'Percorso Gastronomico','Un viaggio attraverso i sapori della città, tra locali dove gustare buon cibo e negozi di prodotti tipici','android.resource://com.example.test.appancona/drawable/stazione');
+INSERT INTO `percorsi` VALUES (1,'Percorso del Porto Antico','Questo percorso parte dal Lazzaretto e percorre la costa fino ad immergersi nella suggestiva cornice del Porto Antico di Ancona','android.resource://com.example.test.appancona/drawable/ancora');
+INSERT INTO `percorsi` VALUES (2,'Percorso del Centro Cittadino','Questo percorso parte dall''Anfiteatro romano e percorre il centro di Ancona racchiudendo,al suo interno, alcuni dei luoghi più caratteristici della città, fino ad arrivare al monumento dei caduti del Passetto.','android.resource://com.example.test.appancona/drawable/centrocitta');
+INSERT INTO `percorsi` VALUES (3,'Percorso Naturale','Questo percorso è stato creato per tutte quelle persone che amano immergersi nella natura. Si inizia con un giro dei vari parchi che caratterizzano Ancona e si termina con il panorama mozzafiato della terrazza del Passetto. ','android.resource://com.example.test.appancona/drawable/iconaparchi');
+INSERT INTO `percorsi` VALUES (4,'Percorso Culturale','Questo percorso è l''ideale di ogni amante dell''arte e della cultura. Con una scelta varia di teatri e musei e finendo poi con la maestosità del Duomo di Ancona. ','android.resource://com.example.test.appancona/drawable/libri');
+INSERT INTO `percorsi` VALUES (5,'Percorso Gastronomico','Un viaggio attraverso i sapori della città, tra locali dove gustare buon cibo e negozi di prodotti tipici','android.resource://com.example.test.appancona/drawable/gastronomico');
 CREATE TABLE IF NOT EXISTS `negozi_tipici` (
 	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`nome`	varchar ( 50 ) NOT NULL,
@@ -263,4 +234,36 @@ CREATE TABLE IF NOT EXISTS `negoz_tappa` (
 	FOREIGN KEY(`cod_negoz`) REFERENCES `negozi_tipici`(`_id`),
 	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`)
 );
+
+INSERT INTO `tappe_percorsi` VALUES (1,1,1,1);
+INSERT INTO `tappe_percorsi` VALUES (2,1,2,2);
+INSERT INTO `tappe_percorsi` VALUES (3,1,3,3);
+INSERT INTO `tappe_percorsi` VALUES (4,1,4,4);
+INSERT INTO `tappe_percorsi` VALUES (5,1,5,5);
+
+INSERT INTO `tappe_percorsi` VALUES (6,2,6,1);
+INSERT INTO `tappe_percorsi` VALUES (7,2,7,2);
+INSERT INTO `tappe_percorsi` VALUES (8,2,8,3);
+INSERT INTO `tappe_percorsi` VALUES (9,2,9,4);
+INSERT INTO `tappe_percorsi` VALUES (10,2,10,5);
+INSERT INTO `tappe_percorsi` VALUES (11,2,11,6);
+
+INSERT INTO `tappe_percorsi` VALUES (12,3,12,1);
+INSERT INTO `tappe_percorsi` VALUES (13,3,13,2);
+INSERT INTO `tappe_percorsi` VALUES (14,3,14,3);
+INSERT INTO `tappe_percorsi` VALUES (15,3,15,4);
+INSERT INTO `tappe_percorsi` VALUES (16,3,16,5);
+
+INSERT INTO `tappe_percorsi` VALUES (17,4,17,1);
+INSERT INTO `tappe_percorsi` VALUES (18,4,18,2);
+INSERT INTO `tappe_percorsi` VALUES (19,4,19,3);
+INSERT INTO `tappe_percorsi` VALUES (20,4,20,4);
+INSERT INTO `tappe_percorsi` VALUES (21,4,7,5);
+
+INSERT INTO `tappe_percorsi` VALUES (22,5,21,1);
+INSERT INTO `tappe_percorsi` VALUES (23,5,22,2);
+INSERT INTO `tappe_percorsi` VALUES (24,5,23,3);
+INSERT INTO `tappe_percorsi` VALUES (25,5,24,4);
+INSERT INTO `tappe_percorsi` VALUES (26,5,25,5);
+
 COMMIT;

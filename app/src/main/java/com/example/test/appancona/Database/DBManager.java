@@ -72,6 +72,21 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
     }
+    public Cursor getPercorsoById(String id)
+    {
+        String query="SELECT * FROM percorsi WHERE _id ="+id;
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+
+    public Cursor getTappeByPercorso(String id){
+        String query = "select * from tappe_percorsi join tappe  where tappe_percorsi.cod_percorso ="+id+"  and tappe._cod_tappa=tappe_percorsi.cod_tappa order by tappe_percorsi.posizione ASC";
+
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+    }
+
     public Cursor getPuntiinteresseByTipo(String tipo)
     {
         String query="SELECT * FROM punti_interesse WHERE cod_tipo ="+tipo;
