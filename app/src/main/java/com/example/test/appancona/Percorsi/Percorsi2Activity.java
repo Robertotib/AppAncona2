@@ -15,7 +15,10 @@ import android.widget.Toast;
 
 import com.example.test.appancona.*;
 
+import com.example.test.appancona.Città.Negozi_tipici2Activity;
 import com.example.test.appancona.Database.DBManager;
+import com.example.test.appancona.Pernottamento.Pernottamento2Activity;
+import com.example.test.appancona.Punti_interesse.Punti_interesse3Activity;
 import com.example.test.appancona.Ristorazione.Ristorazione2Activity;
 import com.example.test.appancona.Ristorazione.RistorazioneActivity;
 
@@ -42,18 +45,7 @@ public class Percorsi2Activity extends AppCompatActivity {
     }
     public void inizializzaTappe(Cursor c){
         ListView lv = findViewById(R.id.tappe);
-
-
-
-        /*
-        while (c.moveToNext()){
-
-            String nome = (c.getPosition()+1)+")"+"\t"+c.getString(c.getColumnIndex("nome_tappa"));
-            String idtappa = c.getString(c.getColumnIndex("_cod_tappa"));
-            CustomObject a=new CustomObject(idtappa,nome);
-        }
-        */
-
+        final DBManager db=new DBManager(this);
         SimpleCursorAdapter adapter=new SimpleCursorAdapter(
                 this,
                 R.layout.tappa,
@@ -71,8 +63,38 @@ public class Percorsi2Activity extends AppCompatActivity {
                 TextView textView2 =  view.findViewById(R.id.custom1 );
                 String myid= textView2.getText().toString();
 
-
-                Toast.makeText(Percorsi2Activity.this, myid, Toast.LENGTH_LONG).show();
+                if(db.isTappaPuntInt(myid))
+                {
+                    Cursor result = db.getPuntIntByCodTappa(myid);
+                    result.moveToFirst();
+                    String codice = result.getString(result.getColumnIndex("cod_pun_int"));
+                    String nome = result.getString(result.getColumnIndex("nome_tappa"));
+                    i = new Intent(Percorsi2Activity.this,Punti_interesse3Activity.class);
+                    i.putExtra("nome",nome);
+                    i.putExtra("id", codice);
+                    startActivity(i);
+                }else if (db.isTappaRist(myid))
+                {
+                    Cursor result  = db.getRistByCodTappa(myid);
+                    result.moveToFirst();
+                    String codice = result.getString(result.getColumnIndex("cod_ristorazione"));
+                    String nome = result.getString(result.getColumnIndex("nome_tappa"));
+                    i = new Intent(Percorsi2Activity.this,Ristorazione2Activity.class);
+                    i.putExtra("nome",nome);
+                    i.putExtra("id", codice);
+                    startActivity(i);
+                }else if (db.isTappaNegozi(myid))
+                {
+                    Cursor result = db.getNegoziByCodTappa(myid);
+                    result.moveToFirst();
+                    String codice = result.getString(result.getColumnIndex("cod_negoz"));
+                    String nome = result.getString(result.getColumnIndex("nome_tappa"));
+                    i = new Intent(Percorsi2Activity.this,Negozi_tipici2Activity.class);
+                    i.putExtra("nome",nome);
+                    i.putExtra("id", codice);
+                    startActivity(i);
+                }else
+                    Toast.makeText(Percorsi2Activity.this, "Scelta non valida", Toast.LENGTH_LONG).show();
 
 
             }

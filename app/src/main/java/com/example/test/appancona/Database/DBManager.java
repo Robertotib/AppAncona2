@@ -72,6 +72,57 @@ public class DBManager {
         SQLiteDatabase db= helper.getReadableDatabase();
         return db.rawQuery(query, null);
     }
+    public Boolean isTappaPuntInt(String id)
+    {
+        String query = "SELECT * from pun_int_tappa join tappe where tappe._cod_tappa = pun_int_tappa.cod_tappa and tappe._cod_tappa =" +id;
+        SQLiteDatabase db= helper.getReadableDatabase();
+        Cursor result = db.rawQuery(query, null);
+        if(result.getCount() == 0)
+            return false;
+        else
+            return true;
+    }
+    public Boolean isTappaRist(String id)
+    {
+        String query = "SELECT * from rist_tappa join tappe where tappe._cod_tappa = rist_tappa.cod_tappa and tappe._cod_tappa =" +id;
+        SQLiteDatabase db= helper.getReadableDatabase();
+        Cursor result = db.rawQuery(query, null);
+        if(result.getCount() == 0)
+            return false;
+        else
+            return true;
+    }
+    public Boolean isTappaNegozi(String id)
+    {
+        String query = "SELECT * from negoz_tappa join tappe where tappe._cod_tappa = negoz_tappa.cod_tappa and tappe._cod_tappa =" +id;
+        SQLiteDatabase db= helper.getReadableDatabase();
+        Cursor result = db.rawQuery(query, null);
+        if(result.getCount() == 0)
+            return false;
+        else
+            return true;
+    }
+    public Cursor getPuntIntByCodTappa(String id)
+    {
+        String query = "SELECT * from pun_int_tappa join tappe where tappe._cod_tappa = pun_int_tappa.cod_tappa and tappe._cod_tappa =" +id;
+        SQLiteDatabase db= helper.getReadableDatabase();
+       return  db.rawQuery(query, null);
+
+    }
+    public Cursor getRistByCodTappa(String id)
+    {
+        String query = "SELECT * from rist_tappa join tappe where tappe._cod_tappa = rist_tappa.cod_tappa and tappe._cod_tappa =" +id;
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+
+    }
+    public Cursor getNegoziByCodTappa(String id)
+    {
+        String query = "SELECT * from negoz_tappa join tappe where tappe._cod_tappa = negoz_tappa.cod_tappa and tappe._cod_tappa =" +id;
+        SQLiteDatabase db= helper.getReadableDatabase();
+        return db.rawQuery(query, null);
+
+    }
     public Cursor getPercorsoById(String id)
     {
         String query="SELECT * FROM percorsi WHERE _id ="+id;
