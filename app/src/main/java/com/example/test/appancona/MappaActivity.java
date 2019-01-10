@@ -136,7 +136,6 @@ public class MappaActivity extends AppCompatActivity {
 
     public void inizializzaMappa(){
 
-
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
@@ -144,11 +143,8 @@ public class MappaActivity extends AppCompatActivity {
         map.setBuiltInZoomControls(true);
         map.setMultiTouchControls(true);
         mapController.setZoom(10.0);
-
-
-
-
     }
+
     public void percorso (Location location,String opzione)
     {
         map.getOverlays().clear();
@@ -178,7 +174,7 @@ public class MappaActivity extends AppCompatActivity {
         map.getOverlays().add(roadOverlay);
         map.invalidate();
         this.road=road;
-}
+    }
 
     public LatLng getSingleLocationFromAddress(String strAddress, Context c)
     {
