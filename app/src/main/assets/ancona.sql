@@ -100,11 +100,11 @@ INSERT INTO `servizi` VALUES (22,'Parcheggio degli Archi','Parcheggi','android.r
 INSERT INTO `servizi` VALUES (23,'Parcheggio Traiano','Parcheggi','android.resource://com.example.test.appancona/drawable/parktraiano','Via XXIX Settembre 2','071 203834','www.anconaparcheggi.it','parcheggiancona@legalmail.it');
 INSERT INTO `servizi` VALUES (24,'Parcheggio Stamira','Parcheggi','android.resource://com.example.test.appancona/drawable/parkstamira','Via Sandro Pertini 1','071 206511','www.anconaparcheggi.it','parcheggiancona@legalmail.it');
 CREATE TABLE IF NOT EXISTS `serv_tappa` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_serv`	int ( 11 ) NOT NULL,
 	`cod_tappa`	int ( 11 ) NOT NULL,
-	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`),
-	FOREIGN KEY(`cod_serv`) REFERENCES `servizi`(`id`)
+	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`_cod_tappa`),
+	FOREIGN KEY(`cod_serv`) REFERENCES `servizi`(`_id`)
 );
 CREATE TABLE IF NOT EXISTS `ristorazione` (
 	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -129,13 +129,20 @@ INSERT INTO `ristorazione` VALUES (7,'Pizzeria Sassi Neri','Via Trieste 59','Man
 INSERT INTO `ristorazione` VALUES (8,'Pizzeria Poldo''s Pizza','Via Montebello 85','Vieni a mangiare una bella e buona puccia!!!','android.resource://com.example.test.appancona/drawable/ristpoldo','18:00-23:00','Lunedi',8,'334 7352303','www.poldoancona.it');
 INSERT INTO `ristorazione` VALUES (9,'Pizzeria Rosticceria Paolo','Via Giacomo Matteotti 27','Primi piatti, secondi, rosticceria, pizza al piatto e al pezzo.','android.resource://com.example.test.appancona/drawable/ristpaolo','07:30-20:30','Domenica',8.0,'071123456','www.facebook.com/pizzeriarosticceriapaolo/');
 INSERT INTO `ristorazione` VALUES (10,'Pizzeria l''Arte della Pizza','Via Benincasa 7','L''Arte della pizza ad Ancona è una pizzeria aperta tutti i giorni, ed è il luogo ideale per un pranzo veloce, una cena gustosa o un aperitivo con gli amici. Il personale sempre accogliente, sarà a vostra disposizione anche per ottime pizze da asporto.','android.resource://com.example.test.appancona/drawable/ristarte','10:00-22:30','Nessuno',10.0,'071 55776','non disponibile');
+
 CREATE TABLE IF NOT EXISTS `rist_tappa` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_ristorazione`	int ( 11 ) NOT NULL,
 	`cod_tappa`	int ( 11 ) NOT NULL,
-	FOREIGN KEY(`cod_ristorazione`) REFERENCES `ristorazione`(`id`),
-	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`)
+	FOREIGN KEY(`cod_ristorazione`) REFERENCES `ristorazione`(`_id`),
+	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`_cod_tappa`)
 );
+
+INSERT INTO `rist_tappa` VALUES (1,5,21);
+INSERT INTO `rist_tappa` VALUES (2,10,22);
+INSERT INTO `rist_tappa` VALUES (3,6,24);
+INSERT INTO `rist_tappa` VALUES (4,1,25);
+
 CREATE TABLE IF NOT EXISTS `punti_interesse` (
 	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`nome`	varchar ( 50 ) NOT NULL,
@@ -167,12 +174,38 @@ INSERT INTO `punti_interesse` VALUES (19,'Museo Tattile Statale Omero','Luoghi C
 INSERT INTO `punti_interesse` VALUES (20,'Museo del Giocattolo','Luoghi Culturali','Via Pizzecolli 9','Il Museo dell''Infanzia, ideato e creato da Gabriele Schiavoni nel 1994, dopo varie sedi ed esposizioni itineranti, ha ora la sua sede nel centro storico di Ancona.Il museo ripercorre la storia del giocattolo e la storia dell''infanzia, dall''antichità all''Ottocento romantico e pre-industriale, fino ad arrivare agli anni del boom economico. Bambole in biscuit, antichi orsi, automobiline di latta, soldatini in pasta, ricami, abiti, fotografie e tanti altri oggetti d''epoca potranno essere ammirati durante la visita.Tra gli oggetti più importanti un''opera giovanile dello scultore Medardo Rosso raffigurante una testa di bambino in cera.Di ultima creazione la Libreria Storica dell''Automobile con un catalogo di 2000 libri  concernenti le più prestigiose marche automobilistiche italiane e straniere che hanno fatto la storia, alcuni dei quali firmati da personalità di spicco del settore e in edizione limitata. ','android.resource://com.example.test.appancona/drawable/giocattolo');
 INSERT INTO `punti_interesse` VALUES (21,'Arco Clementino','Monumenti Storici','Lungomare Vanvitelli 200','Fu eretto, su proposta del Vanvitelli, in onore di papa Clemente XII, per volontà del Senato anconetano, riconoscente nei confronti del pontefice che, vero e proprio mecenate di Ancona, concesse alla città il porto franco, dando nuovo impulso ai secolari traffici navali, ed incaricò il famoso architetto di ridisegnarne il porto. Fu così che sorsero il Lazzaretto e il Molo nuovo.L''arco Clementino è la porta di ingresso in città dal mare. Sorge nel punto in cui il Molo nuovo si innesta nell''antico molo romano, sul quale già si ergeva dal I secolo d.C. l''arco di Traiano. Nelle intenzioni dei promotori del progetto, l''Arco Clementino avrebbe dovuto oscurare la vista del pagano Arco di Traiano, sul suo attico avrebbe dovuto essere collocata la statua benedicente di Clemente XII e il conio di una medaglia onorifica fatta realizzare dagli anconetani e donata al pontefice, rappresentando così, assieme al Duomo in alto sul colle Guasco, la prima immagine che si sarebbe proposta ai naviganti al momento dell''ingresso nel porto dorico','android.resource://com.example.test.appancona/drawable/clementino');
 CREATE TABLE IF NOT EXISTS `pun_int_tappa` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pun_int`	int ( 11 ) NOT NULL,
 	`cod_tappa`	int ( 11 ) NOT NULL,
 	FOREIGN KEY(`cod_pun_int`) REFERENCES `punti_interesse`(`_id`),
-	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`)
+	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`_cod_tappa`)
 );
+
+INSERT INTO `pun_int_tappa` VALUES (1,2,1);
+INSERT INTO `pun_int_tappa` VALUES (2,15,2);
+INSERT INTO `pun_int_tappa` VALUES (3,5,3);
+INSERT INTO `pun_int_tappa` VALUES (4,21,4);
+INSERT INTO `pun_int_tappa` VALUES (5,11,5);
+
+INSERT INTO `pun_int_tappa` VALUES (6,6,6);
+INSERT INTO `pun_int_tappa` VALUES (7,13,7);
+INSERT INTO `pun_int_tappa` VALUES (8,14,8);
+INSERT INTO `pun_int_tappa` VALUES (10,4,9);
+INSERT INTO `pun_int_tappa` VALUES (11,1,10);
+INSERT INTO `pun_int_tappa` VALUES (12,3,11);
+
+INSERT INTO `pun_int_tappa` VALUES (13,10,12);
+INSERT INTO `pun_int_tappa` VALUES (14,9,13);
+INSERT INTO `pun_int_tappa` VALUES (15,8,14);
+INSERT INTO `pun_int_tappa` VALUES (16,7,15);
+INSERT INTO `pun_int_tappa` VALUES (17,12,16);
+
+INSERT INTO `pun_int_tappa` VALUES (18,19,17);
+INSERT INTO `pun_int_tappa` VALUES (19,16,18);
+INSERT INTO `pun_int_tappa` VALUES (20,20,19);
+INSERT INTO `pun_int_tappa` VALUES (21,18,20);
+INSERT INTO `pun_int_tappa` VALUES (22,13,7);
+
 CREATE TABLE IF NOT EXISTS `pernottamento` (
 	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`nome`	varchar ( 50 ) NOT NULL,
@@ -195,11 +228,11 @@ INSERT INTO `pernottamento` VALUES (8,'Hotel Europa','Via Sentino 3','Questo mod
 INSERT INTO `pernottamento` VALUES (9,'Agriturismo Fiori del Conero','Via della Ferrovia 28a','Situato sulla costa adriatica, questo hotel rurale in mattoni rossi dista 2,3 km dal Monumento dedicato ai Caduti della Prima Guerra Mondiale, nel quartiere del Passetto vicino al mare, 4,7 km dal Duomo di Ancona, in stile romanico-gotico, e 5 km dall''Arco di Traiano.','android.resource://com.example.test.appancona/drawable/hotelfiori',72.0,'388 4985967','www.fioridelconero.it','si');
 INSERT INTO `pernottamento` VALUES (10,'Conero Boat&Breakfast','Via Mascino','Passate la vostra notte speciale a bordo di un mini-yacht godendovi al meglio il vostro soggiorno nella splendida cornice di Marina Dorica','android.resource://com.example.test.appancona/drawable/hotelboat',45.0,'328 2540741','www.coneroboat.it','si');
 CREATE TABLE IF NOT EXISTS `pern_tappa` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_pern`	int ( 11 ) NOT NULL,
 	`cod_tappa`	int ( 11 ) NOT NULL,
-	FOREIGN KEY(`cod_pern`) REFERENCES `pernottamento`(`id`),
-	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`)
+	FOREIGN KEY(`cod_pern`) REFERENCES `pernottamento`(`_id`),
+	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`_cod_tappa`)
 );
 CREATE TABLE IF NOT EXISTS `percorsi` (
 	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
@@ -228,12 +261,13 @@ INSERT INTO `negozi_tipici` VALUES (2,'Bottega Re Formaggio','Piazza J.F.Kennedy
 INSERT INTO `negozi_tipici` VALUES (3,'La Congrega','Via degli Orefici 5','Progettiamo e realizziamo manufatti tessili d''arredo: tende,tovaglie,arazzi,cuscini e copriletti.I tessuti di base sono in fibra naturale: lino,cotone,canapa','10:30-12:30 16:00-19:30','Domenica e Lunedi','333 8288659','www.lacongrega.net','android.resource://com.example.test.appancona/drawable/congrega');
 INSERT INTO `negozi_tipici` VALUES (4,'Bontà delle marche','Corso Giuseppe Mazzini 96','Solo le eccellenze della tradizione enogastronomica marchigianae italiana, prodotti di qualità superiore, selezionati con cura.Piaceri per il palato e per l’anima. Vini D.O.C e D.O.C.G.,una ricca selezione di distillati, una selezione incredibile di pietanze d’asporto per tutti i gusti e per ogni necessità,dal single alla famiglia.','09:00-20:00','Domenica pomeriggio','071 53985','www.bontadellemarche.it','android.resource://com.example.test.appancona/drawable/bontamarche');
 CREATE TABLE IF NOT EXISTS `negoz_tappa` (
-	`id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	`_id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
 	`cod_negoz`	int ( 11 ) NOT NULL,
 	`cod_tappa`	int ( 11 ) NOT NULL,
 	FOREIGN KEY(`cod_negoz`) REFERENCES `negozi_tipici`(`_id`),
-	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`id`)
+	FOREIGN KEY(`cod_tappa`) REFERENCES `tappe`(`_cod_tappa`)
 );
+INSERT INTO `negoz_tappa` VALUES (1,4,23);
 
 INSERT INTO `tappe_percorsi` VALUES (1,1,1,1);
 INSERT INTO `tappe_percorsi` VALUES (2,1,2,2);
