@@ -228,6 +228,10 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.MENU_2:
+                Intent a;
+                a = new Intent(MainActivity.this,MenuActivity.class);
+                startActivity(a);
+                break;
         }
         return true;
     }

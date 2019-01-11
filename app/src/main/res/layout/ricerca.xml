@@ -179,7 +179,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/guidelineV1"
         app:layout_constraintTop_toTopOf="@+id/guidelineO2"
         app:layout_constraintVertical_bias="0.485"
-        app:srcCompat="@drawable/iconaparchi" />
+        app:srcCompat="@drawable/gastronomico" />
 
     <TextView
         android:id="@+id/label2"
@@ -245,7 +245,7 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineV1"
         app:layout_constraintTop_toTopOf="@+id/guidelineO3"
         app:layout_constraintVertical_bias="0.485"
-        app:srcCompat="@drawable/iconachiesa" />
+        app:srcCompat="@drawable/bed" />
 
     <TextView
         android:id="@+id/label3"
@@ -275,7 +275,7 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineO5"
         app:layout_constraintStart_toStartOf="@+id/guidelineV1"
         app:layout_constraintTop_toTopOf="@+id/guidelineO4"
-        app:srcCompat="@drawable/iconaculturali" />
+        app:srcCompat="@drawable/info" />
 
     <TextView
         android:id="@+id/label4"

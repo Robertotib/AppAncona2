@@ -25,7 +25,6 @@
         android:layout_marginStart="0dp"
         android:paddingLeft="5dp"
         android:textStyle="bold"
-        android:textSize="18dp"
         android:gravity="center_vertical"
         android:contentDescription="@string/indirizzo"
         android:background="@color/colorPrimary"
@@ -208,7 +207,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="20dp"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline4"

@@ -10,7 +10,8 @@
     <string name="label_icona4">Percorsi</string>
     <string name="label_icona5">Servizi</string>
     <string name="label_icona6">La Città</string>
-
+    <!-- LABEL MENU   -->
+    <string name="aboutus">Applicazione Android volta all \'ausilio del turista della città di Ancona.L\'app supporta l\'utente nella scelta dei punti d\'interesse da visitare,dei ristoranti in cui mangiare, degli hotel in cui alloggiare e dei negozi in cui trovare le tipicità del luogo. Inoltre da indicazioni sui servizi primari disponibili in città. Il progetto è stato realizzato da Roberto Tiburzi ed Abdel Ali Qochih, studenti di Ingegneria Informatica e dell\'Automazione presso l\'Università Politecnica delle Marche, con la supervisione di Luca Virgili dottorando della medesima università</string>
     <!-- LABEL RICERCA   -->
     <string name="distanza">Distanza massima</string>
     <string name="categoria">Categoria</string>

@@ -90,6 +90,10 @@
             android:label="@string/label_citta4"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".MenuActivity"
+            android:label="About us"
+            android:screenOrientation="portrait">
+        </activity>
         <activity android:name=".Ricerca.RicercaActivity"
                   android:label="Ricerca"
             android:screenOrientation="portrait">

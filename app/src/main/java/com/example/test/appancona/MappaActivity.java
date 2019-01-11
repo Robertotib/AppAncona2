@@ -2,16 +2,24 @@ package com.example.test.appancona;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.admin.NetworkEvent;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcel;
 import android.os.StrictMode;
+import android.se.omapi.SEService;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -25,6 +33,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.maps.model.LatLng;
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.routing.GraphHopperRoadManager;
@@ -64,7 +73,6 @@ public class MappaActivity extends AppCompatActivity {
         map =  findViewById(R.id.map);
         mapController = map.getController();
         setTitle(t);
-
         locationManager = (LocationManager) this.getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {
             @Override
@@ -87,8 +95,10 @@ public class MappaActivity extends AppCompatActivity {
 
             @Override
             public void onProviderDisabled(String s) {
-
+              Toast.makeText(getApplicationContext(), "GPS disattivato.\n Attivalo e riprova", Toast.LENGTH_SHORT).show();
+                finish();
             }
+
         };
         if(Build.VERSION.SDK_INT < 23)
         {
@@ -112,13 +122,20 @@ public class MappaActivity extends AppCompatActivity {
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
         }
         GPSTracker gps = new GPSTracker(this);
-        myLocation= gps.getLocation();
-        inizializzaMappa();
-        GeoPoint mypos = new GeoPoint(myLocation);
-        mapController.setCenter(mypos);
-        percorso(myLocation,opzione);
-        addListenerPulsanti();
-        indicazioni(road);
+         try {
+            myLocation= gps.getLocation();
+             inizializzaMappa();
+             GeoPoint mypos = new GeoPoint(myLocation);
+             mapController.setCenter(mypos);
+             percorso(myLocation,opzione);
+             addListenerPulsanti();
+             indicazioni(road);
+        }catch(Exception e){
+
+             Toast.makeText(getApplicationContext(), "GPS disattivato.\n Attivalo e riprova", Toast.LENGTH_SHORT).show();
+             finish();
+        }
+
 
     }
 
