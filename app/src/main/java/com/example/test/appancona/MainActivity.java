@@ -33,17 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         permissionGps();
         permissionRead();
-        this.addListenerOnButton1();
-        this.addListenerOnButton2();
-        this.addListenerOnButton3();
-        this.addListenerOnButton4();
-        this.addListenerOnButton5();
-        this.addListenerOnButton6();
-
-
-
-
-
+        addListenerOnButtons();
     }
     public void permissionGps ()
     {
@@ -123,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             // permissions this app might request.
         }
     }
-    public void addListenerOnButton1(){
+    public void addListenerOnButtons(){
         ImageButton a;
         a  =  findViewById(R.id.icona1);
         a.setOnClickListener( new View.OnClickListener() {
@@ -135,12 +125,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    public void addListenerOnButton2(){
-        ImageButton a;
-        a  =  findViewById(R.id.icona2);
-        a.setOnClickListener( new View.OnClickListener() {
+        ImageButton b;
+        b  =  findViewById(R.id.icona2);
+        b.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
@@ -149,12 +136,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    public void addListenerOnButton3(){
-        ImageButton a;
-        a  =  findViewById(R.id.icona3);
-        a.setOnClickListener( new View.OnClickListener() {
+        ImageButton c;
+        c  =  findViewById(R.id.icona3);
+        c.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
@@ -163,12 +147,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    public void addListenerOnButton4(){
-        ImageButton a;
-        a  =  findViewById(R.id.icona4);
-        a.setOnClickListener( new View.OnClickListener() {
+        ImageButton d;
+        d  =  findViewById(R.id.icona4);
+        d.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
@@ -177,12 +158,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    public void addListenerOnButton5(){
-        ImageButton a;
-        a  =  findViewById(R.id.icona5);
-        a.setOnClickListener( new View.OnClickListener() {
+        ImageButton e;
+        e  =  findViewById(R.id.icona5);
+        e.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
@@ -191,12 +169,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-    }
-    public void addListenerOnButton6(){
-        ImageButton a;
-        a  =  findViewById(R.id.icona6);
-        a.setOnClickListener( new View.OnClickListener() {
+        ImageButton f;
+        f  =  findViewById(R.id.icona6);
+        f.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i;
@@ -205,15 +180,15 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.actionbar,menu);
         return true;
-
     }
 
     @Override
