@@ -13,7 +13,7 @@ import com.example.test.appancona.*;
 
 import com.example.test.appancona.Database.DBManager;
 
-public class PercorsiActivity extends AppCompatActivity {
+public class ElencoPercorsi extends AppCompatActivity {
 
     private ListView lv=null;
     private SimpleCursorAdapter adapter=null;
@@ -46,7 +46,7 @@ public class PercorsiActivity extends AppCompatActivity {
                 String myid= textView2.getText().toString();
 
 
-                i = new Intent(PercorsiActivity.this, Percorsi2Activity.class);
+                i = new Intent(ElencoPercorsi.this, SingoloPercorso.class);
                 i.putExtra("nome", nome);
                 i.putExtra("id", myid);
                 startActivity(i);

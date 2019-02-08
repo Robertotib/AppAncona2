@@ -14,13 +14,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.test.appancona.Percorsi.PercorsiActivity;
-import com.example.test.appancona.Punti_interesse.Punti_interesseActivity;
+import com.example.test.appancona.Percorsi.ElencoPercorsi;
+import com.example.test.appancona.Punti_interesse.TipiPunti_interesse;
 import com.example.test.appancona.Ricerca.RicercaActivity;
 import com.example.test.appancona.Ristorazione.ElencoRistoranti;
 import com.example.test.appancona.Servizi.TipiServizi;
 import com.example.test.appancona.Pernottamento.ElencoHotel;
-import com.example.test.appancona.Città.CittaActivity;
+import com.example.test.appancona.Città.Citta;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,Punti_interesseActivity.class);
+                i = new Intent(MainActivity.this,TipiPunti_interesse.class);
                 startActivity(i); }});
         ImageButton b;
         b  =  findViewById(R.id.icona2);
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,PercorsiActivity.class);
+                i = new Intent(MainActivity.this,ElencoPercorsi.class);
                 startActivity(i); }});
         ImageButton e;
         e  =  findViewById(R.id.icona5);
@@ -160,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,CittaActivity.class);
+                i = new Intent(MainActivity.this,Citta.class);
                 startActivity(i); }});
     }
 

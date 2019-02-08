@@ -15,7 +15,7 @@ import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
 
 
-public class Punti_interesseActivity extends AppCompatActivity {
+public class TipiPunti_interesse extends AppCompatActivity {
 
     private ListView lv = null;
     private SimpleCursorAdapter adapter = null;
@@ -48,7 +48,7 @@ public class Punti_interesseActivity extends AppCompatActivity {
                 TextView textView =  view.findViewById(R.id.nome);
                 String tipo = textView.getText().toString();
 
-                    i = new Intent(Punti_interesseActivity.this, Punti_interesse2Activity.class);
+                    i = new Intent(TipiPunti_interesse.this, ElencoPunti_interesse.class);
                     i.putExtra("tipo", tipo);
                     startActivity(i);
 

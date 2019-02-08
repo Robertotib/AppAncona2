@@ -17,7 +17,7 @@ import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
 import com.google.android.gms.maps.model.LatLng;
 
-public class Punti_interesse2Activity extends AppCompatActivity {
+public class ElencoPunti_interesse extends AppCompatActivity {
 
     private ListView lv = null;
     private SimpleCursorAdapter adapter = null;
@@ -102,7 +102,7 @@ public class Punti_interesse2Activity extends AppCompatActivity {
                 String myid= textView2.getText().toString();
 
 
-                i = new Intent(Punti_interesse2Activity.this, Punti_interesse3Activity.class);
+                i = new Intent(ElencoPunti_interesse.this, SingoloPunto_interesse.class);
                 i.putExtra("nome", nome);
                 i.putExtra("id", myid);
                 startActivity(i);

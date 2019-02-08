@@ -25,16 +25,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Punti_interesse.Punti_interesseActivity"
+        <activity android:name=".Punti_interesse.TipiPunti_interesse"
                   android:label="@string/label_icona1"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".Punti_interesse.Punti_interesse2Activity"
+        <activity android:name=".Punti_interesse.ElencoPunti_interesse"
             android:screenOrientation="portrait"
             >
         </activity>
-        <activity android:name=".Punti_interesse.Punti_interesse3Activity"
+        <activity android:name=".Punti_interesse.SingoloPunto_interesse"
         android:screenOrientation="portrait">
         </activity>
         <activity android:name=".MappaActivity"
@@ -54,11 +54,11 @@
         <activity android:name=".Pernottamento.SingoloHotel"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Percorsi.PercorsiActivity"
+        <activity android:name=".Percorsi.ElencoPercorsi"
                   android:label="@string/label_icona4"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Percorsi.Percorsi2Activity"
+        <activity android:name=".Percorsi.SingoloPercorso"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Servizi.TipiServizi"
@@ -71,22 +71,22 @@
         <activity android:name=".Servizi.SingoloServizio"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Città.CittaActivity"
+        <activity android:name=".Città.Citta"
                   android:label="@string/label_icona6"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Città.Negozi_tipiciActivity"
+        <activity android:name=".Città.ElencoNegozi_tipici"
             android:label="@string/label_citta3"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Città.Negozi_tipici2Activity"
+        <activity android:name=".Città.SingoloNegozio_tipico"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Città.VisitarlaActivity"
+        <activity android:name=".Città.Visitarla"
             android:label="@string/label_citta2"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Città.TradizioniActivity"
+        <activity android:name=".Città.Tradizioni"
             android:label="@string/label_citta4"
             android:screenOrientation="portrait">
         </activity>

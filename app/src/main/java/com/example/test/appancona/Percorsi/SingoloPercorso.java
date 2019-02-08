@@ -19,9 +19,9 @@ import android.widget.Toast;
 
 import com.example.test.appancona.*;
 
-import com.example.test.appancona.Città.Negozi_tipici2Activity;
+import com.example.test.appancona.Città.SingoloNegozio_tipico;
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.Punti_interesse.Punti_interesse3Activity;
+import com.example.test.appancona.Punti_interesse.SingoloPunto_interesse;
 import com.example.test.appancona.Ristorazione.SingoloRistorante;
 import com.google.android.gms.maps.model.LatLng;
 
@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class Percorsi2Activity extends AppCompatActivity {
+public class SingoloPercorso extends AppCompatActivity {
 
     MapView map;
     private IMapController mapController;
@@ -105,7 +105,7 @@ public class Percorsi2Activity extends AppCompatActivity {
                     result.moveToFirst();
                     String codice = result.getString(result.getColumnIndex("cod_pun_int"));
                     String nome = result.getString(result.getColumnIndex("nome_tappa"));
-                    i = new Intent(Percorsi2Activity.this,Punti_interesse3Activity.class);
+                    i = new Intent(SingoloPercorso.this,SingoloPunto_interesse.class);
                     i.putExtra("nome",nome);
                     i.putExtra("id", codice);
                     startActivity(i);
@@ -115,7 +115,7 @@ public class Percorsi2Activity extends AppCompatActivity {
                     result.moveToFirst();
                     String codice = result.getString(result.getColumnIndex("cod_ristorazione"));
                     String nome = result.getString(result.getColumnIndex("nome_tappa"));
-                    i = new Intent(Percorsi2Activity.this,SingoloRistorante.class);
+                    i = new Intent(SingoloPercorso.this,SingoloRistorante.class);
                     i.putExtra("nome",nome);
                     i.putExtra("id", codice);
                     startActivity(i);
@@ -125,12 +125,12 @@ public class Percorsi2Activity extends AppCompatActivity {
                     result.moveToFirst();
                     String codice = result.getString(result.getColumnIndex("cod_negoz"));
                     String nome = result.getString(result.getColumnIndex("nome_tappa"));
-                    i = new Intent(Percorsi2Activity.this,Negozi_tipici2Activity.class);
+                    i = new Intent(SingoloPercorso.this,SingoloNegozio_tipico.class);
                     i.putExtra("nome",nome);
                     i.putExtra("id", codice);
                     startActivity(i);
                 }else
-                    Toast.makeText(Percorsi2Activity.this, "Scelta non valida", Toast.LENGTH_LONG).show();
+                    Toast.makeText(SingoloPercorso.this, "Scelta non valida", Toast.LENGTH_LONG).show();
 
 
             }

@@ -2,7 +2,6 @@ package com.example.test.appancona.Città;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +16,7 @@ import com.example.test.appancona.*;
 
 import com.example.test.appancona.Database.DBManager;
 
-public class Negozi_tipici2Activity extends AppCompatActivity {
+public class SingoloNegozio_tipico extends AppCompatActivity {
 
     private DBManager db = null;
     @Override
@@ -70,7 +69,7 @@ public class Negozi_tipici2Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Negozi_tipici2Activity.this,MappaActivity.class);
+                i = new Intent(SingoloNegozio_tipico.this,MappaActivity.class);
                 i.putExtra("nome",t);
                 i.putExtra("indirizzo", finalInd);
                 startActivity(i);

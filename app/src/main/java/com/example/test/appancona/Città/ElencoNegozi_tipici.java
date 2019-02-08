@@ -12,7 +12,7 @@ import com.example.test.appancona.*;
 
 import com.example.test.appancona.Database.DBManager;
 
-public class Negozi_tipiciActivity extends AppCompatActivity {
+public class ElencoNegozi_tipici extends AppCompatActivity {
     private ListView lv = null;
     private SimpleCursorAdapter adapter = null;
     private DBManager db = null;
@@ -45,7 +45,7 @@ public class Negozi_tipiciActivity extends AppCompatActivity {
                 String myid= textView2.getText().toString();
 
 
-                i = new Intent(Negozi_tipiciActivity.this, Negozi_tipici2Activity.class);
+                i = new Intent(ElencoNegozi_tipici.this, SingoloNegozio_tipico.class);
                 i.putExtra("nome", nome);
                 i.putExtra("id", myid);
                 startActivity(i);

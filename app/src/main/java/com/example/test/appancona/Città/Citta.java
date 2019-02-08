@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.example.test.appancona.*;
 
 
-public class CittaActivity extends AppCompatActivity {
+public class Citta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.citta);
@@ -28,7 +28,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,MappaActivity.class);
+                i = new Intent(Citta.this,MappaActivity.class);
                 i.putExtra("nome", "Come visitarla");
                 i.putExtra("indirizzo", "Piazza Cavour");
                 startActivity(i);
@@ -40,7 +40,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,MappaActivity.class);
+                i = new Intent(Citta.this,MappaActivity.class);
                 i.putExtra("nome", "Come visitarla");
                 i.putExtra("indirizzo", "Piazza Cavour");
                 startActivity(i);
@@ -57,7 +57,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,Negozi_tipiciActivity.class);
+                i = new Intent(Citta.this,ElencoNegozi_tipici.class);
                 startActivity(i);
 
             }
@@ -67,7 +67,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,Negozi_tipiciActivity.class);
+                i = new Intent(Citta.this,ElencoNegozi_tipici.class);
                 startActivity(i);
 
             }
@@ -82,7 +82,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,VisitarlaActivity.class);
+                i = new Intent(Citta.this,Visitarla.class);
                 startActivity(i);
 
             }
@@ -92,7 +92,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,VisitarlaActivity.class);
+                i = new Intent(Citta.this,Visitarla.class);
                 startActivity(i);
 
             }
@@ -107,7 +107,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,TradizioniActivity.class);
+                i = new Intent(Citta.this,Tradizioni.class);
                 startActivity(i);
 
             }
@@ -117,7 +117,7 @@ public class CittaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(CittaActivity.this,TradizioniActivity.class);
+                i = new Intent(Citta.this,Tradizioni.class);
                 startActivity(i);
 
             }

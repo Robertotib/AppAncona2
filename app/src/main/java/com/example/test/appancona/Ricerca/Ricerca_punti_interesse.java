@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.Punti_interesse.Punti_interesse2Activity;
+import com.example.test.appancona.Punti_interesse.ElencoPunti_interesse;
 import com.example.test.appancona.R;
 
 import java.util.ArrayList;
@@ -90,7 +90,7 @@ public class Ricerca_punti_interesse extends AppCompatActivity {
 
                 String tipo = ris.getSelectedItem().toString();
                 Intent i;
-                i = new Intent(Ricerca_punti_interesse.this, Punti_interesse2Activity.class);
+                i = new Intent(Ricerca_punti_interesse.this, ElencoPunti_interesse.class);
                 i.putExtra("tipo", tipo);
                 i.putExtra("distanza",dis);
                 startActivity(i);

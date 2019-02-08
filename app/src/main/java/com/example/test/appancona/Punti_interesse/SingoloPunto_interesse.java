@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
 
-public class Punti_interesse3Activity extends AppCompatActivity
+public class SingoloPunto_interesse extends AppCompatActivity
 {
 
     private DBManager db = null;
@@ -52,7 +52,7 @@ public class Punti_interesse3Activity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Punti_interesse3Activity.this,MappaActivity.class);
+                i = new Intent(SingoloPunto_interesse.this,MappaActivity.class);
                 i.putExtra("nome",t);
                 i.putExtra("indirizzo", finalInd);
                 startActivity(i);
