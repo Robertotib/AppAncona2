@@ -78,7 +78,7 @@ public class Ricerca_ristorazioneActivity extends AppCompatActivity {
     public void valoreSeekBarPrez(int idseeker, int idtext )
     {
         SeekBar dist = findViewById(idseeker);
-        Integer numero =dist.getProgress();
+        Integer numero =dist.getProgress()+10;
         TextView valore = findViewById(idtext);
         valore.setText(numero.toString()+ " €");
     }

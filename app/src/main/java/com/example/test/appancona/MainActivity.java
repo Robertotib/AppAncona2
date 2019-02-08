@@ -121,10 +121,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(MainActivity.this,Punti_interesseActivity.class);
-                startActivity(i);
-
-            }
-        });
+                startActivity(i); }});
         ImageButton b;
         b  =  findViewById(R.id.icona2);
         b.setOnClickListener( new View.OnClickListener() {
@@ -132,10 +129,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(MainActivity.this,RistorazioneActivity.class);
-                startActivity(i);
-
-            }
-        });
+                startActivity(i); }});
         ImageButton c;
         c  =  findViewById(R.id.icona3);
         c.setOnClickListener( new View.OnClickListener() {
@@ -143,10 +137,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(MainActivity.this,PernottamentoActivity.class);
-                startActivity(i);
-
-            }
-        });
+                startActivity(i); }});
         ImageButton d;
         d  =  findViewById(R.id.icona4);
         d.setOnClickListener( new View.OnClickListener() {
@@ -154,10 +145,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(MainActivity.this,PercorsiActivity.class);
-                startActivity(i);
-
-            }
-        });
+                startActivity(i); }});
         ImageButton e;
         e  =  findViewById(R.id.icona5);
         e.setOnClickListener( new View.OnClickListener() {
@@ -165,10 +153,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(MainActivity.this,ServiziActivity.class);
-                startActivity(i);
-
-            }
-        });
+                startActivity(i); }});
         ImageButton f;
         f  =  findViewById(R.id.icona6);
         f.setOnClickListener( new View.OnClickListener() {
@@ -176,10 +161,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i;
                 i = new Intent(MainActivity.this,CittaActivity.class);
-                startActivity(i);
-
-            }
-        });
+                startActivity(i); }});
     }
 
 
@@ -195,21 +177,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id=item.getItemId();
         switch(id)
-        {
-            case R.id.MENU_1:
+        { case R.id.MENU_1:
                 Intent i;
                 i = new Intent(MainActivity.this,RicercaActivity.class);
                 startActivity(i);
                 break;
-
             case R.id.MENU_2:
                 Intent a;
                 a = new Intent(MainActivity.this,MenuActivity.class);
                 startActivity(a);
-                break;
-        }
-        return true;
-    }
+                break; }
+        return true; }
 
 
 }
