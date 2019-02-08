@@ -40,18 +40,18 @@
         <activity android:name=".MappaActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ristorazione.RistorazioneActivity"
+        <activity android:name=".Ristorazione.ElencoRistoranti"
                   android:label="@string/label_icona2"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ristorazione.Ristorazione2Activity"
+        <activity android:name=".Ristorazione.SingoloRistorante"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Pernottamento.PernottamentoActivity"
+        <activity android:name=".Pernottamento.ElencoHotel"
                   android:label="@string/label_icona3"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Pernottamento.Pernottamento2Activity"
+        <activity android:name=".Pernottamento.SingoloHotel"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Percorsi.PercorsiActivity"
@@ -61,14 +61,14 @@
         <activity android:name=".Percorsi.Percorsi2Activity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Servizi.ServiziActivity"
+        <activity android:name=".Servizi.TipiServizi"
                   android:label="@string/label_icona5"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Servizi.Servizi2Activity"
+        <activity android:name=".Servizi.ElencoServizi"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Servizi.Servizi3Activity"
+        <activity android:name=".Servizi.SingoloServizio"
             android:screenOrientation="portrait">
         </activity>
         <activity android:name=".Città.CittaActivity"
@@ -98,19 +98,19 @@
                   android:label="Ricerca"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ricerca.Ricerca_punti_interesseActivity"
+        <activity android:name=".Ricerca.Ricerca_punti_interesse"
             android:label="Ricerca Punti d'interesse"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ricerca.Ricerca_ristorazioneActivity"
+        <activity android:name=".Ricerca.Ricerca_ristorazione"
             android:label="Ricerca Ristorazione"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ricerca.Ricerca_pernottamentoActivity"
+        <activity android:name=".Ricerca.Ricerca_pernottamento"
             android:label="Ricerca Pernottamento"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".Ricerca.Ricerca_serviziActivity"
+        <activity android:name=".Ricerca.Ricerca_servizi"
             android:label="Ricerca Servizi"
             android:screenOrientation="portrait">
         </activity>

@@ -27,7 +27,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this,Ricerca_punti_interesseActivity.class);
+                i = new Intent(RicercaActivity.this,Ricerca_punti_interesse.class);
                 startActivity(i);
 
             }
@@ -36,7 +36,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this,Ricerca_punti_interesseActivity.class);
+                i = new Intent(RicercaActivity.this,Ricerca_punti_interesse.class);
                 startActivity(i);
 
             }
@@ -51,7 +51,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this,Ricerca_ristorazioneActivity.class);
+                i = new Intent(RicercaActivity.this,Ricerca_ristorazione.class);
                 startActivity(i);
 
             }
@@ -60,7 +60,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this,Ricerca_ristorazioneActivity.class);
+                i = new Intent(RicercaActivity.this,Ricerca_ristorazione.class);
                 startActivity(i);
 
             }
@@ -75,7 +75,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this,Ricerca_pernottamentoActivity.class);
+                i = new Intent(RicercaActivity.this,Ricerca_pernottamento.class);
                 startActivity(i);
 
             }
@@ -84,7 +84,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this,Ricerca_pernottamentoActivity.class);
+                i = new Intent(RicercaActivity.this,Ricerca_pernottamento.class);
                 startActivity(i);
 
             }
@@ -99,7 +99,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this, Ricerca_serviziActivity.class);
+                i = new Intent(RicercaActivity.this, Ricerca_servizi.class);
                 startActivity(i);
 
             }
@@ -108,7 +108,7 @@ public class RicercaActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(RicercaActivity.this, Ricerca_serviziActivity.class);
+                i = new Intent(RicercaActivity.this, Ricerca_servizi.class);
                 startActivity(i);
 
             }

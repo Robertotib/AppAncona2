@@ -1,12 +1,10 @@
 package com.example.test.appancona.Percorsi;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -14,8 +12,6 @@ import android.widget.TextView;
 import com.example.test.appancona.*;
 
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.Pernottamento.Pernottamento2Activity;
-import com.example.test.appancona.Pernottamento.PernottamentoActivity;
 
 public class PercorsiActivity extends AppCompatActivity {
 

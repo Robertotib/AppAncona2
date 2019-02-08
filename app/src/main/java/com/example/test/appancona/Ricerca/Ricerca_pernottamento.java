@@ -8,10 +8,10 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.example.test.appancona.Pernottamento.PernottamentoActivity;
+import com.example.test.appancona.Pernottamento.ElencoHotel;
 import com.example.test.appancona.R;
 
-public class Ricerca_pernottamentoActivity extends AppCompatActivity {
+public class Ricerca_pernottamento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ricerca_pernottamento);
@@ -95,7 +95,7 @@ public class Ricerca_pernottamentoActivity extends AppCompatActivity {
                 Integer prez = pre.getProgress();
 
                 Intent i;
-                i = new Intent(Ricerca_pernottamentoActivity.this, PernottamentoActivity.class);
+                i = new Intent(Ricerca_pernottamento.this, ElencoHotel.class);
                 i.putExtra("distanza",dis);
                 i.putExtra("prezzo",prez);
                 startActivity(i);

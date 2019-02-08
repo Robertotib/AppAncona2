@@ -16,7 +16,7 @@ import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
 import com.google.android.gms.maps.model.LatLng;
 
-public class RistorazioneActivity extends AppCompatActivity {
+public class ElencoRistoranti extends AppCompatActivity {
 
 
     private ListView lv=null;
@@ -59,27 +59,16 @@ public class RistorazioneActivity extends AppCompatActivity {
             {
                 String posizione = puntiInt.getString(puntiInt.getColumnIndex("indirizzo"));
                 MappaActivity ma = new MappaActivity();
-
                 LatLng fine = ma.getSingleLocationFromAddress(posizione+" ancona",this);
                 Integer diffdist = ma.calcoloDistanza(inizio,fine,this);
                 if(diffdist <= dist)
-                {
-                    String [] colonne = {
+                { String [] colonne = {
                             puntiInt.getString(puntiInt.getColumnIndex("immagine")),
                             puntiInt.getString(puntiInt.getColumnIndex("nome")),
                             puntiInt.getString(puntiInt.getColumnIndex("indirizzo")),
-                            puntiInt.getString(puntiInt.getColumnIndex("_id"))
-                    };
-                    ((MatrixCursor) filtro).addRow(colonne);
-
-                }
-            }
-        }
-        else {
-            filtro = puntiInt;
-        }
-
-
+                            puntiInt.getString(puntiInt.getColumnIndex("_id"))};
+                    ((MatrixCursor) filtro).addRow(colonne); } } }
+        else { filtro = puntiInt; }
         adapter=new SimpleCursorAdapter(
                 this,
                 R.layout.row_ristorazione,
@@ -88,7 +77,6 @@ public class RistorazioneActivity extends AppCompatActivity {
                 new int[]{R.id.imagerist,R.id.nome, R.id.indirizzo,R.id.id},
                 0
         );
-
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -98,9 +86,7 @@ public class RistorazioneActivity extends AppCompatActivity {
                 String nome = textView.getText().toString();
                 TextView textView2 =  view.findViewById(R.id.id);
                 String myid= textView2.getText().toString();
-
-
-                i = new Intent(RistorazioneActivity.this, Ristorazione2Activity.class);
+                i = new Intent(ElencoRistoranti.this, SingoloRistorante.class);
                 i.putExtra("nome", nome);
                 i.putExtra("id", myid);
                 startActivity(i);

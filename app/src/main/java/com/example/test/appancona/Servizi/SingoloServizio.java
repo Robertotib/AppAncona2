@@ -15,7 +15,7 @@ import com.example.test.appancona.*;
 
 import com.example.test.appancona.Database.DBManager;
 
-public class Servizi3Activity extends AppCompatActivity {
+public class SingoloServizio extends AppCompatActivity {
 
     private DBManager db = null;
     @Override
@@ -61,7 +61,7 @@ public class Servizi3Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(Servizi3Activity.this,MappaActivity.class);
+                i = new Intent(SingoloServizio.this,MappaActivity.class);
                 i.putExtra("nome",t);
                 i.putExtra("indirizzo", finalInd);
                 startActivity(i);

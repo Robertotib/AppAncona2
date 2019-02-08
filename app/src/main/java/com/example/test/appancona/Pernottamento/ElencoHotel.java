@@ -16,7 +16,7 @@ import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
 import com.google.android.gms.maps.model.LatLng;
 
-public class PernottamentoActivity extends AppCompatActivity {
+public class ElencoHotel extends AppCompatActivity {
 
     private ListView lv=null;
     private SimpleCursorAdapter adapter=null;
@@ -97,7 +97,7 @@ public class PernottamentoActivity extends AppCompatActivity {
                 String myid= textView2.getText().toString();
 
 
-                i = new Intent(PernottamentoActivity.this, Pernottamento2Activity.class);
+                i = new Intent(ElencoHotel.this, SingoloHotel.class);
                 i.putExtra("nome", nome);
                 i.putExtra("id", myid);
                 startActivity(i);

@@ -12,14 +12,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.Punti_interesse.Punti_interesse2Activity;
 import com.example.test.appancona.R;
-import com.example.test.appancona.Servizi.Servizi2Activity;
+import com.example.test.appancona.Servizi.ElencoServizi;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ricerca_serviziActivity extends AppCompatActivity {
+public class Ricerca_servizi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ricerca_servizi);
@@ -89,7 +88,7 @@ public class Ricerca_serviziActivity extends AppCompatActivity {
 
                 String tipo = ris.getSelectedItem().toString();
                 Intent i;
-                i = new Intent(Ricerca_serviziActivity.this, Servizi2Activity.class);
+                i = new Intent(Ricerca_servizi.this, ElencoServizi.class);
                 i.putExtra("tipo", tipo);
                 i.putExtra("distanza",dis);
                 startActivity(i);

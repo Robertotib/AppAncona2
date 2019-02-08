@@ -9,9 +9,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.test.appancona.R;
-import com.example.test.appancona.Ristorazione.RistorazioneActivity;
+import com.example.test.appancona.Ristorazione.ElencoRistoranti;
 
-public class Ricerca_ristorazioneActivity extends AppCompatActivity {
+public class Ricerca_ristorazione extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ricerca_ristorazione);
@@ -95,7 +95,7 @@ public class Ricerca_ristorazioneActivity extends AppCompatActivity {
                 Integer prez = pre.getProgress();
 
                 Intent i;
-                i = new Intent(Ricerca_ristorazioneActivity.this, RistorazioneActivity.class);
+                i = new Intent(Ricerca_ristorazione.this, ElencoRistoranti.class);
                 i.putExtra("distanza",dis);
                 i.putExtra("prezzo",prez);
                 startActivity(i);

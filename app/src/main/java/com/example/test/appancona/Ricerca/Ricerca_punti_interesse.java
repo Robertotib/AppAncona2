@@ -19,7 +19,7 @@ import com.example.test.appancona.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ricerca_punti_interesseActivity extends AppCompatActivity {
+public class Ricerca_punti_interesse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ricerca_punti_interesse);
@@ -90,7 +90,7 @@ public class Ricerca_punti_interesseActivity extends AppCompatActivity {
 
                 String tipo = ris.getSelectedItem().toString();
                 Intent i;
-                i = new Intent(Ricerca_punti_interesseActivity.this, Punti_interesse2Activity.class);
+                i = new Intent(Ricerca_punti_interesse.this, Punti_interesse2Activity.class);
                 i.putExtra("tipo", tipo);
                 i.putExtra("distanza",dis);
                 startActivity(i);

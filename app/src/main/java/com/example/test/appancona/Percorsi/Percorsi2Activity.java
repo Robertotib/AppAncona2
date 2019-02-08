@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
@@ -23,10 +21,8 @@ import com.example.test.appancona.*;
 
 import com.example.test.appancona.Città.Negozi_tipici2Activity;
 import com.example.test.appancona.Database.DBManager;
-import com.example.test.appancona.Pernottamento.Pernottamento2Activity;
 import com.example.test.appancona.Punti_interesse.Punti_interesse3Activity;
-import com.example.test.appancona.Ristorazione.Ristorazione2Activity;
-import com.example.test.appancona.Ristorazione.RistorazioneActivity;
+import com.example.test.appancona.Ristorazione.SingoloRistorante;
 import com.google.android.gms.maps.model.LatLng;
 
 import org.osmdroid.api.IMapController;
@@ -119,7 +115,7 @@ public class Percorsi2Activity extends AppCompatActivity {
                     result.moveToFirst();
                     String codice = result.getString(result.getColumnIndex("cod_ristorazione"));
                     String nome = result.getString(result.getColumnIndex("nome_tappa"));
-                    i = new Intent(Percorsi2Activity.this,Ristorazione2Activity.class);
+                    i = new Intent(Percorsi2Activity.this,SingoloRistorante.class);
                     i.putExtra("nome",nome);
                     i.putExtra("id", codice);
                     startActivity(i);

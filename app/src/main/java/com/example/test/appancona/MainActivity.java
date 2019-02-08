@@ -17,9 +17,9 @@ import android.widget.ImageButton;
 import com.example.test.appancona.Percorsi.PercorsiActivity;
 import com.example.test.appancona.Punti_interesse.Punti_interesseActivity;
 import com.example.test.appancona.Ricerca.RicercaActivity;
-import com.example.test.appancona.Ristorazione.RistorazioneActivity;
-import com.example.test.appancona.Servizi.ServiziActivity;
-import com.example.test.appancona.Pernottamento.PernottamentoActivity;
+import com.example.test.appancona.Ristorazione.ElencoRistoranti;
+import com.example.test.appancona.Servizi.TipiServizi;
+import com.example.test.appancona.Pernottamento.ElencoHotel;
 import com.example.test.appancona.Città.CittaActivity;
 
 
@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,RistorazioneActivity.class);
+                i = new Intent(MainActivity.this,ElencoRistoranti.class);
                 startActivity(i); }});
         ImageButton c;
         c  =  findViewById(R.id.icona3);
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,PernottamentoActivity.class);
+                i = new Intent(MainActivity.this,ElencoHotel.class);
                 startActivity(i); }});
         ImageButton d;
         d  =  findViewById(R.id.icona4);
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i;
-                i = new Intent(MainActivity.this,ServiziActivity.class);
+                i = new Intent(MainActivity.this,TipiServizi.class);
                 startActivity(i); }});
         ImageButton f;
         f  =  findViewById(R.id.icona6);

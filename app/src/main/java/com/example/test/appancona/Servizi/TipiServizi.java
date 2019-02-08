@@ -12,7 +12,7 @@ import com.example.test.appancona.*;
 
 import com.example.test.appancona.Database.DBManager;
 
-public class ServiziActivity extends AppCompatActivity {
+public class TipiServizi extends AppCompatActivity {
 
     private ListView lv=null;
     private SimpleCursorAdapter adapter=null;
@@ -43,7 +43,7 @@ public class ServiziActivity extends AppCompatActivity {
                 TextView textView =  view.findViewById(R.id.nome);
                 String tipo = textView.getText().toString();
 
-                i = new Intent(ServiziActivity.this, Servizi2Activity.class);
+                i = new Intent(TipiServizi.this, ElencoServizi.class);
                 i.putExtra("tipo", tipo);
                 startActivity(i);
 

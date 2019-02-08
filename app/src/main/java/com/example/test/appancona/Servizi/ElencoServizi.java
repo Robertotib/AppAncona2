@@ -16,7 +16,7 @@ import com.example.test.appancona.*;
 import com.example.test.appancona.Database.DBManager;
 import com.google.android.gms.maps.model.LatLng;
 
-public class Servizi2Activity extends AppCompatActivity {
+public class ElencoServizi extends AppCompatActivity {
     private ListView lv = null;
     private SimpleCursorAdapter adapter = null;
     private DBManager db = null;
@@ -93,7 +93,7 @@ public class Servizi2Activity extends AppCompatActivity {
                 String myid= textView2.getText().toString();
 
 
-                i = new Intent(Servizi2Activity.this, Servizi3Activity.class);
+                i = new Intent(ElencoServizi.this, SingoloServizio.class);
                 i.putExtra("nome", nome);
                 i.putExtra("id", myid);
                 startActivity(i);
